@@ -1,0 +1,20 @@
+/* small reset */
+
+*, 
+*::after, 
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/*
+font-family: 'Lora', serif; (400, 600 regular and italic);
+font-family: 'Source Code Pro', monospace (400, 700, 900 regular and italic);
+font-family: 'Source Sans 3', sans-serif; (300, 400 regular and italic);
+*/
+
+body {
+    color: hotpink;
+}

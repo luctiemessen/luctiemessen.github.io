@@ -1,0 +1,17 @@
+---
+import { string } from 'astro/zod';
+import MainHead from './MainHead.astro';
+
+//style import
+import "../styles/main.css";
+
+const { title = "Luc Tiemessen, Designer", description = "Personal site of designer Luc Tiemessen. A designer, thinking and writing about proper design, philosophy and fountain pens." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<MainHead {title} {description}/>
+<body>
+    <slot>Default text</slot>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "type": "module",
+  "version": "0.0.1",
+  "browserslist": [
+    "defaults" 
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.3",
+    "astro": "^4.0.6",
+    "postcss": "^8.4.32",
+    "postcss-preset-env": "^9.3.0",
+    "typescript": "^5.3.3"
+  }
+}
