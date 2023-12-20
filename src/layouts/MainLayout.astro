@@ -1,6 +1,7 @@
 ---
 import { string } from 'astro/zod';
 import MainHead from './MainHead.astro';
+import Footer from '../components/footer.astro';
 
 //style import
 import "../styles/main.css";
@@ -13,5 +14,6 @@ const { title = "Luc Tiemessen, Designer", description = "Personal site of desig
 <MainHead {title} {description}/>
 <body>
     <slot>Default text</slot>
+    <Footer />
 </body>
 </html>
