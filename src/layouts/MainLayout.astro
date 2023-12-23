@@ -1,11 +1,11 @@
 ---
 //import { string } from 'astro/zod';
 import MainHead from './MainHead.astro';
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.astro';
 
 //style import
 import "../styles/main.css";
+import CompNav from '../components/compNav.astro';
+import CompFooter from '../components/compFooter.astro';
 
 const { title = "Luc Tiemessen, Designer", description = "Personal site of Luc Tiemessen. A designer, thinking and writing about proper design, philosophy and fountain pens." } = Astro.props;
 ---
@@ -14,8 +14,8 @@ const { title = "Luc Tiemessen, Designer", description = "Personal site of Luc T
 <html lang="en">
 <MainHead {title} {description}/>
 <body>
-    <Nav />
+    <CompNav />
     <slot>Default text</slot>
-    <Footer /> 
+    <CompFooter />
 </body>
 </html>
