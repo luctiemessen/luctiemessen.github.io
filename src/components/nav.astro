@@ -1,0 +1,19 @@
+---
+// data imports
+import navData from "../data/navData";
+---
+
+<nav aria-label="Primary">
+    <a href="/" class="home">Luc Tiemessen</a>
+    <ul>
+        {
+            navData.map((item) => (
+                <a href={item.path} data-navLink>{item.name}</a>
+            ))
+        }
+    </ul>
+</nav>
+
+<script>
+    import "../js/nav.js"
+</script>

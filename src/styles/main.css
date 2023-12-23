@@ -9,15 +9,65 @@
     font: inherit;
 }
 
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color:	#222;
+    --background-color:	#fdfdfd;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color:	#fdfdfd;
+    --background-color:	#222;
+
+    
+  }
+  
+}
+
+:root {
+  --base-font-family: "freight_display_probook", serif;
+  --sans-font-family:		"FreightSansBold", sans-serif;
+  --mono-font-family:		'Source Code Pro', monospace;
+  --base-font-size:		22px;
+  --small-font-size: var(--base-font-size) * 0.875;
+  --base-line-height:		31px;
+
+  --spacing-unit:			1em;
+
+
+  --brand-color:			#ffde03;
+  --brand-color-active:	#78C0E0;
+  --link-color:			#acac9f;
+  --highlight-color:		#2ABFF1;
+
+  --grey-color:			#828282;
+  --grey-color-light:		lighten($grey-color, 40%);
+  --grey-color-dark:		darken($grey-color, 25%);
+
+}
+
 /*
 font-family: 'Lora', serif; (400, 600 regular and italic);
-font-family: 'Source Code Pro', monospace (400, 700, 900 regular and italic);
-font-family: 'Source Sans 3', sans-serif; (300, 400 regular and italic);
+font-family: 'Source Sans 3', monospace (400, 700, 900 regular and italic);
+font-family: 'Source Code Pro', sans-serif; (300, 400 regular and italic);
 */
 
 body {
     font-family: 'Lora', serif;
-    font-weight: 400;
+    font-feature-settings: "onum" 1, "lnum" 1, "kern" 1, "liga" 1, "clig" 1, "dlig" 1, "swsh", "ordn" 1, "ss01", "salt", "calt", "ordn" 1;
+    hyphens: auto;
+    font-size: clamp(100%, 2.5vw, 115%);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.0em;
+    background-color: var(--background-colo);
+    color: var(--text-color);
 }
 
 /* Stuff from gridlover.net */
@@ -26,7 +76,6 @@ html, .root {
     line-height: 24px;
   }
   body, .article {
-    font-family: sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
     max-width: 560px;
@@ -37,30 +86,42 @@ html, .root {
     line-height: 4.5rem;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 900;
   }
   h2, .h2 {
     font-size: 2.625rem;
     line-height: 3rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
   }
   h3, .h3 {
     font-size: 1.625rem;
     line-height: 3rem;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
   }
   h4, .h4 {
     font-size: 1rem;
     line-height: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+
   }
   h5, .h5 {
     font-size: 1rem;
     line-height: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+
   }
   p, ul, ol, pre, table, blockquote {
     margin-top: 0rem;
@@ -91,3 +152,27 @@ html, .root {
     bottom: -0.25em;
   }
 /* end gridlover.net */
+
+pre,
+code {
+	font-family: var(--mono-font-family);
+	font-style: normal;
+	font-weight: 500;
+	font-size: 0.85em;
+	line-height: 1.2em;
+
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 2;
+  hyphens: none;
+  font-feature-settings: "dlig","calt","clig";
+
+}
+
+pre {
+  padding: 1rem;
+}
+
+nav a[aria-current="page"] { color: red;}

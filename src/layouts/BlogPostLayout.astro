@@ -1,0 +1,25 @@
+---
+import MainLayout from './MainLayout.astro';
+import { Image } from 'astro:assets';
+import brugImage from '../images/brug.jpg';
+
+// utils import
+import {formatDate} from "../js/utils";
+
+const {frontmatter} = Astro.props;
+const { title, description, date, draft} = frontmatter;
+---
+
+
+<MainLayout {title} {description}>
+<header>
+    <small>{formatDate(date)}</small>
+    <h1>{title}</h1>
+    {draft && "draft"}
+</header>
+<Image src={brugImage} alt="testafbeelding" width="800" format="webp" quality='100' class="bleed"/>
+
+<div class="post-content">
+    <slot />
+</div>
+</MainLayout>

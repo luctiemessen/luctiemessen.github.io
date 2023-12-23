@@ -1,19 +1,21 @@
 ---
-import { string } from 'astro/zod';
+//import { string } from 'astro/zod';
 import MainHead from './MainHead.astro';
-import Footer from '../components/footer.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
 
 //style import
 import "../styles/main.css";
 
-const { title = "Luc Tiemessen, Designer", description = "Personal site of designer Luc Tiemessen. A designer, thinking and writing about proper design, philosophy and fountain pens." } = Astro.props;
+const { title = "Luc Tiemessen, Designer", description = "Personal site of Luc Tiemessen. A designer, thinking and writing about proper design, philosophy and fountain pens." } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <MainHead {title} {description}/>
 <body>
+    <Nav />
     <slot>Default text</slot>
-    <Footer />
+    <Footer /> 
 </body>
 </html>
