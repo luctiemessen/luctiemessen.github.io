@@ -1,5 +1,7 @@
 ---
 import MainLayout from './MainLayout.astro';
+import { Image } from 'astro:assets';
+import brugImage from "../images/brug.jpg";
 //import { Image } from 'astro:assets';
 //import brugImage from '../images/brug.jpg';
 
@@ -17,6 +19,7 @@ const { title, description, date, draft} = frontmatter;
     <h1>{title}</h1>
     {draft && "draft"}
 </header>
+<Image src={brugImage} alt="A description of my image." width="800" quality="80" class="bleed" />
 <!-- <Image src={brugImage} alt="testafbeelding" width="800" format="webp" quality='100' class="bleed"/> -->
 
 <div class="post-content">

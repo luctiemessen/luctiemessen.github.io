@@ -11,70 +11,131 @@
 
 :root {
   color-scheme: light dark;
+
+  --base-font-family: 'Lora', serif;
+  --sans-font-family:	'Source Sans 3', sans-serif;
+  --mono-font-family:	'Source Code Pro', monospace;
+  --base-font-size:		18px;
+  --small-font-size: calc(var(--base-font-size) * 0.875);
+  --base-line-height:		27px;
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+
+
+  --text-color:	#333;
+  --background-color:	#fdfdfd;
+
+  /* Accent hex: #ffde03; */
+  --accent-color: hsla(52, 100%, 51%,1);
+  --accent-support-color: hsla(52, 100%, 51%,0.25);
+
+  --information-color: hsla(195, 88%, 55%,1);
+  --information-support-color: hsla(195, 88%, 55%,0.25);
+
+  --border-size: 4px;
+
+  --spacing-unit:	1rem;
+
+  --brand-color-active:	#78C0E0;
+  --link-color: #444;
+  --link-hover-color: #000;
+
+  
+  /* hsl(40, 10%, 94%); 
+  Hue, Saturation (100% is saturated), Lightness (100% is white)*/
+
+  --gray-hue: 40;
+  --gray-sat-multiplier: 0.1;
+  --gray-color: hsl(var(--gray-hue), calc(var(--gray-sat-multiplier) * 20%), 94%);
+
+
+/* code highlighter */
+  --astro-code-color-text: #24292f;
+  --astro-code-color-background: var(--gray-color);
+  --astro-code-token-constant: #0550ae;
+  --astro-code-token-string: #24292f;
+  --astro-code-token-comment: #6e7781;
+  --astro-code-token-keyword: #cf222e;
+  --astro-code-token-parameter: #24292f;
+  --astro-code-token-function: #8250df;
+  --astro-code-token-string-expression: #0a3069;
+  --astro-code-token-punctuation: #24292f;
+  --astro-code-token-link: #000012;
+
+
+    --transition-length-short: 0.1s;
+    --transition-length-medium: 0.25s;
+    --transition-length-long: 0.5s;
+    --transition-short: all var(--transition-length-short) ease-in-out;
+    --transition-medium: all var(--transition-length-medium) ease-in-out;
+    --transition-long: all var(--transition-length-long) ease-in-out;
+
+
+
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --text-color:	#222;
-    --background-color:	#fdfdfd;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-color:	#fdfdfd;
-    --background-color:	#222;
-
+    --text-color:	#ddd;
+    --background-color:	#111;
+    --link-color:			#ddd;
+    --link-hover-color: #fff;
+  
+    --astro-code-color-text: #c9d1d9;
+    --astro-code-color-background: #000;
+    --astro-code-token-constant: #79c0ff;
+    --astro-code-token-string: #a5d6ff;
+    --astro-code-token-comment: #8b949e;
+    --astro-code-token-keyword: #ff7b72;
+    --astro-code-token-parameter: #c9d1d9;
+    --astro-code-token-function: #d2a8ff;
+    --astro-code-token-string-expression: #a5d6ff;
+    --astro-code-token-punctuation: #c9d1d9;
+    --astro-code-token-link: #000012;
     
   }
   
 }
 
-:root {
-  --base-font-family: "freight_display_probook", serif;
-  --sans-font-family:		"FreightSansBold", sans-serif;
-  --mono-font-family:		'Source Code Pro', monospace;
-  --base-font-size:		22px;
-  --small-font-size: var(--base-font-size) * 0.875;
-  --base-line-height:		31px;
-
-  --spacing-unit:			1em;
-
-
-  --brand-color:			#ffde03;
-  --brand-color-active:	#78C0E0;
-  --link-color:			#acac9f;
-  --highlight-color:		#2ABFF1;
-
-  --grey-color:			#828282;
-  --grey-color-light:		lighten($grey-color, 40%);
-  --grey-color-dark:		darken($grey-color, 25%);
-
-}
 
 /*
 font-family: 'Lora', serif; (400, 600 regular and italic);
-font-family: 'Source Sans 3', monospace (400, 700, 900 regular and italic);
-font-family: 'Source Code Pro', sans-serif; (300, 400 regular and italic);
+font-family: 'Source Sans 3', sans-serif; (400, 700, 900 regular and italic);
+font-family: 'Source Code Pro', monospace; (300, 400 regular and italic);
 */
 
+
 body {
+  
     font-family: 'Lora', serif;
     font-feature-settings: "onum" 1, "lnum" 1, "kern" 1, "liga" 1, "clig" 1, "dlig" 1, "swsh", "ordn" 1, "ss01", "salt", "calt", "ordn" 1;
     hyphens: auto;
-    font-size: clamp(100%, 2.5vw, 115%);
+    /* font-size: clamp(100%, 2.5vw, 115%); */
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     letter-spacing: 0.0em;
-    background-color: var(--background-colo);
+    background-color: var(--background-color);
     color: var(--text-color);
+
+
+    /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, transparent 5%, transparent 100%);
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 100% 27px;
+    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3); */
+
 }
 
 /* Stuff from gridlover.net */
-html, .root {
-    font-size: 16px;
-    line-height: 24px;
-  }
+/* html, .root { this was defined above
+  font-size: 16px;
+  line-height: 24px;
+} */
   body, .article {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -141,25 +202,34 @@ html, .root {
     line-height: 0;
   }
   sub, sup {
-    line-height: 0;
     position: relative;
-    vertical-align: baseline;
-  }
-  sup {
-    top: -0.5em;
-  }
-  sub {
-    bottom: -0.25em;
+    font-size: var(--small-font-size);
   }
 /* end gridlover.net */
+
+sup {
+  top: -0.2rem;
+  vertical-align: top;
+}
+sub {
+  bottom: -0.25rem;
+  vertical-align: top;
+}
+
+sup:before {
+  content:"[";
+}
+sup:after {
+  content:"]";
+}
 
 pre,
 code {
 	font-family: var(--mono-font-family);
 	font-style: normal;
 	font-weight: 500;
-	font-size: 0.85em;
-	line-height: 1.2em;
+	font-size: var(--base-font-size);
+	line-height: var(--base-line-height);
 
   white-space: pre;
   word-spacing: normal;
@@ -172,7 +242,108 @@ code {
 }
 
 pre {
-  padding: 1rem;
+  padding: var(--base-line-height);
 }
 
 nav a[aria-current="page"] { color: red;}
+
+
+ul {
+	margin-left: 1rem;
+}
+ol {
+	margin-left: 1.2rem;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+li ul {
+	list-style-type: circle;
+}
+
+li ol, li ul {
+	margin: 0 0 0 1rem;
+}
+
+
+ul.post-list {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+
+i, em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 600;
+}
+
+blockquote {
+    border-left: var(--border-size) solid var(--accent-color);
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+blockquote cite {
+  display: block;
+  color: #acac9f;
+  font-weight: 300;
+  font-size: .8rem;
+}
+
+abbr {
+  cursor: help;
+  border-bottom: 1px dotted var(--text-color);
+}
+
+kbd {
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  border: 0.5px solid var(--text-color);
+  font-family: var(--mono-font-family);
+  font-size: 0.8rem;
+  line-height: 1;
+  text-align: center;
+  padding: 0.1rem 4px;
+  position: relative;
+  top: -1px;
+}
+
+p > code {
+  /*TODO: no clue but it messes up the vertical rythm with a 0.5 subpixel, this fixes it but no clue why it occurs */
+  line-height: 0;
+}
+
+/* i use the aside for highlighted sections */
+aside {
+  background-color: var(--accent-support-color);
+  border-left: var(--border-size) solid var(--accent-color);
+  padding: calc(var(--base-line-height)/2);
+  margin-bottom: 1.5rem;
+}
+
+aside.information {
+  background-color: var(--information-support-color);
+  border-left: var(--border-size) solid var(--information-color);
+  padding: calc(var(--base-line-height)/2);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration-color: var(--information-color) !important;
+  text-decoration-thickness: 1px;
+  text-decoration: underline;
+  transition: var(--transition-length-short);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
