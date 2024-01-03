@@ -18,7 +18,9 @@ const { title = "Luc Tiemessen, Designer", description = "Personal site of Luc T
     <div class="wrapper">
         <Nav />
         <main id="content" class="grid-wrapper" role="region" tabindex="-1">
-            <slot>Default text</slot>
+            <div>
+                <slot>Default text</slot>
+            </div>
         </main>
         <Footer />
     </div>
