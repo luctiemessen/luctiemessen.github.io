@@ -7,15 +7,20 @@ import "../styles/main.css";
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
-const { title = "Luc Tiemessen, Designer", description = "Personal site of Luc Tiemessen. A designer, thinking and writing about proper design, philosophy and fountain pens." } = Astro.props;
+const { title = "Luc Tiemessen, Designer", description = "Personal site of Luc Tiemessen. A designer, thinking and writing about philosphy, design and fountain pens." } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <MainHead {title} {description}/>
 <body>
-    <Nav />
-    <slot>Default text</slot>
-    <Footer />
+    <nav class="skiplink"><a href="#content">Skip to content</a></nav>
+    <div class="wrapper">
+        <Nav />
+        <main id="content" class="grid-wrapper" role="region" tabindex="-1">
+            <slot>Default text</slot>
+        </main>
+        <Footer />
+    </div>
 </body>
 </html>

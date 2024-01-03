@@ -2,18 +2,18 @@
 // data imports
 import navData from "../data/navData";
 ---
-
-<nav aria-label="Primary">
-    <a href="/" class="home">Luc Tiemessen</a>
-    <ul>
-        {
-            navData.map((item) => (
-                <a href={item.path} data-navLink>{item.name}</a>
-            ))
-        }
-    </ul>
-</nav>
-
+<header class="grid-wrapper">
+    <nav aria-label="primary" class="main-nav">
+        <a href="/" class="home">Luc Tiemessen</a>
+        <ul class="nav-items">
+            {
+                navData.map((item) => (
+                    <a href={item.path} data-navLink>{item.name}</a>
+                ))
+            }
+        </ul>
+    </nav>
+</header>
 <script>
     import "../js/nav.js"
 </script>

@@ -74,10 +74,6 @@
 
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-  }
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -122,13 +118,11 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 
-
-    /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, transparent 5%, transparent 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, transparent 5%, transparent 100%);
     background-repeat: repeat;
     background-position: top left;
     background-size: 100% 27px;
-    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3); */
-
+    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);
 }
 
 /* Stuff from gridlover.net */
@@ -139,8 +133,6 @@ body {
   body, .article {
     font-size: 1rem;
     line-height: 1.5rem;
-    max-width: 560px;
-    margin: auto;
   }
   h1, .h1 {
     font-size: 4.25rem;
@@ -198,9 +190,9 @@ body {
     border: 1px solid;
     margin: -1px 0;
   }
-  a, b, i, strong, em, small, code {
+  /* a, b, i, strong, em, small, code {
     line-height: 0;
-  }
+  } */
   sub, sup {
     position: relative;
     font-size: var(--small-font-size);
@@ -347,3 +339,36 @@ a {
 a:hover {
   color: var(--link-hover-color);
 }
+
+.skiplink {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+  height: 0;
+  margin: 0;
+  padding: 1em;
+  position: absolute;
+  top: -100%;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-items {
+  display: flex;
+  gap: var(--spacing-unit);
+  margin:0;
+}
+
+.grid-wrapper {
+  display: grid;
+  gap: var(--spacing-unit);
+  grid-template-columns: minmax(0,1fr) minmax(auto, 35rem) minmax(0,1fr);
+}
+
+.grid-wrapper > main,
+.grid-wrapper > div,
+.grid-wrapper > nav {
+  grid-column: 2/3;
+}
+
