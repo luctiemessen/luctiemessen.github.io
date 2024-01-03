@@ -131,7 +131,7 @@ body {
   line-height: 24px;
 } */
   body, .article {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     line-height: 1.5rem;
   }
   h1, .h1 {
@@ -370,5 +370,18 @@ a:hover {
 .grid-wrapper > div,
 .grid-wrapper > nav {
   grid-column: 2/3;
+}
+
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  :root {
+    --base-font-size:		16px;
+  }
+ }
+
+@media all and (max-width: 480px) { 
+  :root {
+    --base-font-size:		14px;
+ }
 }
 
