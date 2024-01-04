@@ -1,10 +1,10 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-title:  "The landscape of Web Typography"
-date:   2015-02-20 10:50:21
-[//]: # format date like: yyyy-mm-dd
+title:  "Butterscotch Squares"
+date:   2014-11-26 22:01:07
+description: no description given
+tags: jekyll
 draft: false
-tags: web typography philosophy
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

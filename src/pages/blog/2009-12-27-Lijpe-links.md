@@ -1,11 +1,11 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-tags: tags css
-date: 2009-12-27
-[//]: # format date like: yyyy-mm-dd
 title: Lijpe links
+date: 2009-12-27
 description: "Links lijken naast koppen, paragrafen en afbeeldingen de meest basale elementen van een web pagina. Helaas lijkt het er op dat aan deze links in veel gevallen ook slechts de meest basale visuele stijl wordt toegekend. Je kent het wel, een lijntje onder de tekst en een afwijkend kleurtje, en we hebben de visuele stijl van een link. Als de hele wereld zo in elkaar zou zitten zou het maar een saaie boel worden en daarnaast (iets veel essentiëlers) zouden we geen gebruik maken van de mogelijkheid om onze gebruikers te voorzien van additionele informatie over de link (metadata), een gemiste kans. Vooral de komst van CSS3 levert ons nieuwe mogelijkheden voor het stijlen van links op een manier waardoor het object link een complete transformatie door kan maken ten opzichte van de zojuist omschreven traditionele verschijning."
-draft: false
+tags: tags css
+draft: yes
+dutch: yes
 ---
 
 

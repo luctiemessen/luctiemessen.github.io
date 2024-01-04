@@ -1,7 +1,7 @@
 ---
 title: 'Styleguide'
 ---
-# Styleguide connected
+# Styleguide
 <aside>
 This page demonstrates the visual styles of the various elements that determine the design of this site.
 </aside>

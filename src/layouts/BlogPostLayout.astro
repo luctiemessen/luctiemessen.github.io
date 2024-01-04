@@ -2,22 +2,21 @@
 import MainLayout from './MainLayout.astro';
 import { Image } from 'astro:assets';
 import brugImage from "../images/brug.jpg";
-//import { Image } from 'astro:assets';
-//import brugImage from '../images/brug.jpg';
 
 // utils import
 import {formatDate} from "../js/utils";
 
 const {frontmatter} = Astro.props;
-const { title, description, date, draft} = frontmatter;
+const { title, description, date, draft, dutch} = frontmatter;
 ---
 
 
 <MainLayout {title} {description}>
 <header>
-    <small>{formatDate(date)}</small>
+    {dutch && <aside class="information">This article is written in dutch. Use your browser's translator function if you want to translate this.</aside>}
     <h1>{title}</h1>
-    {draft && "draft"}
+    <small>{formatDate(date)}</small>
+    {draft && "Draft"}
 </header>
 <Image src={brugImage} alt="A description of my image." width="800" quality="80" class="bleed" />
 <!-- <Image src={brugImage} alt="testafbeelding" width="800" format="webp" quality='100' class="bleed"/> -->

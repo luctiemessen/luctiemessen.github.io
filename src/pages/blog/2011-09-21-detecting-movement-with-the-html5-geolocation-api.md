@@ -1,9 +1,9 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-tags: tags css
-date: 2011-09-21 10:50:21
-[//]: # format date like: yyyy-mm-dd
 title: Detecting movement with the HTML5 Geolocation API
+date: 2011-09-21 10:50:21
+description: no description present
+tags: tags css
 draft: false
 ---
 

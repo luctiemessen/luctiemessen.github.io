@@ -1,10 +1,12 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-tags: tags css
+title: Schaduw schaduw aan de rand...
 date: 2010-02-04 10:50:21
 [//]: # format date like: yyyy-mm-dd
-title: Schaduw schaduw aan de rand...
+description: Een stukje over schaduw in CSS 3
+tags: tags css
 draft: false
+dutch: yes
 ---
 
 is article is written in Dutch.

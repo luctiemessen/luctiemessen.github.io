@@ -13,7 +13,7 @@
   color-scheme: light dark;
 
   --base-font-family: 'Lora', serif;
-  --sans-font-family:	'Source Sans 3', sans-serif;
+  --sans-font-family:	'Playfair', 'Source Sans 3', sans-serif;
   --mono-font-family:	'Source Code Pro', monospace;
   --base-font-size:		18px;
   --small-font-size: calc(var(--base-font-size) * 0.875);
@@ -117,12 +117,12 @@ body {
     letter-spacing: 0.0em;
     background-color: var(--background-color);
     color: var(--text-color);
-/* 
+
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, transparent 5%, transparent 100%);
     background-repeat: repeat;
     background-position: top left;
     background-size: 100% 27px;
-    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3); */
+    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);
 }
 
 /* Stuff from gridlover.net */
@@ -139,7 +139,7 @@ body {
     line-height: 4.5rem;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: var(--sans-font-family);
     font-weight: 900;
   }
   h2, .h2 {
@@ -147,7 +147,7 @@ body {
     line-height: 3rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: var(--sans-font-family);
     font-weight: 700;
   }
   h3, .h3 {
@@ -155,7 +155,7 @@ body {
     line-height: 3rem;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: var(--sans-font-family);
     font-weight: 700;
   }
   h4, .h4 {
@@ -163,7 +163,7 @@ body {
     line-height: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: var(--sans-font-family);
     font-weight: 700;
 
   }
@@ -172,7 +172,7 @@ body {
     line-height: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: var(--sans-font-family);
     font-weight: 700;
 
   }
@@ -353,6 +353,8 @@ a:hover {
 .main-nav {
   display: flex;
   justify-content: space-between;
+  margin-bottom: calc(1.5*var(--base-line-height));
+  margin-top: calc(0.5*var(--base-line-height));
 }
 .nav-items {
   display: flex;

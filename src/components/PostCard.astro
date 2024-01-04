@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+
+// utils import
+import { slugify, formatDate} from "../js/utils";
+
+const { frontmatter, url } = Astro.props;
+const { title, date, description, dutch } = frontmatter;
+---
+
+
+<!-- <pre>{JSON.stringify(frontmatter, null, 2)}</pre> -->
+
+<article class="blog-item">
+<a href={url}>{frontmatter.title}</a>
+</article>
