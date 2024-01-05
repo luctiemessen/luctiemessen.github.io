@@ -99,12 +99,12 @@ body {
     letter-spacing: 0.0em;
     background-color: var(--background-color);
     color: var(--text-color);
-
-    background-image: linear-gradient(to bottom, var(--grid-color) 0%, transparent 5%, transparent 100%);
+ 
+    /* background-image: linear-gradient(to bottom, var(--grid-color) 0%, transparent 5%, transparent 100%);
     background-repeat: repeat;
     background-position: top left;
     background-size: 100% 1.5rem;
-    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);
+    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);  */
 }
 
 /* Stuff from gridlover.net */
@@ -118,6 +118,8 @@ h1, .h1 {
   margin-bottom: 3rem;
   font-family: var(--sans-font-family);
   font-weight: 900;
+  /* test this font zetting*/
+  font-size: clamp(2.5rem,8vmin,4.25rem)
 }
 h2, .h2 {
   font-size: 2.625rem;
@@ -284,6 +286,9 @@ kbd {
 p > code {
   /*TODO: no clue but it messes up the vertical rythm with a 0.5 subpixel, this fixes it but no clue why it occurs */
   line-height: 0;
+  background-color: var(--gray-color);
+  border-radius: 3px;
+  padding: 0 2px;
 }
 
 /* I use the aside for highlighted sections */
@@ -344,6 +349,16 @@ a:hover {
 .grid-wrapper > div,
 .grid-wrapper > nav {
   grid-column: 2/3;
+}
+
+.footer {
+  margin-top: var(--base-line-height);
+  padding: calc(0.5*var(--base-line-height)) 0;
+  border-top: 0.063rem solid var(--gray-color);
+  font-family: 'Source Sans 3', serif;
+  font-weight: 400;
+  font-size: calc(0.8*var(--base-font-size));
+
 }
 
 

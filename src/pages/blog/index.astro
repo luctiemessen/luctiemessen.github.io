@@ -2,20 +2,23 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import PostCard from "../../components/PostCard.astro";
 
-const allPosts = await Astro.glob("./*md");
+// utils import
+import { orderBlogPosts } from "../../js/utils";
 
+const allPosts = await Astro.glob("./*md");
+const orderedPosts = orderBlogPosts(allPosts, {
+    filterOutDrafts: false,
+    filterOutFuturePosts: true,
+    sortByDate: true,
+    // limit: 2,
+});
 
 ---
 
 <MainLayout title="blog">
     <!-- <PostCard frontmatter={allPosts[0].frontmatter} url={allPosts[0].url} /> -->
-{allPosts.map((post) => <PostCard frontmatter={post.frontmatter} url={post.url} /> ) }
-	<!-- <ul>
-        <li><a href="./2009-12-27-Lijpe-links/">postje 1</a></li>
-        <li><a href="./2010-02-04-Schaduw-schaduw-aan-de-rand/">postje 2</a></li>
-        <li><a href="./2011-09-21-detecting-movement-with-the-html5-geolocation-api/">postje 3</a></li>
-        <li><a href="./2011-10-14-pure-css-ios-alert/">postje 4</a></li>
-        <li><a href="./2014-11-26-welcome-to-jekyll/">postje 5</a></li>
-        <li><a href="./2015-02-20-the-landscape-of-web-typography/">postje 6</a></li>
-    </ul> -->
+    {
+        orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
+    }
+	
 </MainLayout>

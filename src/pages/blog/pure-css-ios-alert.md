@@ -37,9 +37,6 @@ At the end of the second state, it seems that the dialog is slightly bigger than
 
 We all know that this animation effect can be achieved through keyframe animations. I decided that the four steps are divided equally over the entire animation, so the time of the individual states take 1/4 of the entire animation. I used the following CSS for this.
 
-{% highlight html %}
-{% endhighlight %}
-
 ```css
 @-webkit-keyframes iOSpulse {
   0% {
@@ -57,7 +54,7 @@ We all know that this animation effect can be achieved through keyframe animatio
 }
 ```
 
-Note that I only use -webkit prefixes, in the final result I also included the -moz prefix but since the code is apart from the prefix identical I think it is a waste of screen real-estate to put all browser specific stuff here.
+Note that I only use <code>-webkit</code> prefixes, in the final result I also included the <code>-moz</code> prefix but since the code is apart from the prefix identical I think it is a waste of screen real-estate to put all browser specific stuff here.
 
 The animation starts at 0% and ends at 100% (obviously). The initial scaling size is 0 making the message invisible. After the second stop the message is at a 110% size and then scales down to 80% finishing at 100%.
 
@@ -102,7 +99,7 @@ button:active {
   background: -webkit-linear-gradient(-90deg, rgba(98,98,98,.38) 1px, rgba(98,98,98,.2) 50%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.38) 100%);
 }
 ```
-So, this linear gradient has a minus 90 degrees orientation with a 1px top “border” and after that the gradient speaks for itself. The text shadow is the icing on the cake.
+So, this linear gradient has a minus 90 degrees orientation with a 1px top border and after that the gradient speaks for itself. The text shadow is the icing on the cake.
 
 When you put all this together with some other basic styling (not worth mentioning here) we get this final result (works with Webkit and Gecko engines)
 

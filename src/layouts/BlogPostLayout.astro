@@ -18,8 +18,8 @@ const { title, description, date, draft, dutch} = frontmatter;
     <small>{formatDate(date)}</small>
     {draft && "Draft"}
 </header>
-<Image src={brugImage} alt="A description of my image." width="800" quality="80" class="bleed" />
-<!-- <Image src={brugImage} alt="testafbeelding" width="800" format="webp" quality='100' class="bleed"/> -->
+<!-- <Image src={brugImage} alt="A description of my image." width="800" quality="80" class="bleed" /> -->
+
 
 <div class="post-content">
     <slot />

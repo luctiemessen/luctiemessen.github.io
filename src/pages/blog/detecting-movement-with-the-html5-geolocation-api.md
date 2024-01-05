@@ -7,26 +7,28 @@ tags: tags css
 draft: false
 ---
 
-{:.lead}
+<div class="lead-in">
 Determining the location of the visitor of your site has become much easier with the HTML5 API. With a only a few lines of JavaScript we now can indicate the location of the user and we can even check whether the user is moving. This opens interesting ways for us designers and developers to deliver the right content to our users.
+</div>
 
 ## API?
 The [Geolocation API](http://www.w3.org/TR/geolocation-API/ "Geolocation API Specification") lets you share your location with trusted websites. The <code>getCurrentPosition()</code> method requests these coordinates from the browser. How browsers implement this location service is browser specific. Therefore, the accuracy of the request can differ between browsers.
 
-{% highlight js %}
-// illuminatie ill1l11
+
+```js
 // does the browser support Geolocation?
 if (navigator.geolocation) {
   // do geolocation stuff...
   navigator.geolocation.getCurrentPosition(showMap, showError);
 }
-{% endhighlight %}
+```
 
-This gets our current position (via the Position Interface and passes it through the showMap function. This Position Interface contains the Coordinates Interface with all the information you need to determine the location of the user (latitude, longitude, altitude, accuracy, speed etc). The user is prompted to share the location with the website. The getCurrentPosition() method accepts an optional third argument called the PositionOptions object which we will discuss later.
+This gets our current position (via the Position Interface) and passes it through the <code>showMap</code> function. This Position Interface contains the Coordinates Interface with all the information you need to determine the location of the user (latitude, longitude, altitude, accuracy, speed etc). The user is prompted to share the location with the website. The <code>getCurrentPosition()</code> method accepts an optional third argument called the PositionOptions object which we will discuss later.
 
-If the location could not be determined, the showError function is called with the error message as argument. With this we can provide useful feedback to the user.
+If the location could not be determined, the <code>showError</code> function is called with the error message as argument. With this we can provide useful feedback to the user.
 
-{% highlight js %}
+
+```js
 function showError(error) {
   if(error.code==0) {
     alert('An unknown error occurred.');
@@ -38,8 +40,7 @@ function showError(error) {
     alert('There was a timeout.');
   }
 }
-{% endhighlight %}
-
+```
 
 ## Changing content based on the users’ context
 
@@ -47,21 +48,21 @@ Now that we have all the checks and fallbacks into place, we can start drawing a
 
 Luckily the Geolocation API offers us a method to observe the location of the user and call a function every time the location changes. This is the <code>watchPosition()</code> method and like the <code>getCurrentPosition()</code> method, this method accepts three arguments. The first is the success callback, second the error callback and third the previously mentioned PositionOptions object.
 
-{% highlight js %}
+
+```js
 if (navigator.geolocation) {
   navigator.geolocation.watchPosition(checkLocationChanges, showError, {enableHighAccuracy:true, maximumAge:5000, timeout:27000});
 }
-{% endhighlight %}
-
-The PositionOptions object has three properties. The enableHighAccuracy when set to true your device tries to acquire the exact location. When the property is set to false the information can be accessed quicker but the results can be less accurate (how surprising). The maximumAge is the age (in milliseconds) of the last position request. If you want to compare locations and you don’t want a location older than 5 seconds you pass 5000 into that property. The timeout property takes the time (again in milliseconds) the browser can take to acquire a position until the script throws a timeout error.
+```
+The <code>PositionOptions</code> object has three properties. The <code>enableHighAccuracy</code> when set to true your device tries to acquire the exact location. When the property is set to false the information can be accessed quicker but the results can be less accurate (how surprising). The <code>maximumAge</code> is the age (in milliseconds) of the last position request. If you want to compare locations and you don’t want a location older than 5 seconds you pass 5000 into that property. The <code>timeout</code> property takes the time (again in milliseconds) the browser can take to acquire a position until the script throws a timeout error.
 
 If we set these properties we are ready to determine if the user is moving based on the speed of the user. Hey, if the speed is 0 or null the user is not moving so if the value is other than that, we have movement!
 What you do after you detected movement is up to you. I decided to add a classname to the body tag. With CSS I can now display a link to a specific part of a website that users can access quickly when they are moving and this link will be invisible by default (for the users behind a desktop computer).
 
 
-{% highlight js %}
+```js
 function checkLocationChanges(position) {
-  if(position.coords.speed!=0 &amp;&amp; position.coords.speed != null) {
+  if(position.coords.speed!=0 && position.coords.speed != null) {
     // whee we are moving!!!
     // change classname on body. Yes, jQuery...
     $('body').addClass('movement');
@@ -69,13 +70,14 @@ function checkLocationChanges(position) {
     // let the page load normally
   }
 }
-{% endhighlight %}
+```
 
 When choosing this solution to display your content you might also want to make sure the change of content is noticed by the user. If the link is visible but not within the viewport, you might want to scroll to the location of the link or perform some other noticable action.
 
 The CSS for the link within the document that should only be visible when movement is detected.
 
-{% highlight css %}
+
+```css
 a.movementLink {
   display: none;
   background: #333;
@@ -86,8 +88,7 @@ a.movementLink {
 body.movement a.movementLink {
   display: block;
 }
-
-{% endhighlight %}
+```
 
 I put together a simple demo for this. (hint: open it on your GPS enabled mobile device while traveling)
 
