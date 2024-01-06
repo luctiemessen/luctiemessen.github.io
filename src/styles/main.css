@@ -125,7 +125,7 @@ h1, .h1 {
   font-weight: 900;
   /* test this font zetting*/
   font-size: clamp(2.25rem,8vmin,4.25rem);
-  line-height: clamp(3rem,4vmin,4.5rem);
+  line-height: clamp(3rem,8vmin,4.5rem);
 }
 h2, .h2 {
   font-size: 2.625rem;
@@ -134,6 +134,8 @@ h2, .h2 {
   margin-bottom: 1.5rem;
   font-family: var(--heading-font-family);
   font-weight: 700;
+  font-size: clamp(1.5rem,5vmin,2.625rem);
+  line-height: clamp(1.5rem,5vmin,3rem);
 }
 h3, .h3 {
   font-size: 1.625rem;
@@ -142,6 +144,8 @@ h3, .h3 {
   margin-bottom: 0rem;
   font-family: var(--heading-font-family);
   font-weight: 700;
+  font-size: clamp(1.5rem,4vmin,1.625rem);
+  line-height: clamp(1.5rem,4vmin,3rem);
 }
 h4, .h4 {
   font-size: 1rem;
@@ -150,7 +154,8 @@ h4, .h4 {
   margin-bottom: 0rem;
   font-family: var(--heading-font-family);
   font-weight: 700;
-
+  font-size: clamp(calc(1.5rem*0.8),2vmin,1rem);
+  /* line-height: clamp(1.5rem,8vmin,1.5rem); */
 }
 h5, .h5 {
   font-size: 1rem;
