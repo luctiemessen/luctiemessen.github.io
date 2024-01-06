@@ -11,7 +11,7 @@
   color-scheme: light dark;
 
   --base-font-family: 'Lora', serif;
-  --sans-font-family:	'Playfair', 'Source Sans 3', sans-serif;
+  --heading-font-family:	'Playfair', 'Source Sans 3', sans-serif;
   --mono-font-family:	'Source Code Pro', monospace;
   --base-font-size:		18px;
   --small-font-size: calc(var(--base-font-size) * 0.875);
@@ -29,7 +29,7 @@
   --information-color: hsla(195, 88%, 55%,1);
   --information-support-color: hsla(195, 88%, 55%,0.25);
 
-  --border-size: 4px;
+  --border-size: 0.2em;
 
   --spacing-unit:	1rem;
 
@@ -39,12 +39,12 @@
 
   --gray-hue: 40;
   --gray-sat-multiplier: 0.1;
-  --gray-color: hsl(var(--gray-hue), calc(var(--gray-sat-multiplier) * 20%), 94%);
+  --background-inset-color: hsl(var(--gray-hue), calc(var(--gray-sat-multiplier) * 20%), 94%);
   --grid-color: hsl(var(--gray-hue), calc(var(--gray-sat-multiplier) * 20%), 74%);
 
 /* code highlighter */
   --astro-code-color-text: #24292f;
-  --astro-code-color-background: var(--gray-color);
+  --astro-code-color-background: var(--background-inset-color);
   --astro-code-token-constant: #0550ae;
   --astro-code-token-string: #24292f;
   --astro-code-token-comment: #6e7781;
@@ -69,9 +69,11 @@
     --background-color:	#111;
     --link-color:			#ddd;
     --link-hover-color: #fff;
+
+    --background-inset-color: hsl(var(--gray-hue), calc(var(--gray-sat-multiplier) * 20%), 0%);
   
     --astro-code-color-text: #c9d1d9;
-    --astro-code-color-background: #000;
+    --astro-code-color-background: var(--background-inset-color);
     --astro-code-token-constant: #79c0ff;
     --astro-code-token-string: #a5d6ff;
     --astro-code-token-comment: #8b949e;
@@ -81,6 +83,7 @@
     --astro-code-token-string-expression: #a5d6ff;
     --astro-code-token-punctuation: #c9d1d9;
     --astro-code-token-link: #000012;
+
   }
 }
 
@@ -99,12 +102,14 @@ body {
     letter-spacing: 0.0em;
     background-color: var(--background-color);
     color: var(--text-color);
- 
-    /* background-image: linear-gradient(to bottom, var(--grid-color) 0%, transparent 5%, transparent 100%);
-    background-repeat: repeat;
-    background-position: top left;
-    background-size: 100% 1.5rem;
-    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);  */
+ }
+
+body.grid {
+  background-image: linear-gradient(to bottom, var(--grid-color) 0%, transparent 5%, transparent 100%);
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 100% 1.5rem;
+  box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3); 
 }
 
 /* Stuff from gridlover.net */
@@ -116,17 +121,18 @@ h1, .h1 {
   line-height: 4.5rem;
   margin-top: 1.5rem;
   margin-bottom: 3rem;
-  font-family: var(--sans-font-family);
+  font-family: var(--heading-font-family);
   font-weight: 900;
   /* test this font zetting*/
-  font-size: clamp(2.5rem,8vmin,4.25rem)
+  font-size: clamp(2.25rem,8vmin,4.25rem);
+  line-height: clamp(3rem,4vmin,4.5rem);
 }
 h2, .h2 {
   font-size: 2.625rem;
   line-height: 3rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  font-family: var(--sans-font-family);
+  font-family: var(--heading-font-family);
   font-weight: 700;
 }
 h3, .h3 {
@@ -134,7 +140,7 @@ h3, .h3 {
   line-height: 3rem;
   margin-top: 1.5rem;
   margin-bottom: 0rem;
-  font-family: var(--sans-font-family);
+  font-family: var(--heading-font-family);
   font-weight: 700;
 }
 h4, .h4 {
@@ -142,7 +148,7 @@ h4, .h4 {
   line-height: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 0rem;
-  font-family: var(--sans-font-family);
+  font-family: var(--heading-font-family);
   font-weight: 700;
 
 }
@@ -151,7 +157,7 @@ h5, .h5 {
   line-height: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 0rem;
-  font-family: var(--sans-font-family);
+  font-family: var(--heading-font-family);
   font-weight: 700;
 
 }
@@ -214,7 +220,11 @@ pre {
   padding: var(--base-line-height);
 }
 
-nav a[aria-current="page"] { color: red;}
+nav a[aria-current="page"] { 
+  color: var(--link-hover-color);
+  /* text-decoration: underline; */
+  text-decoration-color: var(--text-color);
+}
 
 ul {
 	margin-left: 1rem;
@@ -286,7 +296,7 @@ kbd {
 p > code {
   /*TODO: no clue but it messes up the vertical rythm with a 0.5 subpixel, this fixes it but no clue why it occurs */
   line-height: 0;
-  background-color: var(--gray-color);
+  background-color: var(--background-inset-color);
   border-radius: 3px;
   padding: 0 2px;
 }
@@ -330,13 +340,21 @@ a:hover {
 .main-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: calc(1.5*var(--base-line-height));
-  margin-top: calc(0.5*var(--base-line-height));
+  margin-bottom: calc(0 - var(--border-size));
+  margin-top: var(--base-line-height);
+  border-bottom: 0.05rem solid var(--accent-color);
+  padding-bottom: var(--base-line-height);
 }
+
+
 .nav-items {
   display: flex;
   gap: var(--spacing-unit);
   margin:0;
+}
+
+.main-nav a {
+  text-decoration: none;
 }
 
 .grid-wrapper {
@@ -354,13 +372,59 @@ a:hover {
 .footer {
   margin-top: var(--base-line-height);
   padding: calc(0.5*var(--base-line-height)) 0;
-  border-top: 0.063rem solid var(--gray-color);
+  border-top: 0.063rem solid var(--background-inset-color);
   font-family: 'Source Sans 3', serif;
   font-weight: 400;
   font-size: calc(0.8*var(--base-font-size));
-
 }
 
+.blog-item-wrapper .blog-item {
+  display: grid;
+  gap: var(--spacing-unit);
+  grid-template-columns: 5fr 1fr;
+  margin-bottom: var(--base-line-height);
+}
+
+.blog-item a {
+  margin-top:0;
+  text-decoration: none;
+}
+
+.smaller {
+  font-size: smaller;
+}
+
+.blog-item time {
+  display: block;
+  font-size:smaller;
+}
+
+.blog-item > small {
+  margin-bottom: var(--base-line-height);
+}
+
+.lead {
+  margin-top: var(--base-line-height);
+  position: relative;
+  font-size: calc(var(--base-font-size)*1.1);
+  margin-bottom: calc(2*var(--base-line-height));
+  width: 80%;
+}
+
+.lead::after {
+  background: var(--accent-color);
+  bottom: -1.34em;
+  content: "";
+  display: block;
+  height: 0.16em;
+  position: absolute;
+  width: calc(2*var(--spacing-unit));
+}
+
+.publication-date {
+  position: relative;
+  top: calc(var(--base-line-height) * -2);
+}
 
 @media all and (min-width: 480px) and (max-width: 768px) {
   :root {

@@ -16,9 +16,12 @@ const orderedPosts = orderBlogPosts(allPosts, {
 ---
 
 <MainLayout title="blog">
-    <!-- <PostCard frontmatter={allPosts[0].frontmatter} url={allPosts[0].url} /> -->
-    {
-        orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
-    }
+    <h1>Blog</h1>
+    <section class="blog-item-wrapper">
+        <!-- <PostCard frontmatter={allPosts[0].frontmatter} url={allPosts[0].url} /> -->
+        {
+            orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
+        }
+    </section>
 	
 </MainLayout>

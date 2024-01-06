@@ -13,11 +13,11 @@ const { title = "Luc Tiemessen, Designer", description = "Personal site of Luc T
 <!DOCTYPE html>
 <html lang="en">
 <MainHead {title} {description}/>
-<body>
+<body class="test ">
     <nav class="skiplink"><a href="#content">Skip to content</a></nav>
     <div class="wrapper">
         <Nav />
-        <main id="content" class="grid-wrapper" role="region" tabindex="-1">
+        <main id="content" class="grid-wrapper" role="region">
             <div>
                 <slot>Default text</slot>
             </div>

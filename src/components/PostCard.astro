@@ -8,9 +8,9 @@ const { frontmatter, url } = Astro.props;
 const { title, date, description, dutch } = frontmatter;
 ---
 
-
-<!-- <pre>{JSON.stringify(frontmatter, null, 2)}</pre> -->
-
 <article class="blog-item">
-    <a href={url}>{frontmatter.title}</a>
+    <div class="item">
+        <a href={url} class="h2">{frontmatter.title}</a>
+        <time datetime="2018-07-07">{formatDate(frontmatter.date)}</time>
+    </div>
 </article>

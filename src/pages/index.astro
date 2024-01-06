@@ -16,12 +16,15 @@ const orderedPosts = orderBlogPosts(allPosts, {
 ---
 
 
-<MainLayout title="My Blog">
-	<h1>Max en Sofie zijn super cool! en dat komt omdat ze cool zijn!!!</h1>
-
-
-	<h1>Sen en Fedde die zijn, legendary!</h1>
-	{
-        orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
-    }
+<MainLayout title="Luc Tiemessen, Designer">
+	<div class="lead">
+		<p>Hi there, I'm a designer from Utrecht, <a href="http://www.ing.nl">working</a> in Amsterdam on web and native mobile apps that are easy to understand and a joy to use. I like to spend time on thinking and <a href="/blog/">writing</a> about technology, design and <a href="/pens/">fountain pens</a>.</p>
+		<p><a href="/about/">Read more about me</a>.</p>
+	</div>
+	<p class="smaller">Recent blog entries</p>
+	<section class="blog-item-wrapper">
+		{
+        	orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
+    	}
+	</section>
 </MainLayout>
