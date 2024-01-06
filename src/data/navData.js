@@ -8,7 +8,7 @@ const navData = [
         path: "/pens/",
     },
     {
-        name: "About me",
+        name: "About",
         path: "/about/",
     },
     {
