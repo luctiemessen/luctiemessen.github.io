@@ -460,4 +460,8 @@ a:hover {
  h1, .h1 {
   margin-bottom: 1.5rem;
  }
+
+ .publication-date {
+  top: calc(var(--base-line-height) * -1);
+ }
 }
