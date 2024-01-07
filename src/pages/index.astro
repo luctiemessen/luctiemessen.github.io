@@ -21,7 +21,7 @@ const orderedPosts = orderBlogPosts(allPosts, {
 		<p>Hi there, I'm a designer from Utrecht, <a href="http://www.ing.nl">working</a> in Amsterdam on web and native mobile apps that are easy to understand and a joy to use. I like to spend time on thinking and <a href="/blog/">writing</a> about technology, design and <a href="/pens/">fountain pens</a>.</p>
 		<p><a href="/about/">Read more about me</a>.</p>
 	</div>
-	<p class="smaller">Recent blog entries</p>
+	<p class="smaller blog-lead">Recent blog entries</p>
 	<section class="blog-item-wrapper">
 		{
         	orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 

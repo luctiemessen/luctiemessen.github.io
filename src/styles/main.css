@@ -427,6 +427,10 @@ a:hover {
   width: calc(2*var(--spacing-unit));
 }
 
+.blog-lead {
+  margin-bottom: 0;
+}
+
 .publication-date {
   position: relative;
   top: calc(var(--base-line-height) * -2);
