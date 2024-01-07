@@ -387,7 +387,7 @@ a:hover {
 .blog-item-wrapper .blog-item {
   display: grid;
   gap: var(--spacing-unit);
-  grid-template-columns: 8fr 1fr;
+  grid-template-columns: 9fr 1fr;
   margin-bottom: var(--base-line-height);
 }
 
