@@ -11,10 +11,10 @@ const navData = [
         name: "About",
         path: "/about/",
     },
-    {
-        name: "Styleguide",
-        path: "/styleguide/",
-    },
+    // {
+    //     name: "Styleguide",
+    //     path: "/styleguide/",
+    // },
 ]
 
 export default navData;

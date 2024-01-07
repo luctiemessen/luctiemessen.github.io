@@ -2,39 +2,45 @@
 title: 'Styleguide'
 ---
 # Styleguide
+
+<p class="lead">This page demonstrates the visual styles of the various elements that determine the design of this site.
+You are currently reading a lead paragraph which is used to introduce an article or page. It has a bit bigger font size and a visual accent at the bottom.</p>
+
+#### Typography
+I've set the body copy in <a href="https://fonts.google.com/specimen/Lora">Lora</a> at <code>18px</code>. The headings are set in <a href="https://fonts.google.com/specimen/Playfair">Playfair</a> and the code snippets in <a href="https://fonts.google.com/specimen/Source+Code+Pro">Source Code Pro</a> all through <a href="https://www.fonts.google.com">Google Fonts</a>. 
+
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+
+#### Paragraph
+Aute occaecat mollit ex eiusmod aute voluptate in Lorem et consectetur. Anim fugiat enim eu ullamco consequat qui officia. Lorem occaecat id sit do adipisicing dolore occaecat magna. Aliquip esse consectetur voluptate exercitation aute id ad duis in cupidatat dolor ex nisi nisi. Fugiat elit in occaecat occaecat commodo cupidatat consectetur ullamco enim et non occaecat reprehenderit. Ullamco aute cupidatat ipsum eu mollit labore.
+
+#### Aside
 <aside>
 This page demonstrates the visual styles of the various elements that determine the design of this site.
 </aside>
 
+#### Aside (information)
 <aside class="information">
 This page demonstrates the visual styles of the various elements that determine the design of this site.
 </aside>
 
-
-## 45 / 75 range...
+#### 45 / 75 range...
 The amount of characters on one line resulting in * comfortable ♥ readi * ng is considered to be between 45-75. The Ideal length being 66.
 [^line-length-ref-a][^line-length-ref-b][^line-length-ref-c]
-
-
 [^line-length-ref-a]: [Readability: the Optimal Line Length](http://baymard.com/blog/line-length-readability "Readability: the Optimal Line Length") - Baymard Institute.
 [^line-length-ref-b]: [The Elements of Typographic Style Applied to the Web](http://webtypography.net/2.1.2 "Search for it") - Robert Bringhurst.
 [^line-length-ref-c]: [Accessibility for Teams](https://accessibility.digital.gov/visual-design/typography/ "Can you easily read and comprehend textual information on the page?") - U.S. General Services Administration
 
-## The iI1l test
+I'm taking this into account while defining the <code>max-width</code> of the content section of the site.
+
+#### The iI1l test
 The iI1l test. Let's hope these letterforms differ so we don't mix up a 1 with a l or an i with a l, or a I with a l.
 
-## This is a second level heading, it is completely and utterly awesome
-There’s nothing in the world like the taste of warm, freshly-baked A [butterscotch squares in 3fold](http://google.com "Search for it on google") butterscotch squares. They’re convenient to store and also easy to pack and carry, so they always make the perfect bring-along treat for parties and potlucks, or on long road-trips. 
 
-<i>&</i>They’re also quite versatile, so you can have fun creating your own variations. If you like them crunchy, just add 1 cup of chopped walnuts or pecans. Or if you prefer chocolate, try adding 1 cup of dark or semisweet chocolate chips.
-
-## Insanely cool second level heading
-First 1st sift 1 1/2 cups all-purpose flour, 2 teaspoons baking powder and 1/2 teaspoon of salt together into a medium-sized mixing bowl. Melt 1/2 cup of butter, then add 2 cups of brown sugar. Stir them together over low heat, and keep stirring until the sugar has completely melted. Remove from heat and add the dry ingredients. Add 2 eggs and 1/2 teaspoon of vanilla extract. Stir together until smooth. Pour the batter into an ungreased 9” × 13” baking pan, and spread it flat with a spatula. Bake at 300° F (150° C) for about 25–30 minutes, or until the crust turns golden-brown.
-
-### The insanest third level
-They’re convenient to store and also easy to pack and carry, so they always make the perfect bring-along treat for parties and potlucks, or on long road-trips. They’re also quite versatile, so you can have fun creating your own variations.
-
-#### Horizontal ruler (first)
+#### Horizontal ruler
 
 -------------------------------
 
@@ -68,7 +74,7 @@ You simply <em>must</em> try the new 12 year old Aultmore whisky!
 #### Strong importance
 The <code>strong</code> element is used to denote text with strong importance. Where bolding is used for stylistic differentiation, the <code>b</code> element may be preferable.
 
-<strong>Don’t</strong> stick nails in the electrical outlet.
+Please <strong>don’t</strong> stick nails in the electrical outlet.
 
 
 #### Links
@@ -79,19 +85,28 @@ The <code>strong</code> element is used to denote text with strong importance. W
 > This is a blockquote.
 > on multiple lines <cite>[butterscotch squares](http://google.com "Search for it on google") test</cite>
 
+#### Strong
+For bold text, use <strong>strong</strong>.
 
-
-
-To bold text, use <strong>strong</strong>.
+#### Italics
 To italicize text, use <em>em</em>.
+
+#### Abbr
 Abbreviations, like <abbr title="HyperText Markup Language">HTML</abbr> should use <abbr>abbr</abbr>, with an optional title attribute for the full phrase.
-Citations, like — Mark otto, should use <cite>cite</cite>.
+
+#### Citations
+Citations, like — Jane Doe, should use <cite>cite</cite>.
+
+#### Deleted & Inserted
 Deleted text should use <del>del</del> and inserted text should use <ins>ins</ins>.
+
+#### Super- and Subscript
 Superscript text uses <sup>sup</sup> and subscript text uses <sub>sub</sub>.
 
+#### Keys
 Ah and <kbd>⌘</kbd> + <kbd>shift</kbd> keys are important.
 
-Excepteur aliqua sit laborum et minim. Consectetur eiusmod veniam nostrud labore minim fugiat adipisicing et qui duis sunt consequat laboris. Deserunt incididunt et lets see how <kbd>⌘</kbd> and <kbd>shift</kbd> and <kbd>F4</kbd> look in a paragraph also <kbd>CAPS LOCK</kbd> reprehenderit incididunt veniam fugiat non aliqua anim anim officia. Lorem ut do nisi mollit reprehenderit reprehenderit officia cupidatat. Anim veniam sit consectetur dolore incididunt labore minim deserunt quis.
+Excepteur aliqua <abbr>sit</abbr> laborum <sup>et</sup> minim. Consectetur eiusmod veniam nostrud labore minim fugiat adipisicing et qui duis sunt consequat laboris. Deserunt incididunt <sub>et</sub> lets see how <kbd>⌘</kbd> and <kbd>shift</kbd> and <kbd>F4</kbd> look in a paragraph also <kbd>CAPS LOCK</kbd> reprehenderit <del>incididunt</del> <ins>veniam</ins> fugiat non aliqua anim anim officia. Lorem ut do nisi mollit <strong>reprehenderit</strong> <em>reprehenderit</em> officia cupidatat. Anim veniam sit consectetur dolore incididunt labore minim deserunt quis.
 
 #### Code highlighting
 ```js
