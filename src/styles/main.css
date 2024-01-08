@@ -99,7 +99,7 @@ body {
     hyphens: auto;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    letter-spacing: 0.0em;
+    letter-spacing: 0.015em;
     background-color: var(--background-color);
     color: var(--text-color);
  }
