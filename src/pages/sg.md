@@ -142,4 +142,23 @@ function showError(error) {
     animation-duration: 0.000001s;
 }
 ```
+
+<figure class="">
+
+[![This is a bridge](../assets/brug.jpg "This is the alt text")](../assets/brug.jpg)
+
+<figcaption>
+	This is the caption of the image
+</figcaption>
+</figure>
+</div>
+
+<div class="bleed">
+<figure>
+
+[![This is a bridge](../assets/brug.jpg "This is the alt text")](../assets/brug.jpg)
+<figcaption>
+  This is the caption of the image
+</figcaption>
+</figure>
 </div>

@@ -1,13 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import PostCard from "../components/PostCard.astro";
+import Image from "astro:assets";
 
 // utils import
 import { orderBlogPosts } from "../js/utils";
 
 const allPosts = await Astro.glob("./blog/*md");
 const orderedPosts = orderBlogPosts(allPosts, {
-    filterOutDrafts: false,
+    filterOutDrafts: true,
     filterOutFuturePosts: true,
     sortByDate: true,
     limit: 3,
