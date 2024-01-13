@@ -20,7 +20,7 @@ const orderedPosts = orderBlogPosts(allPosts, {
         <h1>Blog</h1>
             <!-- <PostCard frontmatter={allPosts[0].frontmatter} url={allPosts[0].url} /> -->
             {
-                orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
+                orderedPosts.map((post: { frontmatter: any; url: any; }) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
             }
     </div>
 </MainLayout>

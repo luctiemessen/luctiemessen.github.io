@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import PostCard from "../components/PostCard.astro";
-import Image from "astro:assets";
+// import Image from "astro:assets";
 
 // utils import
 import { orderBlogPosts } from "../js/utils";
@@ -26,7 +26,7 @@ const orderedPosts = orderBlogPosts(allPosts, {
 		<p class="smaller blog-lead">Recent blog entries</p>
 		<section class="blog-item-wrapper">
 			{
-				orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
+				orderedPosts.map((post: { frontmatter: any; url: any; }) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
 			}
 		</section>
 	</div>
