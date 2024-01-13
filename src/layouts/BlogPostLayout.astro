@@ -12,7 +12,7 @@ const { title, description, date, draft, dutch} = frontmatter;
 
 
 <MainLayout {title} {description}>
-<header class="article-header">
+<header class="article-header span2-4">
     {dutch && <aside class="information">This article is written in dutch. Use your browser's translator function if you want to translate this.</aside>}
     <h1>{title}</h1>
     <time class="publication-date smaller">{formatDate(date)}</time>
@@ -21,7 +21,7 @@ const { title, description, date, draft, dutch} = frontmatter;
 <!-- <Image src={brugImage} alt="A description of my image." width="800" quality="80" class="bleed" /> -->
 
 
-<div class="post-content">
+<!-- <div class="post-content"> -->
     <slot />
-</div>
+<!-- </div> -->
 </MainLayout>

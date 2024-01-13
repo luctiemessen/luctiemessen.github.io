@@ -6,8 +6,9 @@ description: no description present
 tags: tags css
 draft: false
 ---
+<div class="span2-4">
 
-<div class="lead-in">
+<div class="lead">
 Determining the location of the visitor of your site has become much easier with the HTML5 API. With a only a few lines of JavaScript we now can indicate the location of the user and we can even check whether the user is moving. This opens interesting ways for us designers and developers to deliver the right content to our users.
 </div>
 
@@ -95,3 +96,5 @@ I put together a simple demo for this. (hint: open it on your GPS enabled mobile
 ## Conclusion
 
 With this easy technique we can make interesting context-aware alterations to our content to facilitate the needs of our users. Obviously, this example is relatively straight forward an one could argue about the solution I suggested (changing a body class and display information based on that class via CSS) but the possibility of having more information about the activity the user is performing is opening new doors to provide the right content to our users.
+
+</div>

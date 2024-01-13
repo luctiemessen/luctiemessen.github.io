@@ -7,7 +7,7 @@ tags: tags css
 draft: false
 dutch: yes
 ---
-
+<div class="span2-4">
 
 ## Heading 2
 
@@ -87,3 +87,5 @@ Soms wil je niet dat de mensen direct zien dat het een pdf document is omdat het
 
 ## Conclusie
 Met de huidige attribuut selectoren kun je bezoekers van je site bedienen op veel meer manieren dan je in eerste instantie misschien zou denken. Het tonen van metadata op basis van het type informatie waar je de gebruiker heen stuurt kan helpen om de gebruiker een goed gevoel over te laten houden aan het bezoek op je site. Het visualiseren van deze metadata is natuurlijk nog wel een onderdeel waar men goed over na moet denken wil de metadata een toegevoegde waarde leveren. Tot slot wil ik nog melden dat de CSS3 selectors (en zelfs een boel CSS2.1 attribuut selectors) niet worden ondersteund door alle browsers (zoals Internet Explorer). Mocht je met deze groep gebruikers rekening willen houden, bedenk dan dat je deze informatie op een nette manier moet laten degraderen voor de incapabele browsers. In veel gevallen zal de selector gewoon niet worden uitgevoerd en zul je niet met dit probleem te maken krijgen. Wil je echter belangrijke informatie weergeven, zul je misschien een ander alternatief moeten bedenken voor het weergeven van deze informatie.
+
+</div>

@@ -1,3 +1,4 @@
+/* small reset */
 *,
 *::after,
 *::before {
@@ -6,6 +7,21 @@
     padding: 0;
     font: inherit;
 }
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+input, textarea, button, select {
+    font: inherit;
+}
+
+/* end small reset*/
 
 :root {
     color-scheme: light dark;
@@ -79,6 +95,10 @@ font-family: 'Lora', serif; (400, 600 regular and italic);
 font-family: 'Playfair', 'Source Sans 3', sans-serif; (400, 700, 900 regular and italic);
 font-family: 'Source Code Pro', monospace; (300, 400 regular and italic);
 */
+
+html {
+    hanging-punctuation: first last;
+}
 
 body {
     font-family: 'Lora', serif;
@@ -209,6 +229,10 @@ sup {
 
 /* end gridlover.net */
 
+h1,h2,h3,h4,h5 {
+    text-wrap: balance;
+}
+
 sup {
     top: -0.2rem;
     vertical-align: top;
@@ -254,19 +278,16 @@ nav a[aria-current="page"] {
 }
 
 ul {
-    margin-left: 1rem;
-}
-
-ol {
-    margin-left: 1.2rem;
+    list-style-type: disc;
 }
 
 ol {
     list-style-type: decimal;
+    padding-inline-start: 0.3em;
 }
 
-ul {
-    list-style-type: disc;
+ol, ul {
+    margin-left: 1rem;
 }
 
 li ul {
@@ -389,17 +410,27 @@ a:hover {
     text-decoration: none;
 }
 
-.grid-wrapper {
+.wrapper {
     display: grid;
-    gap: var(--spacing-unit);
-    grid-template-columns: minmax(0, 1fr) minmax(0, 35rem) minmax(0, 1fr);
+    padding: 0 3rem;
+    margin:0 auto;
+    /*gap: var(--spacing-unit);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 35rem) minmax(0, 1fr); */
+    grid-column-gap: 2.5rem;
+    grid-template-columns: repeat(6,[col] 1fr);
+    max-width: 62rem;
 }
 
-.grid-wrapper>main,
-.grid-wrapper>div,
-.grid-wrapper>nav {
-    grid-column: 2/3;
+.wrapper {
+    & .span2-4, section.footnotes {
+        grid-column: col 2/span 4;
+    }
+    & .bleed {
+        grid-column: col 1/span 6;
+    }
 }
+
+
 
 .footer {
     margin-top: var(--base-line-height);
@@ -410,7 +441,7 @@ a:hover {
     font-size: calc(0.8*var(--base-font-size));
 }
 
-.blog-item-wrapper .blog-item {
+.blog-item {
     display: grid;
     gap: var(--spacing-unit);
     grid-template-columns: 9fr 1fr;
@@ -462,11 +493,32 @@ a:hover {
     top: calc(var(--base-line-height) * -2);
 }
 
+.footnotes {
+    font-family: 'Source Sans 3', serif;
+    font-weight: 400;
+    font-size: calc(0.8*var(--base-font-size));
+
+    & p {
+        margin-bottom:0;
+    }
+}
+
+
 @media all and (min-width: 480px) and (max-width: 768px) {
      :root {
         --base-font-size: 16px;
         line-height: 1.5rem;
     }
+
+    .wrapper {
+        grid-column-gap: 1rem;
+        padding: 0 1rem;
+        & .span2-4, section.footnotes {
+            grid-column: col 1/span 6;
+        }
+    }
+
+
 }
 
 @media all and (max-width: 480px) {
@@ -489,5 +541,19 @@ a:hover {
     }
     .publication-date {
         top: calc(var(--base-line-height) * -1);
+    }
+
+    .wrapper {
+        grid-column-gap: 1rem;
+        padding: 0 0.5rem;
+        & .span2-4, section.footnotes {
+            grid-column: col 1/span 6;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        scroll-behavior: smooth;
     }
 }

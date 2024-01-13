@@ -6,6 +6,7 @@ description: no description present
 tags: tags css
 draft: false
 ---
+<div class="span2-4">
 
 After my workshop at the Fronteers 2011 Conference, Lea Verou showed us some very cool CSS3 stuff. This inspiring session made me think about how to implement some complex interaction patterns without the usage of Javascript and images and the iOS alert dialog seemed like a suitable candidate for a first exercise.
 
@@ -104,3 +105,5 @@ So, this linear gradient has a minus 90 degrees orientation with a 1px top borde
 When you put all this together with some other basic styling (not worth mentioning here) we get this final result (works with Webkit and Gecko engines)
 
 If you have any improvements, please let me know.
+
+</div>
