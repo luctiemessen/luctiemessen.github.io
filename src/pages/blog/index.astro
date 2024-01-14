@@ -5,7 +5,7 @@ import PostCard from "../../components/PostCard.astro";
 // utils import
 import { orderBlogPosts } from "../../js/utils";
 
-const allPosts = await Astro.glob("./*md");
+const allPosts = await Astro.glob("./*mdx");
 const orderedPosts = orderBlogPosts(allPosts, {
     filterOutDrafts: true,
     filterOutFuturePosts: true,

@@ -4,14 +4,15 @@ title:  "Site redesign process"
 date:   2024-01-13
 description: Elaborate description of the process of redesigning my personal site.
 tags: web personal
-draft: true
+draft: false
 ---
-
 
 <div class="bleed">
 <figure>
+<a href="../../assets/typeface-pairings.png">
 
 [![Typeface pairings](../../assets/typeface-pairings.png "Typeface pairings presented")](../../assets/typeface-pairings.png)
+</a>
 <figcaption>
   Trying out headings that pair well with Lora 
 </figcaption>
