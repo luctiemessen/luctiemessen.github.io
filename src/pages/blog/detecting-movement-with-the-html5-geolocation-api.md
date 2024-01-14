@@ -7,7 +7,7 @@ tags: tags css
 draft: false
 ---
 <div class="span2-4">
-
+ 
 <div class="lead">
 Determining the location of the visitor of your site has become much easier with the HTML5 API. With a only a few lines of JavaScript we now can indicate the location of the user and we can even check whether the user is moving. This opens interesting ways for us designers and developers to deliver the right content to our users.
 </div>
