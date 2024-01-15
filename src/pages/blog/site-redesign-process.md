@@ -17,7 +17,21 @@ draft: true
 
   I was looking for a typeface that would give me an elegant atmosphere that has some space in the letterforms and reads easily. My initial thoughts were to only consider serif typefaces but I wanted to explore soms sans-serifs as well. 
 
-  When chosing typefaces, I like to look at specific letterforms. I'm often judging the lower case g (I love a good double-story g) and upper case R and also the lowercase a, s and c to judge if there is some space around the letterforms. Finally the t for me is a lettershape that needed to be elegant. Racgt is the lettersecuence I use to do an initial assesment. 
+  When chosing typefaces, I like to look at specific letterforms. I'm often judging the lower case g (I love a good double-story g) and upper case R and also the lowercase a, s and c to judge if there is some space around the letterforms. Finally the t for me is a lettershape that needed to be elegant. Racgt is the lettersecuence I use to do an initial assesment. Additionally I use the iI1l characters to scan for character imposter syndrome. I really want distinct letterforms for the lowercase i, capital i, number one and lowercase l. Since they are so often alike, I want to chose a typeface that can display these distinctions properly. 
+</div>
+<div class="bleed">
+  <figure>
+
+  [![Overview of multiple typefaces to compare space and letterforms](../../assets/space-and-letterform-comparison.png "Space and letterform comparison")](../../assets/space-and-letterform-comparison.png)
+  <figcaption>
+    Overview of multiple typefaces to compare space and letterforms.
+  </figcaption>
+  </figure>
+</div>
+
+  
+
+
 
 </div>
 <div class="bleed">
