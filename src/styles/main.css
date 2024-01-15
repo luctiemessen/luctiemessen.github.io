@@ -7,10 +7,19 @@
     font: inherit;
 }
 
+::selection {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+a::selection  {
+    background: var(--information-color);
+}
+
 :root {
     color-scheme: light dark;
     --base-font-family: 'Lora', serif;
-    --heading-font-family: 'Playfair', 'Source Sans 3', sans-serif;
+    --heading-font-family: 'Playfair', serif;
     --mono-font-family: 'Source Code Pro', monospace;
     --base-font-size: 18px;
     --small-font-size: calc(var(--base-font-size) * 0.875);
@@ -21,7 +30,7 @@
     --background-color: #fdfdfd;
     --accent-color: hsla(52, 100%, 51%, 1);
     --accent-support-color: hsla(52, 100%, 51%, 0.25);
-    --information-color: hsla(195, 88%, 55%, 1);
+    --information-color: hsl(195, 88%, 55%);
     --information-support-color: hsla(195, 88%, 55%, 0.25);
     --border-size: 0.2em;
     --spacing-unit: 1rem;
@@ -489,5 +498,11 @@ a:hover {
     }
     .publication-date {
         top: calc(var(--base-line-height) * -1);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+     :has(:target) {
+        scroll-behavior: smooth;
     }
 }

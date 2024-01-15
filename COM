@@ -1,0 +1,4 @@
+
+; <<>> DiG 9.10.6 <<>> WWW.LUCTIEMESSEN +nostats +nocomments +nocmd
+;; global options: +cmd
+;; connection timed out; no servers could be reached
