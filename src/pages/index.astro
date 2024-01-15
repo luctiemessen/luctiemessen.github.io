@@ -1,13 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import PostCard from "../components/PostCard.astro";
+// import Image from "astro:assets";
 
 // utils import
 import { orderBlogPosts } from "../js/utils";
 
 const allPosts = await Astro.glob("./blog/*md");
 const orderedPosts = orderBlogPosts(allPosts, {
-    filterOutDrafts: false,
+    filterOutDrafts: true,
     filterOutFuturePosts: true,
     sortByDate: true,
     limit: 3,
@@ -17,14 +18,16 @@ const orderedPosts = orderBlogPosts(allPosts, {
 
 
 <MainLayout title="Luc Tiemessen, Designer">
-	<div class="lead">
+	<div class="lead span2-4">
 		<p>Hi there, I'm a designer from Utrecht, <a href="http://www.ing.nl">working</a> in Amsterdam on web and native mobile apps that are easy to understand and a joy to use. I like to spend time thinking and <a href="/blog/">writing</a> about technology, design and <a href="/pens/">fountain pens</a>.</p>
 		<p><a href="/about/">Read more about me</a>.</p>
 	</div>
-	<p class="smaller blog-lead">Recent blog entries</p>
-	<section class="blog-item-wrapper">
-		{
-        	orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
-    	}
-	</section>
+	<div class="span2-4">
+		<p class="smaller blog-lead">Recent blog entries</p>
+		<section class="blog-item-wrapper">
+			{
+				orderedPosts.map((post: { frontmatter: any; url: any; }) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
+			}
+		</section>
+	</div>
 </MainLayout>

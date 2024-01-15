@@ -1,3 +1,4 @@
+/* small reset */
 *,
 *::after,
 *::before {
@@ -7,20 +8,28 @@
     font: inherit;
 }
 
-::selection {
-    background: var(--accent-color);
-    color: var(--text-color);
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-a::selection  {
-    background: var(--information-color);
+body {
+    min-height: 100vh;
 }
+
+input, textarea, button, select {
+    font: inherit;
+}
+
+/* end small reset*/
 
 :root {
     color-scheme: light dark;
     --base-font-family: 'Lora', serif;
     --heading-font-family: 'Playfair', serif;
     --mono-font-family: 'Source Code Pro', monospace;
+    --metadata-font-family: 'Source Sans 3', serif;
     --base-font-size: 18px;
     --small-font-size: calc(var(--base-font-size) * 0.875);
     --base-line-height: 1.5rem;
@@ -88,6 +97,10 @@ font-family: 'Lora', serif; (400, 600 regular and italic);
 font-family: 'Playfair', 'Source Sans 3', sans-serif; (400, 700, 900 regular and italic);
 font-family: 'Source Code Pro', monospace; (300, 400 regular and italic);
 */
+
+html {
+    hanging-punctuation: first last;
+}
 
 body {
     font-family: 'Lora', serif;
@@ -199,7 +212,7 @@ ol ul {
 hr,
 .hr {
     border: 0.05em solid var(--text-color);
-    margin: 0.05em 0;
+    margin: -0.05em 0;
     width: 50%;
     margin: 0 auto;
 }
@@ -217,6 +230,10 @@ sup {
 
 
 /* end gridlover.net */
+
+h1,h2,h3,h4,h5 {
+    text-wrap: balance;
+}
 
 sup {
     top: -0.2rem;
@@ -263,19 +280,16 @@ nav a[aria-current="page"] {
 }
 
 ul {
-    margin-left: 1rem;
-}
-
-ol {
-    margin-left: 1.2rem;
+    list-style-type: disc;
 }
 
 ol {
     list-style-type: decimal;
+    padding-inline-start: 0.3em;
 }
 
-ul {
-    list-style-type: disc;
+ol, ul {
+    margin-left: 1rem;
 }
 
 li ul {
@@ -398,17 +412,27 @@ a:hover {
     text-decoration: none;
 }
 
-.grid-wrapper {
+.wrapper {
     display: grid;
-    gap: var(--spacing-unit);
-    grid-template-columns: minmax(0, 1fr) minmax(0, 35rem) minmax(0, 1fr);
+    padding: 0 3rem;
+    margin:0 auto;
+    /*gap: var(--spacing-unit);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 35rem) minmax(0, 1fr); */
+    grid-column-gap: 2.5rem;
+    grid-template-columns: repeat(6,[col] 1fr);
+    max-width: 62rem;
 }
 
-.grid-wrapper>main,
-.grid-wrapper>div,
-.grid-wrapper>nav {
-    grid-column: 2/3;
+.wrapper {
+    & .span2-4, section.footnotes {
+        grid-column: col 2/span 4;
+    }
+    & .bleed {
+        grid-column: col 1/span 6;
+    }
 }
+
+
 
 .footer {
     margin-top: var(--base-line-height);
@@ -419,7 +443,7 @@ a:hover {
     font-size: calc(0.8*var(--base-font-size));
 }
 
-.blog-item-wrapper .blog-item {
+.blog-item {
     display: grid;
     gap: var(--spacing-unit);
     grid-template-columns: 9fr 1fr;
@@ -471,10 +495,87 @@ a:hover {
     top: calc(var(--base-line-height) * -2);
 }
 
+.footnotes {
+    font-family: var(--metadata-font-family);
+    font-weight: 400;
+    font-size: calc(0.8*var(--base-font-size));
+
+    & p {
+        margin-bottom:0;
+    }
+}
+
+figure {
+    position: relative;
+    font-family: var(--metadata-font-family);
+    font-weight: 400;
+    font-size: calc(0.8*var(--base-font-size));
+    margin-bottom: var(--base-line-height);
+}
+
+figure figcaption {
+    position:absolute;
+    top: 0;
+    width: 10rem;
+    left: -11rem;
+    font-style: italic;
+    text-align: right;
+}
+
+figcaption::before {
+	content: "";
+	width: 4em;
+	position: absolute;
+	top: calc(var(--border-size)*-1);
+	right: 0;
+	border-top: var(--border-size) solid var(--accent-color);
+}
+
+.bleed figure figcaption  {
+    position: relative;
+    text-align: left;
+    width: 50%;
+    left:0;
+    margin-top: calc(var(--base-line-height)*-1);
+
+}
+
+.bleed figcaption::before {
+    left: 0px;
+    right: unset;
+    top: unset;
+    bottom:0;
+}
+
+
+
 @media all and (min-width: 480px) and (max-width: 768px) {
      :root {
         --base-font-size: 16px;
         line-height: 1.5rem;
+    }
+
+    .wrapper {
+        grid-column-gap: 1rem;
+        padding: 0 1rem;
+        & .span2-4, section.footnotes {
+            grid-column: col 1/span 6;
+        }
+    }
+
+    figure figcaption  {
+        position: relative;
+        text-align: left;
+        width: 50%;
+        left:0;
+        margin-top: calc(var(--base-line-height)*-1);
+    }
+    
+    figcaption::before {
+        left: 0px;
+        right: unset;
+        top: unset;
+        bottom: 0;
     }
 }
 
@@ -499,10 +600,33 @@ a:hover {
     .publication-date {
         top: calc(var(--base-line-height) * -1);
     }
+
+    .wrapper {
+        grid-column-gap: 1rem;
+        padding: 0 0.5rem;
+        & .span2-4, section.footnotes {
+            grid-column: col 1/span 6;
+        }
+    }
+    figure figcaption,
+    .bleed figure figcaption  {
+        position: relative;
+        text-align: left;
+        width: 100%;
+        left:0;
+        margin-top: calc(var(--base-line-height)*-1);
+    }
+    
+    figcaption::before {
+        left: 0px;
+        right: unset;
+        top: unset;
+        bottom: 0;
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-     :has(:target) {
+    :has(:target) {
         scroll-behavior: smooth;
     }
 }

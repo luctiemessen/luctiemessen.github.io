@@ -1,16 +1,14 @@
 ---
-import { Image } from 'astro:assets';
-
 // utils import
-import { slugify, formatDate} from "../js/utils";
+//import { slugify, formatDate} from "../js/utils";
+import { formatDate } from "../js/utils";
 
 const { frontmatter, url } = Astro.props;
-const { title, date, description, dutch } = frontmatter;
 ---
 
 <article class="blog-item">
     <div class="item">
         <a href={url} class="h2">{frontmatter.title}</a>
-        <time datetime="2018-07-07">{formatDate(frontmatter.date)}</time>
+        <time datetime="">{formatDate(frontmatter.date)}</time>
     </div>
 </article>

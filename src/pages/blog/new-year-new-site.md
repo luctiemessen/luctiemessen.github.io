@@ -6,7 +6,7 @@ description: New year, new website. In 2024 I am picking up writing again. Today
 tags: web personal
 draft: false
 ---
-
+<div class="span2-4">
 <p class="lead">After years of designing, exploring, and multiple restarts, I've set a deadline for my personal website. I've got around 5 different designs in my Dropbox, but it's time to stop tinkering and start delivering.</p>
 
 During this year's vacation, I challenged myself to create a new site (the 6th design I guess) and have it ready for "production" by the end of my break. Well, here it is! It's not finished, but I'm happy with it.
@@ -33,3 +33,4 @@ The site is a work in progress, but instead of overthinking, I've decided to sta
 For now I whish you all a very happy, productive, memorable 2024 and let's start today with new healthy habits!
 
 Enjoy and thanks for reading along.
+</div>

@@ -8,6 +8,7 @@ tags: tags css
 draft: false
 dutch: yes
 ---
+<div class="span2-4">
 
 Je kent het wel, je klanten willen mooie afgeronde hoekjes op de blokken op hun site. En als ze dan deze uitgewerkte ronde randen zien willen ze daar weer diepte in: “Ow kan er ook een schaduw achter?”. En dan mag je dat weer cross-browser compatible maken want het IE6 gebruikende webfossiel moet ook natuurlijk van die mooie randjes kunnen genieten... *zucht*
 
@@ -141,3 +142,5 @@ Bekijk het eindresultaat op [CodePen](https://codepen.io/lucraak/pen/xxBZoYJ "Co
 Naast dat dit natuurlijk een handige en snelle methode is om de boel zonder afbeeldingen te realiseren moet je goed stilstaan bij het gebruik en je realiseren dat het niet door alle browsers wordt ondersteund. Wanneer de afscheiding van het blok een belangrijke functie heeft zoals het scheiden/uitlichten van proces gevoelige informatie dan is het verstandig om toch terug te vallen op de archaïsche methode met het gebruik van afbeeldingen. Is het niet belangrijk voor het proces of de flow van de pagina, gebruik dan lekker deze methode alle oude browsers negeren de CSS dan gewoon en krijgen een schaduwloos, ronderandjesloos en animatieloos bokje. Hier al weer drie redenen om met de tijd mee te gaan.
 
 Met dank aan Cornelis die er voor gezorgd heeft dat dit artikel een keer volledig herschreven moest worden :)
+
+</div>

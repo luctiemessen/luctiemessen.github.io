@@ -1,7 +1,8 @@
 ---
 import MainLayout from './MainLayout.astro';
-import { Image } from 'astro:assets';
-import brugImage from "../images/brug.jpg";
+// import { Image } from 'astro:assets';
+// import Image from "astro:assets";
+
 
 // utils import
 import {formatDate} from "../js/utils";
@@ -12,16 +13,13 @@ const { title, description, date, draft, dutch} = frontmatter;
 
 
 <MainLayout {title} {description}>
-<header class="article-header">
+<header class="article-header span2-4">
     {dutch && <aside class="information">This article is written in dutch. Use your browser's translator function if you want to translate this.</aside>}
     <h1>{title}</h1>
     <time class="publication-date smaller">{formatDate(date)}</time>
-    {draft && "Draft"}
+    {draft && <aside>Item is in draft mode</aside>}
 </header>
-<!-- <Image src={brugImage} alt="A description of my image." width="800" quality="80" class="bleed" /> -->
 
+<slot />
 
-<div class="post-content">
-    <slot />
-</div>
 </MainLayout>

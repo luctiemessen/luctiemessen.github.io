@@ -7,7 +7,7 @@ import { orderBlogPosts } from "../../js/utils";
 
 const allPosts = await Astro.glob("./*md");
 const orderedPosts = orderBlogPosts(allPosts, {
-    filterOutDrafts: false,
+    filterOutDrafts: true,
     filterOutFuturePosts: true,
     sortByDate: true,
     // limit: 2,
@@ -16,12 +16,11 @@ const orderedPosts = orderBlogPosts(allPosts, {
 ---
 
 <MainLayout title="blog">
-    <h1>Blog</h1>
-    <section class="blog-item-wrapper">
-        <!-- <PostCard frontmatter={allPosts[0].frontmatter} url={allPosts[0].url} /> -->
-        {
-            orderedPosts.map((post) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
-        }
-    </section>
-	
+    <div class="span2-4">
+        <h1>Blog</h1>
+            <!-- <PostCard frontmatter={allPosts[0].frontmatter} url={allPosts[0].url} /> -->
+            {
+                orderedPosts.map((post: { frontmatter: any; url: any; }) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
+            }
+    </div>
 </MainLayout>

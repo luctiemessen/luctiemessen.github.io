@@ -1,6 +1,8 @@
 ---
 title: 'Styleguide'
 ---
+<div class="span2-4">
+
 # Styleguide
 
 <p class="lead">This page demonstrates the visual styles of the various elements that determine the design of this site.
@@ -14,8 +16,19 @@ I've set the body copy in <a href="https://fonts.google.com/specimen/Lora">Lora<
 ### Heading 3
 #### Heading 4
 
+
 #### Paragraph
 Aute occaecat mollit ex eiusmod aute voluptate in Lorem et consectetur. Anim fugiat enim eu ullamco consequat qui officia. Lorem occaecat id sit do adipisicing dolore occaecat magna. Aliquip esse consectetur voluptate exercitation aute id ad duis in cupidatat dolor ex nisi nisi. Fugiat elit in occaecat occaecat commodo cupidatat consectetur ullamco enim et non occaecat reprehenderit. Ullamco aute cupidatat ipsum eu mollit labore.
+</div>
+
+<div class="bleed">
+
+#### Paragraph (bleed)
+Aute occaecat mollit ex eiusmod aute voluptate in Lorem et consectetur. Anim fugiat enim eu ullamco consequat qui officia. Lorem occaecat id sit do adipisicing dolore occaecat magna. Aliquip esse consectetur voluptate exercitation aute id ad duis in cupidatat dolor ex nisi nisi. Fugiat elit in occaecat occaecat commodo cupidatat consectetur ullamco enim et non occaecat reprehenderit. Ullamco aute cupidatat ipsum eu mollit labore.
+
+</div>
+
+<div class="span2-4">
 
 #### Aside
 <aside>
@@ -129,3 +142,23 @@ function showError(error) {
     animation-duration: 0.000001s;
 }
 ```
+
+<figure class="">
+
+[![This is a bridge](../assets/brug.jpg "This is the alt text")](../assets/brug.jpg)
+
+<figcaption>
+	This is the caption of the image
+</figcaption>
+</figure>
+</div>
+
+<div class="bleed">
+<figure>
+
+[![This is a bridge](../assets/brug.jpg "This is the alt text")](../assets/brug.jpg)
+<figcaption>
+  This is the caption of the image
+</figcaption>
+</figure>
+</div>
