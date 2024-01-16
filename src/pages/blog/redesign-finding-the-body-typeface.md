@@ -23,7 +23,7 @@ I'll be dividing this description up into 3 chapters:
   I was looking for a typeface that would give me an elegant atmosphere that has some space in the letterforms and reads easily. My initial thoughts were to only consider serif typefaces but I wanted to explore soms sans-serifs as well. 
 
 ### Exploring options
-  When chosing typefaces, I like to look at specific letterforms. I'm often judging the lower case g (I love a good double-story g) and upper case R and also the lowercase a, s and c to judge if there is some space around the letterforms. Finally the t for me is a lettershape that needed to be elegant. <em>Racgt</em> is the lettersecuence I use to do an initial assesment. Next I just use <em>Loremfix</em> for the capital L and the potential fi ligature. Additionally I use the <em>iI1l</em> characters to scan for character imposter syndrome. I really want distinct letterforms for the lowercase i, capital i, number one and lowercase l. Since they are so often alike, I want to chose a typeface that can display these distinctions properly. 
+  When chosing typefaces, I like to look at specific letterforms. I'm often judging the lower case g (I love a good double-story g) and upper case R and also the lowercase a, s and c to judge if there is some space around the letterforms. Finally the t for me is a lettershape that needed to be elegant. <em>Racgt</em> is the lettersequence I use to do an initial assesment. Next I just use <em>Loremfix</em> for the capital L and the potential fi ligature. Additionally I use the <em>iI1l</em> characters to scan for character imposter syndrome. I really want distinct letterforms for the lowercase i, capital i, number one and lowercase l. Since they are so often alike, I want to chose a typeface that can display these distinctions properly. 
 
 </div>
 
@@ -35,6 +35,7 @@ I'll be dividing this description up into 3 chapters:
 <div class="span2-4">
 
 It is obvious that almost all of the selected sans-serif typefaces are not passing the iI1l test. Apart from Source Sans Pro. I kept that in mind but quickly discarded the sans-serif typefaces for the body copy. On to the serifs. 
+
 I'm always blown away by the difference in fonts with the same sizes (x-height and tracing). It is quite apparent in the serif column. Lora takes up so much more space than Freight does. And Garamond - however really elegant and slender - it almost feels too fragile for long reads.
 
 ![The difference between Freight, Lora and Garamond](../../assets/freight-lora-garamond.png "Difference between Freight, Lora and Garamond")
@@ -50,7 +51,7 @@ For me, Lora strikes a really great balance for legibility, elegance but it's al
 
 ### Sanity check
 
-To double check the choices I made, I put all the typefaces in different sized in different viewports to see how the text feels in different sizes but also in different viewports. What I'm looking for here is to see if the considerations that I had while looking at the letterforms are still usable and also if my choices are also not hurting the legibility. One of the smallest viewport sizes is 320px so it is wise to check this (and determine the minimum size there) and I'm using the 45-75 character rule to determine a (starting point for a) maximum width of the page. In my case for Lora this was around 720px at 21px (which was the size I like to have as a maximum). 
+To double check the choices I made, I put all the typefaces in different sized in different viewports to see how the text behaves in different contexts. What I'm looking for here is to see if the considerations that I had while looking at the letterforms are still usable and also if my choices are also not hurting the legibility. One of the smallest viewport sizes is 320px so it is wise to check this (and determine the minimum size there) and I'm using the 45-75 character rule to determine a (starting point for a) maximum width of the page. In my case for Lora this was around 720px at 21px (which was the size I like to have as a maximum). 
 
 
 ![Lora in context of viewports](../../assets/screensizes-lora.png "Lora in different viewports")
@@ -59,6 +60,6 @@ To double check the choices I made, I put all the typefaces in different sized i
 
 ![Hoefler Text in context of viewports](../../assets/screensizes-hoefler.png "Hoefler Text in different viewports")
 
-I like what I see from Lora. Very good readability, where Playfair feels a bit too tall for me. I was surprised to see so little difference between Lora and Hoefler in terms of legibility even though they have very distinct shapes. I love some of the letterforms of Hoefler (the W ohw my...) but the more lush feel I get from Lora still gives it the upper hand for me. I'll stick with Lora and move on to the next phase. Finding a proper typeface for the headings to pair it with. 
+I like what I see from Lora. Very good readability, where Playfair feels a bit too tall and upright for me. I was surprised to see so little difference between Lora and Hoefler in terms of legibility even though they have very distinct shapes. I love some of the letterforms of Hoefler (the W, ohw my...) but the lush feel I get from Lora still gives it the upper hand for me. I'll stick with Lora and move on to the next phase. Finding a proper typeface for the headings to pair it with. 
 
 </div>
