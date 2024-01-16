@@ -22,6 +22,7 @@ I'll be dividing this description up into 3 chapters:
 
   I was looking for a typeface that would give me an elegant atmosphere that has some space in the letterforms and reads easily. My initial thoughts were to only consider serif typefaces but I wanted to explore soms sans-serifs as well. 
 
+### Exploring options
   When chosing typefaces, I like to look at specific letterforms. I'm often judging the lower case g (I love a good double-story g) and upper case R and also the lowercase a, s and c to judge if there is some space around the letterforms. Finally the t for me is a lettershape that needed to be elegant. <em>Racgt</em> is the lettersecuence I use to do an initial assesment. Next I just use <em>Loremfix</em> for the capital L and the potential fi ligature. Additionally I use the <em>iI1l</em> characters to scan for character imposter syndrome. I really want distinct letterforms for the lowercase i, capital i, number one and lowercase l. Since they are so often alike, I want to chose a typeface that can display these distinctions properly. 
 
 </div>
