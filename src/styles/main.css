@@ -559,7 +559,7 @@ figcaption::before {
         grid-column-gap: 1rem;
         padding: 0 1rem;
         & .span2-4, section.footnotes {
-            grid-column: col 1/span 6;
+            grid-column: content-column 1/span 6;
         }
     }
 
@@ -605,7 +605,7 @@ figcaption::before {
         grid-column-gap: 1rem;
         padding: 0 0.5rem;
         & .span2-4, section.footnotes {
-            grid-column: col 1/span 6;
+            grid-column: content-column 1/span 6;
         }
     }
     figure figcaption,
