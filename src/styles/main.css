@@ -30,7 +30,7 @@ input, textarea, button, select {
     --heading-font-family: 'Playfair', serif;
     --mono-font-family: 'Source Code Pro', monospace;
     --metadata-font-family: 'Source Sans 3', serif;
-    --base-font-size: 18px;
+    --base-font-size: 21px;
     --small-font-size: calc(var(--base-font-size) * 0.875);
     --base-line-height: 1.5rem;
     font-size: var(--base-font-size);
@@ -419,16 +419,16 @@ a:hover {
     /*gap: var(--spacing-unit);
     grid-template-columns: minmax(0, 1fr) minmax(0, 35rem) minmax(0, 1fr); */
     grid-column-gap: 2.5rem;
-    grid-template-columns: repeat(6,[col] 1fr);
+    grid-template-columns: repeat(6,[content-column] 1fr);
     max-width: 62rem;
 }
 
 .wrapper {
     & .span2-4, section.footnotes {
-        grid-column: col 2/span 4;
+        grid-column: content-column 2/span 4;
     }
     & .bleed {
-        grid-column: col 1/span 6;
+        grid-column: content-column 1/span 6;
     }
 }
 
