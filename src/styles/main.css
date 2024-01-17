@@ -111,6 +111,14 @@ body {
     letter-spacing: 0.015em;
     background-color: var(--background-color);
     color: var(--text-color);
+    
+    background-image: linear-gradient(to bottom, var(--grid-color) 0%, transparent 5%, transparent 100%);
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 100% 1.5rem;
+    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);
+
+    
 }
 
 body.grid {
@@ -121,11 +129,6 @@ body.grid {
     box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);
 }
 
-    background-image: linear-gradient(to bottom, var(--grid-color) 0%, transparent 5%, transparent 100%);
-    background-repeat: repeat;
-    background-position: top left;
-    background-size: 100% 1.5rem;
-    box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);
 
 
 /* Stuff from gridlover.net */
