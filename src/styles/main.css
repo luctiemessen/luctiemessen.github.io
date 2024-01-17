@@ -30,7 +30,7 @@ input, textarea, button, select {
     --heading-font-family: 'Playfair', serif;
     --mono-font-family: 'Source Code Pro', monospace;
     --metadata-font-family: 'Source Sans 3', serif;
-    --base-font-size: 21px;
+    --base-font-size: 22px;
     --small-font-size: calc(var(--base-font-size) * 0.875);
     --base-line-height: 1.5rem;
     font-size: var(--base-font-size);
