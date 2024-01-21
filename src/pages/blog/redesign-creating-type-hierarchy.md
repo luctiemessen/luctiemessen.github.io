@@ -14,8 +14,8 @@ draft: false
 
 ## Redesign series
 This is part of a 3 chapter series on redesign:
-1. [Finding the body typeface](redesign-finding-the-body-typeface.html "Finding the body copy typeface" )
-2. [Creating type hierarchy](redesign-creating-type-hierarchy.html "Creating type hierarchy") (this page)
+1. [Finding the body typeface](/blog/redesign-finding-the-body-typeface.html "Finding the body copy typeface" )
+2. [Creating type hierarchy](/blog/redesign-creating-type-hierarchy.html "Creating type hierarchy") (this page)
 3. Setting the scale in CSS
 
 ## Hierarchy
