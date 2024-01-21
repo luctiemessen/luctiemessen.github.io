@@ -31,6 +31,8 @@ input, textarea, button, select {
     --mono-font-family: 'Source Code Pro', monospace;
     --metadata-font-family: 'Source Sans 3', serif;
     --base-font-size: 22px;
+    --base-font-size: calc(0.4vw + 16px);
+
     --small-font-size: calc(var(--base-font-size) * 0.875);
     --base-line-height: 1.5rem;
     font-size: var(--base-font-size);
@@ -148,7 +150,7 @@ h2,
     font-size: 2.625rem;
     line-height: 3rem;
     margin-top: 1.5rem;
-    /* margin-bottom: 1.5rem; */
+    margin-bottom: 1.5rem;
     font-family: var(--heading-font-family);
     font-weight: 700;
     /* font-size: clamp(1.5rem,5vmin,2.625rem);
