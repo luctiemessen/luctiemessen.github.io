@@ -140,9 +140,6 @@ h1,
     margin-bottom: 3rem;
     font-family: var(--heading-font-family);
     font-weight: 700;
-    /* test this font zetting*/
-    /* font-size: clamp(2.25rem,8vmin,4.25rem);
-  line-height: clamp(3rem,8vmin,4.5rem); */
 }
 
 h2,
@@ -153,8 +150,6 @@ h2,
     margin-bottom: 1.5rem;
     font-family: var(--heading-font-family);
     font-weight: 700;
-    /* font-size: clamp(1.5rem,5vmin,2.625rem);
-  line-height: clamp(1.5rem,5vmin,3rem); */
 }
 
 h3,
@@ -165,8 +160,6 @@ h3,
     margin-bottom: 0rem;
     font-family: var(--heading-font-family);
     font-weight: 700;
-    /* font-size: clamp(1.5rem,4vmin,1.625rem);
-  line-height: clamp(1.5rem,4vmin,3rem); */
 }
 
 h4,
@@ -177,8 +170,6 @@ h4,
     margin-bottom: 0rem;
     font-family: var(--heading-font-family);
     font-weight: 700;
-    /* font-size: clamp(calc(1.5rem*0.8),2vmin,1rem);
-  line-height: clamp(1.5rem,8vmin,1.5rem); */
 }
 
 h5,
@@ -554,7 +545,6 @@ figcaption::before {
 
 @media all and (min-width: 480px) and (max-width: 768px) {
      :root {
-        --base-font-size: 16px;
         line-height: 1.5rem;
     }
 
@@ -584,8 +574,8 @@ figcaption::before {
 
 @media all and (max-width: 480px) {
      :root {
-        --base-font-size: 15px;
         line-height: 1.5rem;
+        letter-spacing: 0;
     }
     .main-nav {
         display: block;
