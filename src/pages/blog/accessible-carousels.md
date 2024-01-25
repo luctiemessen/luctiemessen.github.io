@@ -20,6 +20,8 @@ At work we've been in discussion with some of our a11y specialist about not usin
     overflow: auto;
     scroll-snap-type: x mandatory;
     scroll-padding: 0 24px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 .carousel .item {
@@ -63,6 +65,11 @@ el.scrollIntoView() {
     background-color: var(--information-color);
     scroll-snap-align: start;
 }
+
+.item:target {
+    background-color:red;
+}
+
 </style>
 
 <ul class="carousel">
@@ -79,5 +86,10 @@ el.scrollIntoView() {
 </div>
 
 https://www.reddit.com/r/webdev/comments/v1rjlk/how_do_nike_and_apple_make_such_smooth_and_touch/
+
 https://jsfiddle.net/54fy6Lo2/
+
+https://www.w3.org/WAI/tutorials/carousels/full-code/
+
+https://www.w3.org/WAI/tutorials/carousels/structure/
 

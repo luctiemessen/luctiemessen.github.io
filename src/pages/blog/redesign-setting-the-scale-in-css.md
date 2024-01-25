@@ -34,7 +34,21 @@ This went really wel for my liking. But it needed to scale now, since a `93px` s
 Well for 1 viewport now I got these proportions roughly figured out. But now how to elegantly scale it down when the viewport becomes smaller? Obviously we have mediaqueries to do this but like I mentioned above, I want to reduce my media queries and only use them to fix things that really need fixing. We have enough scalable length units in CSS to create a true fluid font size. 
 
 ### vw to the rescue
-Media queries revolve around screen dimensions (among other things) and for me the most relevant one is the viewport width `vw`. It represents 1% of the viewport width. So an iPhone 14 Pro in portrait has `393px` as the viewport width, in landscape it is `852px`. So `1vw` of portrait on an iPhone 14 is `393 * 1% = 3,93px`. 
+Media queries revolve around screen dimensions (among other things) and for me the most relevant one is the viewport width `vw`. It represents 1% of the viewport width. So an iPhone 14 Pro in portrait has `393px` as the viewport width, in landscape it is `852px`. So `1vw` of portrait on an iPhone 14 is `393 * 1% = 3,93px` (roughly `4px`). Since I was looking for a estimatet font size of `18px` I could define the font-size at `calc(16px+0.5vw)` which would result in 18-ish pixels on a mobile devicde. Once I started with that, it felt a bit bit too much so I tinkered with it a bit and decided on `0.4vw` as the fluid length to add to the `16px`. It just felt better. 
+
+So with the minimum of `16px` it scales up to quite a bit bigger on a desktop screen. On my 16" Macbook it is 1728px wide. In full screen (note; the `vw` viewport width is the browsers' width, if you resize the browser, the viewport width is changing along with it, so it is not your screen-width). So the max font-size on my full screen browser is 
+
+```css
+/* Full screen on MacBook */
+1728 * 1% = 17.28px (= 1vw)
+
+
+0.4 * 17.28 = 6.912px (= 0.4vw)
+
+/* font-size definition */
+calc(0.4vw + 16px) = 6.912 + 16 = 22.912px
+
+```
 
 <div style="background-color:var(--information-color);width:1vw;height:50px;"></div>
 
