@@ -49,6 +49,7 @@ So with the minimum of `16px` it scales up to quite a bit bigger on a desktop sc
 calc(0.4vw + 16px) = 6.912 + 16 = 22.912px
 
 ```
+v
 
 <div style="background-color:var(--information-color);width:1vw;height:50px;"></div>
 
