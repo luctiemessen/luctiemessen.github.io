@@ -123,7 +123,14 @@ body.grid {
     box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);
 }
 
-
+/* Stuff from Utopia.fyi */
+:root {
+    --step--1: clamp(0.695rem, 0.6411rem + 0.2696vw, 0.85rem);
+    --step-0: clamp(1.125rem, 1.038rem + 0.4348vw, 1.375rem);
+    --step-1: clamp(1.82rem, 1.6791rem + 0.7043vw, 2.225rem);
+    --step-2: clamp(2.945rem, 2.7174rem + 1.138vw, 3.5994rem);
+    --step-3: clamp(4.765rem, 4.3965rem + 1.8424vw, 5.8244rem);
+}
 
 /* Stuff from gridlover.net */
 
@@ -140,9 +147,6 @@ h1,
     margin-bottom: 3rem;
     font-family: var(--heading-font-family);
     font-weight: 700;
-    /* test this font zetting*/
-    /* font-size: clamp(2.25rem,8vmin,4.25rem);
-  line-height: clamp(3rem,8vmin,4.5rem); */
 }
 
 h2,
@@ -153,8 +157,6 @@ h2,
     margin-bottom: 1.5rem;
     font-family: var(--heading-font-family);
     font-weight: 700;
-    /* font-size: clamp(1.5rem,5vmin,2.625rem);
-  line-height: clamp(1.5rem,5vmin,3rem); */
 }
 
 h3,
@@ -165,8 +167,6 @@ h3,
     margin-bottom: 0rem;
     font-family: var(--heading-font-family);
     font-weight: 700;
-    /* font-size: clamp(1.5rem,4vmin,1.625rem);
-  line-height: clamp(1.5rem,4vmin,3rem); */
 }
 
 h4,
@@ -177,8 +177,6 @@ h4,
     margin-bottom: 0rem;
     font-family: var(--heading-font-family);
     font-weight: 700;
-    /* font-size: clamp(calc(1.5rem*0.8),2vmin,1rem);
-  line-height: clamp(1.5rem,8vmin,1.5rem); */
 }
 
 h5,
@@ -234,7 +232,8 @@ sup {
 
 /* end gridlover.net */
 
-h1,h2,h3,h4,h5 {
+h1,.h1,h2,.h2,h3,.h3,h4,.h4 {
+    white-space: unset;
     text-wrap: balance;
 }
 
@@ -554,7 +553,6 @@ figcaption::before {
 
 @media all and (min-width: 480px) and (max-width: 768px) {
      :root {
-        --base-font-size: 16px;
         line-height: 1.5rem;
     }
 
@@ -584,8 +582,8 @@ figcaption::before {
 
 @media all and (max-width: 480px) {
      :root {
-        --base-font-size: 15px;
         line-height: 1.5rem;
+        letter-spacing: 0;
     }
     .main-nav {
         display: block;

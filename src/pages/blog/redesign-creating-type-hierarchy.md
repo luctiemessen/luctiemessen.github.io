@@ -107,6 +107,6 @@ And just like that, I learned that prepping like mad in Figma is nice, but when 
 
 Even though I think exploring and comparing types in Figma (or any other tool) is useful and even more efficient early on in the process, I think I could have benefitted from earlier stepping towards actual code with actual content.
 
-In the next section, I’ll discuss what I did to set the scales in CSS (and how I also deviated from my initial ideas there).
+In the next section, I’ll discuss what I did to set the scale in CSS.
 
 </div>
