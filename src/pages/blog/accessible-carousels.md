@@ -71,18 +71,19 @@ el.scrollIntoView() {
 }
 
 </style>
-
-<ul class="carousel">
-    <li class="item"></li>
-    <li class="item"></li>
-    <li class="item"></li>
-    <li class="item"></li>
-    <li class="item"></li>
-    <li class="item"></li>
-</ul>
-<div class="carousel-controls">
-    <button class="previous"></button>
-    <button class="next"></button>
+<div role="region" aria-roledescription="carousel" aria-label="Design patterns">
+    <ol class="carousel">
+        <li class="item"><a href="">First</a></li>
+        <li class="item"><a href="">Second</a></li>
+        <li class="item"><a href="">Third</a></li>
+        <li class="item"><a href="">Fourth</a></li>
+        <li class="item"><a href="">Fifth</a></li>
+        <li class="item"><a href="">Sixth</a></li>
+    </ol>
+    <div class="carousel-controls">
+        <button class="previous">prev</button>
+        <button class="next">next</button>
+    </div>
 </div>
 
 https://www.reddit.com/r/webdev/comments/v1rjlk/how_do_nike_and_apple_make_such_smooth_and_touch/
