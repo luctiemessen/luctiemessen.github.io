@@ -390,7 +390,7 @@ a:hover {
 }
 
 .skiplink {
-    background-color: var(--highlight-color);
+    background-color: var(--accent-color);
     color: var(--text-color);
     height: 0;
     margin: 0;
@@ -553,6 +553,23 @@ figcaption::before {
     bottom:0;
 }
 
+@keyframes grow-progress {
+	from { transform: scaleX(0); }
+	to { transform: scaleX(1); }
+}
+
+#progress {
+	position: fixed;
+	left: 0; 
+    top: 0;
+	width: 100%; 
+    height: 5px;
+	background: var(--accent-color);
+
+	transform-origin: 0 50%;
+	animation: grow-progress auto linear;
+	animation-timeline: scroll();
+}
 
 
 @media all and (min-width: 480px) and (max-width: 768px) {
