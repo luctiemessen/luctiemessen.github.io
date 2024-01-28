@@ -78,7 +78,38 @@ And yes, I know, the pixels are smaller on those displays and probably people wi
 ### Clamp() to save the day
 With that, I'm in need of a max font size. I could use a fixed proportion to define that (for example with query container length units) but then if I'd change the container size, this would also change my maximum font size which probably wouldnt be the end of the world but there is this `clamp()` function that gives me a bit more control since it dictates a min and max size. 
 
+With this I was able to set the min size on mobile which was an equivalent of `18px` or `1.125rem`. And my max size is `22px` or `1.375rem`. And in the middle we define our fluid value. So the trick is to have a fluid value (using vw) between your minimum width and maximum width which you designed for. So I designed from 320px and I decided that with 22px, my ideal content width is 1232 (actually 62rem (which is 1364px), which is my max width of my grid but I added left and right 3rem padding (66px both sides adds up to 132px)). When you substract the padding you get 1232px. So now I need to find the value which I can add up to 321px (the next step from 320px) up until 1231px (the step before 1232). 
+So the difference between 1231 and 321 = 1232-321=910. So I need a value I can divide into 910 pieces.
 
+So the difference between min and max is 22-18=4px. 
+So I need to span these 4px font-size difference within 910px.
+
+So at 321px I want to have 4/910th pixel added to something that I need to figure out.
+
+4/910 = 0,004395604396 pixel increase
+
+op 321 moet ik 18.001 hebben op 1231 moet ik 21,999 hebben
+
+
+/*
+                    1.0363rem = 16,5808px
+
+                    @320px 0.4386vw = 1,40352
+                    1,40352 + 16,5808 = 18px
+
+                    @1232 0.4386wv = 5,403552
+                    5,403552 + 16,5808 = 22px;
+
+*/
+
+
+
+Now there is a really 
+
+62*22=1364 full width
+padding 3rem = 66px (l and r = 132px) 1232px
+
+clamp(1.125rem, 1.0373rem + 0.4386vw, 1.375rem);
 
 
 </div>

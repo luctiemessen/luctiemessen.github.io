@@ -30,10 +30,23 @@ input, textarea, button, select {
     --heading-font-family: 'Playfair', serif;
     --mono-font-family: 'Source Code Pro', monospace;
     --metadata-font-family: 'Source Sans 3', serif;
-    --base-font-size: 22px;
-    --base-font-size: calc(0.4vw + 16px);
+    /* --base-font-size: 22px;
+    --base-font-size: calc(0.4vw + 16px); */
+    /* --base-font-size: clamp(1.125rem, 1.038rem + 0.435vi, 1.375rem); */
+    --base-font-size: clamp(1.125rem, 1.0373rem + 0.4386vw, 1.375rem);
+    
+/*
+                    1.0363rem = 16,5808px
 
-    --small-font-size: calc(var(--base-font-size) * 0.875);
+                    @320px 0.4386vw = 1,40352
+                    1,40352 + 16,5808 = 18px
+
+                    @1232 0.4386wv = 5,403552
+                    5,403552 + 16,5808 = 22px;
+
+*/
+
+    --small-font-size: 0.875rem;
     --base-line-height: 1.5rem;
     font-size: var(--base-font-size);
     line-height: var(--base-line-height);
@@ -212,9 +225,10 @@ ol ul {
 
 hr,
 .hr {
-    border: 0.05em solid var(--text-color);
-    margin: -0.05em 0;
+    outline: 0.05em solid var(--text-color);
+    height:0;
     width: 50%;
+    border:0;
     margin: 0 auto;
 }
 
@@ -264,7 +278,6 @@ code {
     font-family: var(--mono-font-family);
     font-style: normal;
     font-weight: 500;
-    font-size: var(--base-font-size);
     line-height: var(--base-line-height);
     white-space: pre;
     word-spacing: normal;
@@ -344,10 +357,10 @@ kbd {
     border-radius: 0.25rem;
     border: 0.5px solid var(--text-color);
     font-family: var(--mono-font-family);
-    font-size: 0.8rem;
+    font-size: var(--small-font-size);
     line-height: 1;
     text-align: center;
-    padding: 0.1rem 4px;
+    padding: 0 4px;
     position: relative;
     top: -1px;
 }
@@ -446,7 +459,7 @@ a:hover {
     border-top: 0.063rem solid var(--background-inset-color);
     font-family: 'Source Sans 3', serif;
     font-weight: 400;
-    font-size: calc(0.8*var(--base-font-size));
+    font-size: var(--small-font-size)
 }
 
 .blog-item {
@@ -477,7 +490,7 @@ a:hover {
 .lead {
     margin-top: var(--base-line-height);
     position: relative;
-    font-size: calc(var(--base-font-size)*1.1);
+    font-size: 1.1rem;
     margin-bottom: calc(2*var(--base-line-height));
     width: 80%;
 }
@@ -504,7 +517,7 @@ a:hover {
 .footnotes {
     font-family: var(--metadata-font-family);
     font-weight: 400;
-    font-size: calc(0.8*var(--base-font-size));
+    font-size: var(--small-font-size);
 
     & p {
         margin-bottom:0;
@@ -515,7 +528,7 @@ figure {
     position: relative;
     font-family: var(--metadata-font-family);
     font-weight: 400;
-    font-size: calc(0.8*var(--base-font-size));
+    font-size: var(--small-font-size);
     margin-bottom: var(--base-line-height);
 }
 
