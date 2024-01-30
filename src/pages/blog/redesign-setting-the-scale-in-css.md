@@ -16,7 +16,7 @@ draft: false
 This is part of a 3 chapter series on redesign:
 1. [Finding the body typeface](/blog/redesign-finding-the-body-typeface/ "Finding the body copy typeface" )
 2. [Creating type hierarchy](/blog/redesign-creating-type-hierarchy/ "Creating type hierarchy") 
-3. [Setting the scale in CSS](/blog/redesign-setting-the-scale-in-css/ "Setting the scale in CSS")(this page)
+3. [Setting the scale in CSS](/blog/redesign-setting-the-scale-in-css/ "Setting the scale in CSS") (this page)
 
 ## Responsive scale
 Ever since the influential [Responsive design](https://alistapart.com/article/responsive-web-design/ "A List Apart: Responsive Web Design" ) article was published I used media queries to define the styles of all typography (and other components) to fit them properly on different viewports. Sometimes resulting in splitting hairs between 2 breakpoints that are only a few pixels apart since some things just looked off in a specific viewport width or height. Over the years I tried to simplify my media queries to the extend that I want to minimize the use of them nowadays. Thankfully, we now have a lot more fluid type (and space) setting properties at our disposal in CSS. 
