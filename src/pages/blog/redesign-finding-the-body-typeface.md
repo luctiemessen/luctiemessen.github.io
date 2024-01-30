@@ -14,7 +14,7 @@ draft: false
 I'll be dividing this description up into 3 chapters:
 1. [Finding the body typeface](/blog/redesign-finding-the-body-typeface/ "Finding the body copy typeface" ) (this page)
 2. [Creating type hierarchy](/blog/redesign-creating-type-hierarchy/ "Creating type hierarchy")
-3. Setting the scale in CSS
+3. [Setting the scale in CSS](/blog/redesign-setting-the-scale-in-css/ "Setting the scale in CSS")
 
   ## Why start with the typeface?
 

@@ -30,22 +30,7 @@ input, textarea, button, select {
     --heading-font-family: 'Playfair', serif;
     --mono-font-family: 'Source Code Pro', monospace;
     --metadata-font-family: 'Source Sans 3', serif;
-    /* --base-font-size: 22px;
-    --base-font-size: calc(0.4vw + 16px); */
-    /* --base-font-size: clamp(1.125rem, 1.038rem + 0.435vi, 1.375rem); */
     --base-font-size: clamp(1.125rem, 1.0373rem + 0.4386vw, 1.375rem);
-    
-/*
-                    1.0363rem = 16,5808px
-
-                    @320px 0.4386vw = 1,40352
-                    1,40352 + 16,5808 = 18px
-
-                    @1232 0.4386wv = 5,403552
-                    5,403552 + 16,5808 = 22px;
-
-*/
-
     --small-font-size: 0.875rem;
     --base-line-height: 1.5rem;
     font-size: var(--base-font-size);
@@ -136,14 +121,7 @@ body.grid {
     box-shadow: 1px 0px 0px rgba(0, 169, 255, 0.3), -1px 0px 0px rgba(0, 169, 255, 0.3);
 }
 
-/* Stuff from Utopia.fyi */
-:root {
-    --step--1: clamp(0.695rem, 0.6411rem + 0.2696vw, 0.85rem);
-    --step-0: clamp(1.125rem, 1.038rem + 0.4348vw, 1.375rem);
-    --step-1: clamp(1.82rem, 1.6791rem + 0.7043vw, 2.225rem);
-    --step-2: clamp(2.945rem, 2.7174rem + 1.138vw, 3.5994rem);
-    --step-3: clamp(4.765rem, 4.3965rem + 1.8424vw, 5.8244rem);
-}
+
 
 /* Stuff from gridlover.net */
 

@@ -1,10 +1,10 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
 title:  "Redesign: Setting the scale in CSS"
-date:   2024-01-22
+date:   2024-01-30
 description: Redesign process - Setting the typographic scale in CSS.
 tags: web personal
-draft: true
+draft: false
 
 ---
 
@@ -15,8 +15,8 @@ draft: true
 ## Redesign series
 This is part of a 3 chapter series on redesign:
 1. [Finding the body typeface](/blog/redesign-finding-the-body-typeface/ "Finding the body copy typeface" )
-2. [Creating type hierarchy](/blog/redesign-creating-type-hierarchy/ "Creating type hierarchy") (this page)
-3. Setting the scale in CSS
+2. [Creating type hierarchy](/blog/redesign-creating-type-hierarchy/ "Creating type hierarchy") 
+3. [Setting the scale in CSS](/blog/redesign-setting-the-scale-in-css/ "Setting the scale in CSS")(this page)
 
 ## Responsive scale
 Ever since the influential [Responsive design](https://alistapart.com/article/responsive-web-design/ "A List Apart: Responsive Web Design" ) article was published I used media queries to define the styles of all typography (and other components) to fit them properly on different viewports. Sometimes resulting in splitting hairs between 2 breakpoints that are only a few pixels apart since some things just looked off in a specific viewport width or height. Over the years I tried to simplify my media queries to the extend that I want to minimize the use of them nowadays. Thankfully, we now have a lot more fluid type (and space) setting properties at our disposal in CSS. 
@@ -73,50 +73,85 @@ Let's calculate; an 8K screen renders 7680 x 4320 pixels. `0.4 * 76.8 is 30.72`.
   <p style="font-size:46.72px;line-height:50px">46</p>
 </div>
 
-And yes, I know, the pixels are smaller on those displays and probably people will not use the browser in full screen mode on these displays so it will not render as huge as shown here but still. It didnt feel good.
+And yes, I know, the pixels are smaller on those displays and probably nobody will not use the browser in full screen mode on these displays so it will not render as huge as shown here but still, it didn't feel good.
 
 ### Clamp() to save the day
 With that, I'm in need of a max font size. I could use a fixed proportion to define that (for example with query container length units) but then if I'd change the container size, this would also change my maximum font size which probably wouldnt be the end of the world but there is this `clamp()` function that gives me a bit more control since it dictates a min and max size. 
 
-With this I was able to set the min size on mobile which was an equivalent of `18px` or `1.125rem`. And my max size is `22px` or `1.375rem`. And in the middle we define our fluid value. So the trick is to have a fluid value (using vw) between your minimum width and maximum width which you designed for. So I designed from 320px and I decided that with 22px, my ideal content width is 1232 (actually 62rem (which is 1364px), which is my max width of my grid but I added left and right 3rem padding (66px both sides adds up to 132px)). When you substract the padding you get 1232px. So now I need to find the value which I can add up to 321px (the next step from 320px) up until 1231px (the step before 1232). 
-So the difference between 1231 and 321 = 1232-321=910. So I need a value I can divide into 910 pieces.
+With this I was able to set the min size on mobile which was an equivalent of `18px` or `1.125rem`. And my max size is `22px` or `1.375rem`. And in the middle we define our fluid value. So the trick is to have a fluid value (using vw) between your minimum width and maximum width which you designed for. So I designed from 320px and I decided that with 22px, my ideal content width is 1232 (actually 62rem (which is 1364px), which is my max width of my grid but I added left and right 3rem padding (66px both sides adds up to 132px)). When you substract the padding you get 1232px. So now I need to find the value which I can add up to the `18px` size on 320px up until the `22px` for 1232px and above.
 
-So the difference between min and max is 22-18=4px. 
-So I need to span these 4px font-size difference within 910px.
+So I need to bridge `1232 - 320 = 912` pixels of viewport width to gradually (linear) increase the size with `4px` (which is the difference between my maximum and minimum font-size).
 
-So at 321px I want to have 4/910th pixel added to something that I need to figure out.
+So basically per pixel viewport shift from 320 onwards, there are 4/912th pixels (which is 0,00438596 pixel size increase per pixel shift) I need to add. But this is not something I could do in CSS easily with `vw` since it scales along the way. At `320px` 1vw renders in `3.2px` but at `1232px` it renders to `12.32px`. So I need a formula to gradually increase it.
 
-4/910 = 0,004395604396 pixel increase
+My math skills were not up for this task but Google helped me along to find this method from Pedro Rodriguez: [Linearly scale font size with CSS](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/ "Linearly scale font size with CSS - CSS Tricks").
 
-op 321 moet ik 18.001 hebben op 1231 moet ik 21,999 hebben
+It is a brilliant article that goes way further than just fluid type setting but I was particularly interested in that he explained the linear part and how to come up with the values for the ideal value within the clamp() statement. 
 
+```js
+slope = (maxFontSize - minFontSize) / (maxWidth - minWidth)
+yAxisIntersection = -minWidth * slope + minFontSize
+preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
+```
 
-/*
-                    1.0363rem = 16,5808px
+Let's disentangle these individual lines of this formula.
 
-                    @320px 0.4386vw = 1,40352
-                    1,40352 + 16,5808 = 18px
+```js
+slope = (maxFontSize - minFontSize) / (maxWidth - minWidth)
 
-                    @1232 0.4386wv = 5,403552
-                    5,403552 + 16,5808 = 22px;
+/* my scenario */
+slope = (22 - 18) / (1232 - 320) = 0,00438596
+```
 
-*/
-
-
-
-Now there is a really 
-
-62*22=1364 full width
-padding 3rem = 66px (l and r = 132px) 1232px
-
-clamp(1.125rem, 1.0373rem + 0.4386vw, 1.375rem);
+So this is where I was with my own journey, Pedro calls it the slope (the slope of the line over which to increase the font-size). I thought this `0.004px` increase per step should be added to the `18px` initially (from 320 onwards) but then I walked into the trap that this `vw` value increases over time and it would render my font-size to `22px` earlier than the `1232px` viewport width so Pedro came up with this solution.
 
 
-</div>
+```js
+yAxisIntersection = -minWidth * slope + minFontSize
 
-<div class="bleed">
+/* my scenario */
+yAxisxIntersection = -320 * 0,00438596 + 18 = 16,5964928
+```
 
+He uses the `yAxisIntersection` as the reference point which we can add scalable `vw` value to. The reference point is in my case `16,5964928`. This needs to be converted to rems and we can do that by dividing by `16px` (the assumed rem font-size)
 
-</div>
-<div class="span2-4">
-</div>
+```js
+ 16,5964928 / 16 = 1,0372808 = 1,0373 (rounded)
+```
+
+so our `clamp()` statement would look like this (for now) 
+
+```css
+clamp(1.125rem, 1.0373rem + <increase value>, 1.375rem);
+```
+
+All we need now is the slope (times 100) to add it to the `yAxisIntersection` in order to create true linear fluidity in our type.
+
+```js
+preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
+
+/* my scenario */
+preferredValue = 1.0373rem + (0,00438596 * 100)vw
+preferredValue = 1.0373rem + 0,4386vw
+```
+
+This renders my final font-size declaration to:
+```css
+--base-font-size: clamp(1.125rem, 1.0373rem + 0.4386vw, 1.375rem);
+```
+
+### Wrapping it up
+With the font-size defined at `:root` in this method, now I can create a truely fluid scale that serves as a fundament for all my typographic typesetting. So my line-height will be defined in `rem` so it will be relative to the base-font size. And this will work for everything from now on. So also my vertical grid will adapt to the fluid type from now on, as well as my margins (who are also defined based on the line-height, which is based on the fluid font-size). Jolly good!
+
+```css
+:root {
+    ...
+    --base-font-size: clamp(1.125rem, 1.0373rem + 0.4386vw, 1.375rem);
+    --base-line-height: 1.5rem;
+    font-size: var(--base-font-size);
+    line-height: var(--base-line-height);
+    ...
+}
+```
+
+I'm happy with how my scale is now fluid and works in almost every viewport. I might make some adjustments in some viewports when I don't like how it pans out and I'll probably do that within some media queries. But for now this is it!

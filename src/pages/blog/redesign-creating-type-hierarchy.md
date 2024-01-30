@@ -16,7 +16,7 @@ draft: false
 This is part of a 3 chapter series on redesign:
 1. [Finding the body typeface](/blog/redesign-finding-the-body-typeface/ "Finding the body copy typeface" )
 2. [Creating type hierarchy](/blog/redesign-creating-type-hierarchy/ "Creating type hierarchy") (this page)
-3. Setting the scale in CSS
+3. [Setting the scale in CSS](/blog/redesign-setting-the-scale-in-css/ "Setting the scale in CSS")
 
 ## Hierarchy
 There are quite a lot of variables to play with for the hierarchy: size, weight, color, spacing, and the typeface. Although I knew I eventually wanted to have a different typeface for the headings, I still liked to start with experimenting with some of the other variables using the body typeface first and see how far we could come.
