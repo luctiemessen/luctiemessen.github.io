@@ -155,3 +155,6 @@ With the font-size defined at `:root` in this method, now I can create a truely 
 ```
 
 I'm happy with how my scale is now fluid and works in almost every viewport. I might make some adjustments in some viewports when I don't like how it pans out and I'll probably do that within some media queries. But for now this is it!
+
+## Closing remarks
+This closes off the three-piece on redesigning my site. I learned a lot from properly describing the process and also learned a lot along the way. I'm happy with the result and also happy this series is finished so I can write about other things onwards. 
