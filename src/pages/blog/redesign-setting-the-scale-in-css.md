@@ -83,7 +83,7 @@ I need to bridge `1232 - 320 = 912` pixels of view port width to gradually (line
 
 So basically per pixel view port shift from 320 onward, there are 4/912th pixels (which is 0,00438596 pixel size increase per pixel shift) I need to add. But this is not something I could do in CSS easily with `vw` since it scales along the way. At `320px` 1vw renders in `3.2px` but at `1232px` it renders to `12.32px`. So I need a formula to gradually increase it.
 
-My math skills were not up for this task but Google helped me along to find this method from Pedro Rodriguez: [Linearly scale font size with CSS](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-view port/ "Linearly scale font size with CSS - CSS Tricks").
+My math skills were not up for this task but Google helped me along to find this method from Pedro Rodriguez: [Linearly scale font size with CSS](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/ "Linearly scale font size with CSS - CSS Tricks").
 
 It is a brilliant article that goes way further than just fluid type setting but I was particularly interested in that he explained the linear part and how to come up with the values for the ideal value within the clamp() statement. 
 
