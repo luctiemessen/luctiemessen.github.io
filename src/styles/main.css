@@ -104,7 +104,7 @@ html {
 
 body {
     font-family: 'Lora', serif;
-    font-feature-settings: "onum" 1, "lnum" 1, "kern" 1, "liga" 1, "clig" 1, "dlig" 1, "swsh", "ordn" 1, "ss01", "salt", "calt", "ordn" 1;
+    /* font-feature-settings: "onum" 1, "lnum" 1, "kern" 1, "liga" 1, "clig" 1, "dlig" 1, "swsh", "ordn" 1, "ss01", "salt", "calt", "ordn" 1; */
     hyphens: auto;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -454,6 +454,10 @@ a:hover {
     font-size: smaller;
 }
 
+.blog-item-wrapper {
+    width: 90%;
+}
+
 .blog-item time {
     display: block;
     font-size: smaller;
@@ -571,6 +575,7 @@ figcaption::before {
         bottom: 0;
     }
 }
+
 
 @media all and (max-width: 480px) {
      :root {
