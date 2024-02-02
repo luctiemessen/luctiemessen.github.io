@@ -419,6 +419,21 @@ a:hover {
 }
 
 .wrapper {
+    & .span1-4, section.footnotes {
+        grid-column: content-column 1/span 4;
+    }
+    & .span5-6, section.footnotes {
+        grid-column: content-column 5/span 2;
+    }
+    & .span1-3, section.footnotes {
+        grid-column: content-column 3/span 3;
+    }
+    & .span4-6, section.footnotes {
+        grid-column: content-column 4/span 3;
+    }
+ 
+ 
+ 
     & .span2-4, section.footnotes {
         grid-column: content-column 2/span 4;
     }
@@ -512,38 +527,30 @@ figure {
     margin-bottom: var(--base-line-height);
 }
 
-figure figcaption {
-    position:absolute;
-    top: 0;
-    width: 10rem;
-    left: -11rem;
-    font-style: italic;
-    text-align: right;
+
+figure figcaption  {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    left:0;
+    /* margin-top: calc(var(--base-line-height)*-1); */
 }
 
 figcaption::before {
+	position: absolute;
 	content: "";
 	width: 4em;
-	position: absolute;
-	top: calc(var(--border-size)*-1);
-	right: 0;
 	border-top: var(--border-size) solid var(--accent-color);
+    left: 0;
+    top: calc(var(--base-line-height)*-0.5);
 }
 
-.bleed figure figcaption  {
-    position: relative;
-    text-align: left;
-    width: 50%;
-    left:0;
-    margin-top: calc(var(--base-line-height)*-1);
-
+ref {
+    font-weight: bold;
+    color: crimson;
 }
-
-.bleed figcaption::before {
-    left: 0px;
-    right: unset;
-    top: unset;
-    bottom:0;
+ref::before {
+    content: "[ref]"
 }
 
 
@@ -560,20 +567,6 @@ figcaption::before {
         }
     }
 
-    figure figcaption  {
-        position: relative;
-        text-align: left;
-        width: 50%;
-        left:0;
-        margin-top: calc(var(--base-line-height)*-1);
-    }
-    
-    figcaption::before {
-        left: 0px;
-        right: unset;
-        top: unset;
-        bottom: 0;
-    }
 }
 
 
@@ -605,21 +598,6 @@ figcaption::before {
         & .span2-4, section.footnotes {
             grid-column: content-column 1/span 6;
         }
-    }
-    figure figcaption,
-    .bleed figure figcaption  {
-        position: relative;
-        text-align: left; 
-        width: 100%;
-        left:0;
-        margin-top: calc(var(--base-line-height)*-1);
-    }
-    
-    figcaption::before {
-        left: 0px;
-        right: unset;
-        top: unset;
-        bottom: 0;
     }
 }
 
