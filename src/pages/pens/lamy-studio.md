@@ -68,6 +68,59 @@ Apparently this process went well. Since he was asked to design another pen[ref 
 Probably 2004 November 2004 was hij op de site van Lamy
 https://web.archive.org/web/20041112035205/http://www.lamy.com/
 
+The initial launch of the Lamy Studio netted 3 versions of the Studio. The Palladium (model no. 68), Brushed steel (65) and Black (67). Which makes me wonder, what happened to the model 66. 
+
+### Model numbers
+Most Lamy pens follow the same modelnumber structure with 3 digits. Their position and number have a specific meaning. 
+
+```
+1st digit: Pen type
+2nd digit: Pen model
+3rd digit: Pen finish
+```
+
+For the first digit (pen type) there are the following variants
+
+```
+0: Fountain pen (not used in the model number)
+1: Mechanical pencil
+2: Ballpoint
+3: Rollerball
+4: Multi color ballpoint
+5: Fineliner
+6: Twin pen (and tri-pen?)
+```
+
+For the second digit (pen model) I don't aim to be complete here but we know the following numbers are linked to the following models.
+
+```
+0: Lamy 2000, Logo
+1: Safari, Vista
+2: Pur, Linea, AL-star
+3: Swift
+4: st
+5: cp1
+6: Studio
+7: Dialog
+8: Scribble, Pico
+```
+
+Finally the finish digit. 
+
+```
+5: Brushed steel
+6: Matte Black, All black LX, Violet, Royal red
+7: Black, Blue
+8: Palladium, Platinum Grey, Piano black
+9: Platinum, Dark Brown
+```
+
+So with these numbers you could identify a Lamy Studio Platinum ballpoint with the 269 model number. The fountain pen model number (0) is not used so the Brushed steel Studio is just referenced to as 65 and not 065. 
+
+I am under the impression that they try to align these finish numbers across models but I'm not really sure. I also see some discrepancies between finishes. The 6 for the cp1 model is the matte black finish but for the Studio they use the 7 for the black (and blue) finish. <ref>ask lamy</ref>. 
+
+
+The Palladium was launched with a 14k nib. The pen was available with an EF, F, M, B, OM or OB nib. The black and brushed steel
 Lamy.com
 2006 had Palladium, Brushed en Black
 
@@ -123,13 +176,13 @@ https://web.archive.org/web/20081121110531/http://www.lamy.com/produkte/schreibs
 
 
 Snapshot 26 november 2011:
-- Platinum Grey
-- Palladium
-- Violet
-- Regular blue
-- Black
-- Brushed (ballpoint wordt Stahl genoemd)
-- Platinum
+- Platinum Grey ("068 Platinum grey")
+- Palladium ("068")
+- Violet (266)
+- Regular (67 blue)
+- Black (67 Black)
+- Brushed (ballpoint wordt Stahl genoemd) (065)
+- Platinum (69)
 
 Snapshot 14 october 2012
 Zoals 2011 behalve:
@@ -175,7 +228,7 @@ Lamy Studio
 3. 2009 Violet Purple (78 staal + 75 gold fp)
 4. 2009 Platinum Grey (175 14k fountain)
 5. 2009 Pearl Black (hongkong only)
-6. 2010 Platinum Plated (216)
+6. 2010 Platinum Plated (216) Proof: https://web.archive.org/web/20191222172108/http://kmpn.blogspot.com/2010/
 7. 2012 Royal Red 95 check
 8. 2014 Wild Rubin 95 check
 9. 2017 Racing Green 45 check
@@ -196,6 +249,13 @@ Lamy Studio
 2024 Rose Glossy (EU only edition)
 
 
+#### Terracotta 2018
+https://web.archive.org/web/20191129003221/https://kmpn.blogspot.com/
+
+https://web.archive.org/web/20191129003221/http://kmpn.blogspot.com/search/label/Lamy
+
+Goeie:
+https://web.archive.org/web/20191129003221/https://kmpn.blogspot.com/
 
 
 Taken from: https://www.flickr.com/photos/sentience/46914143962/in/photolist-2etDfx5-osLjWB-2osRMkc-EBMrR9-bnm9HK-bnm8WB-bnm8qM-2osERjo-bnm7Tz-bnm8Dp-C7ebE-8KrMeg-Bi1kV-Bi1pb-Bi1nU-Bi1oF-8KrMmz-pyBP6P-bWMVQi-jkyrNC-bnm84K-bnm96X-2pjJrkB-FxnMQU-MPNw9m-bnm8MR-2oSRe8n-4ZhMAt-FzEuWM-Fxow2h-2gVsXKL-F88wxL-EC7aHD-FzEtpZ-ceaizQ-EC7cj4-FoZqTG-J9zazK-bnmaiT-Fxowj1-eSZwvU-Fxqhqq-EBKQEj-JVLbXG-2gjUS4Z-Fxovx1-6w3SNf-f2FYwy-f2rHup-bWMVsR

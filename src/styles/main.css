@@ -280,11 +280,11 @@ ul {
 
 ol {
     list-style-type: decimal;
-    padding-inline-start: 0.3em;
+    /* padding-inline-start: 0.3em; */
 }
 
 ol, ul {
-    margin-left: 1rem;
+   list-style-position: inside;
 }
 
 li ul {
@@ -516,6 +516,7 @@ a:hover {
 
     & p {
         margin-bottom:0;
+        display: inline-block;
     }
 }
 
@@ -550,7 +551,7 @@ ref {
     color: crimson;
 }
 ref::before {
-    content: "[ref]"
+    content: "[ref] "
 }
 
 
