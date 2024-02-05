@@ -68,7 +68,7 @@ Apparently this process went well. Since he was asked to design another pen[ref 
 Probably 2004 November 2004 was hij op de site van Lamy
 https://web.archive.org/web/20041112035205/http://www.lamy.com/
 
-The initial launch of the Lamy Studio netted 3 versions of the Studio. The Palladium (model no. 68), Brushed steel (65) and Black (67). Which makes me wonder, what happened to the model 66. 
+The initial launch of the Lamy Studio netted 3 versions of the Studio. The Palladium (model no. 68), Brushed steel (65) and Black (67). More about the model numbers below. But what I find the most interesting about this initial release is that the 3 models all have different sections. The Palladium has this textured finish on the section, the steel has the black rubberized section and the black has the polished section. I w
 
 ### Model numbers
 Most Lamy pens follow the same modelnumber structure with 3 digits. Their position and number have a specific meaning. 
@@ -114,6 +114,8 @@ Finally the finish digit.
 8: Palladium, Platinum Grey, Piano black
 9: Platinum, Dark Brown
 ```
+
+<ref>Hier afbeelding van maken</ref>
 
 So with these numbers you could identify a Lamy Studio Platinum ballpoint with the 269 model number. The fountain pen model number (0) is not used so the Brushed steel Studio is just referenced to as 65 and not 065. 
 
@@ -269,7 +271,7 @@ Taken from: https://www.flickr.com/photos/sentience/46914143962/in/photolist-2et
 - How many design iterations and/or prototypes were made?
 - What were the challenges with the production of the pen?
 - When was the initial release of the pen?
-- What made Wettstein decide to have 2 types of sections 1 glossy chrome and 1 rubber/plastic (and later palladium)
+- What made Wettstein decide to have 3 types of sections 1 glossy chrome and 1 rubber/plastic (and later palladium)
 - Was Wettstein involved in every evolvement of the pen (for example the platinum version)
 - How did the redesign of the ballpoint come into being?
 
