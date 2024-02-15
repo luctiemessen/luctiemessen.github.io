@@ -47,18 +47,20 @@ Wettstein's story with Lamy starts around 1997 with the initial sketches for the
 Looking at this sketch you might argue that Wettstein already hinted to a propeller shape clip which later would be used on the Lamy Studio.
 
 
-
 https://hls-dhs-dss.ch/de/articles/049370/2013-10-28/
 
 
-Apparently this process went well. Since he was asked to design another pen[ref needed]. This time not only limited to a pencil but a full suite of rollerball, ballpoint, twin pen (ballpoint and mechanical pencil combined) and fountain pen.
+Apparently this process went well. Since he was asked to design another pen <ref>. This time not only limited to a pencil but a full suite of rollerball, ballpoint, twin pen (ballpoint and mechanical pencil combined) and fountain pen.
 
 
 ## About the design
 .. scan van de tekening uit het boek .. 
 
+- sigar shaped pen 
+- tapers 
+
 ### The clip
-.. clip .. 
+One of the most thought about and eye catching elements of the pen is the propeller shaped clip. On all pens it is a glossy solid piece of metal that is attached on the cap of the pen. 
 
 ### The "slippery" section
 
@@ -73,51 +75,23 @@ The initial launch of the Lamy Studio netted 3 versions of the Studio. The Palla
 ### Model numbers
 Most Lamy pens follow the same modelnumber structure with 3 digits. Their position and number have a specific meaning. 
 
-```
-1st digit: Pen type
-2nd digit: Pen model
-3rd digit: Pen finish
-```
+The first digit defines the <em>pen type</em> with 0 for fountain pen and 1 for mechanical pencil, 3 for ballpoint and so on. The second digit identifies the <em>pen model</em>. The Lamy 2000 for example is identified with a zero (0) as well as the Logo. The Safari and Vista are identified with 1, cp1 with 5 and Studio has 6. The last digit is for the <em>pen finish</em> and I am under the impression that Lamy tries to keep them similar across models but obviously these finishes are mostly unique to a specific model, in this case the Lamy Studio. Where the brushed steel is identified with a 5 and the Violet and Royal red (and I believe most special editions <ref>). 8 is used for the Palladium and Platinum grey. 
 
-For the first digit (pen type) there are the following variants
+</div>
+<div class="bleed">
 
-```
-0: Fountain pen (not used in the model number)
-1: Mechanical pencil
-2: Ballpoint
-3: Rollerball
-4: Multi color ballpoint
-5: Fineliner
-6: Twin pen (and tri-pen?)
-```
+<figure>
 
-For the second digit (pen model) I don't aim to be complete here but we know the following numbers are linked to the following models.
+![Model numbering Lamy](../../assets/model-numbering-lamy.png "Model numbering Lamy")
+<figcaption>
+  Explanation of the Lamy pen model numbering
 
-```
-0: Lamy 2000, Logo
-1: Safari, Vista
-2: Pur, Linea, AL-star
-3: Swift
-4: st
-5: cp1
-6: Studio
-7: Dialog
-8: Scribble, Pico
-```
-
-Finally the finish digit. 
-
-```
-5: Brushed steel
-6: Matte Black, All black LX, Violet, Royal red
-7: Black, Blue
-8: Palladium, Platinum Grey, Piano black
-9: Platinum, Dark Brown
-```
-
-<ref>Hier afbeelding van maken</ref>
+</figcaption>
+</figure>
 
 So with these numbers you could identify a Lamy Studio Platinum ballpoint with the 269 model number. The fountain pen model number (0) is not used so the Brushed steel Studio is just referenced to as 65 and not 065. 
+
+<ref>Hier afbeelding van maken</ref>
 
 I am under the impression that they try to align these finish numbers across models but I'm not really sure. I also see some discrepancies between finishes. The 6 for the cp1 model is the matte black finish but for the Studio they use the 7 for the black (and blue) finish. <ref>ask lamy</ref>. 
 
