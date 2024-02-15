@@ -86,11 +86,22 @@ el.scrollIntoView() {
     </div>
 </div>
 
+
+stuff
+
+
+<div>d</div>
+<p>more</p>
+
+
+https://www.w3.org/WAI/tutorials/carousels/structure/
+
+
+
 https://www.reddit.com/r/webdev/comments/v1rjlk/how_do_nike_and_apple_make_such_smooth_and_touch/
 
 https://jsfiddle.net/54fy6Lo2/
 
 https://www.w3.org/WAI/tutorials/carousels/full-code/
 
-https://www.w3.org/WAI/tutorials/carousels/structure/
 

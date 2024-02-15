@@ -28,6 +28,10 @@ Next to his main job as a designer was also a teacher at the prestigious <a href
 
 [^ref-b]: [Hannes Wettstein - Wikipedia](https://de.wikipedia.org/wiki/Hannes_Wettstein "Hannes Wettstein - Wiki").
 
+
+https://www.stylepark.com/en/news/remembering-hannes-wettstein
+
+
 ### Scribble 
 Wettstein's story with Lamy starts around 1997 with the initial sketches for the Scribble mechanical pencil. These sketches were followed up by several prototypes in 1998 and led to the final drawings in 1999 [^ref-d].
 
@@ -63,6 +67,10 @@ Apparently this process went well. Since he was asked to design another pen <ref
 One of the most thought about and eye catching elements of the pen is the propeller shaped clip. On all pens it is a glossy solid piece of metal that is attached on the cap of the pen. 
 
 ### The "slippery" section
+
+### Reviews of the pen
+https://www.penaddict.com/blog/2014/2/10/lamy-studio-fountain-pen-review
+
 
 
 ## The launch
@@ -165,6 +173,11 @@ Zoals 2011 behalve:
 - Geen violet
 - Royal Red
 - Geen regular blue maar Imperial Blue
+
+
+Snapshot 13 nov 2012 had de Royal Red (Preis: 85.00 €)
+https://web.archive.org/web/20121113111913/http://www.lamy.com/ger/b2c/studio/066_royalred
+
 
 
 ## Ballpoint redesign
