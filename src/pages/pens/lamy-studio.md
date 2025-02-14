@@ -214,11 +214,11 @@ Lamy Studio
 
 1. 2007 Pearl White (85 roller + 75 gold fp) check
 2. 2008 Rubin Black (72 roller + 75 gold fp) check
-3. 2009 Violet Purple (78 staal + 75 gold fp)
+3. 2009 Violet Purple (78 staal + 75 gold fp) (https://web.archive.org/web/20110812154552/http://www.lamy.com/ger/b2c/studio/066_violet speaks only of "Violet" not "Violet Purple")
 4. 2009 Platinum Grey (175 14k fountain)
 5. 2009 Pearl Black (hongkong only)
 6. 2010 Platinum Plated (216) Proof: https://web.archive.org/web/20191222172108/http://kmpn.blogspot.com/2010/
-7. 2012 Royal Red 95 check
+7. 2012 Royal Red (https://web.archive.org/web/20121014125730/http://www.lamy.com/ger/b2c/studio)
 8. 2014 Wild Rubin 95 check
 9. 2017 Racing Green 45 check
 10. 2017 Piano Black (75) check (regular line up)
@@ -228,14 +228,14 @@ Lamy Studio
 14. 2019 Aquamarine (60)
 15. 2019 Black LX (90) (regular line up)
 16. 2020 Glacier
-16. Xxxx Imperial Blue (80 amazon) (regular line up)
-17. Xxxx Blue (55 roller + 75 gold fp) (regular line up, discontinued in 2012)
-18. Xxxx palladium (78 fountain, marktplaats)check  (regular line up)
-19. Xxxx stainless brushed steel (48) check  (regular line up)
-2021 Black Forest
-2022 Dark Brown
-2023 Rose (matte)
-2024 Rose Glossy (EU only edition)
+17. 2021 Black Forest
+18. 2022 Dark Brown
+19. 2023 Rose (matte)
+20. 2024 Rose Glossy (EU only edition)
+21. 2024 Royal red
+22. 2024 Piano red
+
+
 
 
 #### Terracotta 2018
