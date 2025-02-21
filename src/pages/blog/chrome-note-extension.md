@@ -33,7 +33,7 @@ draft: false
   ## Where to find it?
 
   - [Github](https://github.com/luctiemessen/ChromeNote)
-  - [Chrome extension page](https://www.chrome.com) (to be updated after publishing)
+  - [Chrome extension page](https://chromewebstore.google.com/detail/chromenote/dplgcfjgpdcopmpaoejmboojhpfagjki)
 
 I'm happy to think along about new features. Please let me know :)
 
