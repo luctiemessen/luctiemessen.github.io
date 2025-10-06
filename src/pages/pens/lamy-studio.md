@@ -9,8 +9,7 @@ draft: true
 ---
 
 <div class="span2-4">
-  <p class="lead">Information about the Lamy Studio
-</p>
+  <p class="lead">Information about the Lamy Studio</p>
 
 ## Introduction
 The Lamy Studio is a pen introduced in 2005 by Lamy and was placed in their premium product lineup. The pen was designed by renowed designer <a href="https://de.wikipedia.org/wiki/Hannes_Wettstein" title="Hannes Wettstein Wikipedia">Hannes Wettstein</a> and has since its introduction received several design awards. In 2005 the Good Design Award [ref needed] and in 2006 the iF award [^ref-a]. 
@@ -86,6 +85,7 @@ Most Lamy pens follow the same modelnumber structure with 3 digits. Their positi
 The first digit defines the <em>pen type</em> with 0 for fountain pen and 1 for mechanical pencil, 3 for ballpoint and so on. The second digit identifies the <em>pen model</em>. The Lamy 2000 for example is identified with a zero (0) as well as the Logo. The Safari and Vista are identified with 1, cp1 with 5 and Studio has 6. The last digit is for the <em>pen finish</em> and I am under the impression that Lamy tries to keep them similar across models but obviously these finishes are mostly unique to a specific model, in this case the Lamy Studio. Where the brushed steel is identified with a 5 and the Violet and Royal red (and I believe most special editions <ref>). 8 is used for the Palladium and Platinum grey. 
 
 </div>
+
 <div class="bleed">
 
 <figure>
@@ -96,6 +96,8 @@ The first digit defines the <em>pen type</em> with 0 for fountain pen and 1 for 
 
 </figcaption>
 </figure>
+</div>
+<div class="span2-4">
 
 So with these numbers you could identify a Lamy Studio Platinum ballpoint with the 269 model number. The fountain pen model number (0) is not used so the Brushed steel Studio is just referenced to as 65 and not 065. 
 
@@ -268,3 +270,4 @@ Throughout this article I've used several sources, when directly cited, these ar
 
 <a href="https://bleistift.blog/2014/07/lamy-scribble/">Lamy Scribble</a> from Bleistift.blog. This has helped a ton for drafting the background on the Scribble pen. 
 
+</div>
