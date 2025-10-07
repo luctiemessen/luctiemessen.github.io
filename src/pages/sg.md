@@ -164,3 +164,116 @@ function showError(error) {
 </figcaption>
 </figure>
 </div>
+
+
+<div class="bleed">
+
+  <div class="table-wrap" role="region" aria-labelledby="table-caption" tabindex="0">
+    <table role="table" aria-describedby="description">
+      <caption id="table-caption">Lamy Studio Special and Regular Editions</caption>
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col">Name</th>
+          <th scope="col">Color</th>
+          <th scope="col">Nib</th>
+          <th scope="col">Grip Section</th>
+          <th scope="col">Finish</th>
+          <th scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">2025</th>
+          <td data-label="Name">Studio Arctic Silver</td>
+          <td data-label="Color">Frosted silver metallic</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Satin metallic</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2024</th>
+          <td data-label="Name">Studio Racing Green</td>
+          <td data-label="Color">Deep British green</td>
+          <td data-label="Nib">Gold nib (14k)</td>
+          <td data-label="Grip Section">Steel grip</td>
+          <td data-label="Finish">Gloss metallic</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2023</th>
+          <td data-label="Name">Studio Lilac</td>
+          <td data-label="Color">Soft lavender metallic</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Satin anodized</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2022</th>
+          <td data-label="Name">Studio Black Forest</td>
+          <td data-label="Color">Dark green, almost black</td>
+          <td data-label="Nib">Gold nib (14k)</td>
+          <td data-label="Grip Section">Steel grip</td>
+          <td data-label="Finish">Gloss lacquer</td>
+          <td data-label="Notes">Permanent color (initially SE)</td>
+        </tr>
+        <tr>
+          <th scope="row">2021</th>
+          <td data-label="Name">Studio Glacier</td>
+          <td data-label="Color">Cool ice blue</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Satin anodized</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2020</th>
+          <td data-label="Name">Studio Rose</td>
+          <td data-label="Color">Warm rose gold hue</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Steel grip</td>
+          <td data-label="Finish">Matte metallic</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2019</th>
+          <td data-label="Name">Studio Aquamarine</td>
+          <td data-label="Color">Deep turquoise</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Steel grip</td>
+          <td data-label="Finish">Anodized</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2018</th>
+          <td data-label="Name">Studio Olive</td>
+          <td data-label="Color">Matte olive green</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Matte lacquer</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2017</th>
+          <td data-label="Name">Studio Imperial Blue</td>
+          <td data-label="Color">Rich metallic blue</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Gloss lacquer</td>
+          <td data-label="Notes">Became part of regular lineup</td>
+        </tr>
+        <tr>
+          <th scope="row">2016</th>
+          <td data-label="Name">Studio LX All Black</td>
+          <td data-label="Color">Matte black</td>
+          <td data-label="Nib">Steel nib (black coated)</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Matte lacquer</td>
+          <td data-label="Notes">Special monochrome edition</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

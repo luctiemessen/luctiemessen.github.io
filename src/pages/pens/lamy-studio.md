@@ -88,15 +88,17 @@ The first digit defines the <em>pen type</em> with 0 for fountain pen and 1 for 
 
 <div class="bleed">
 
-<figure>
+  <figure>
 
-![Model numbering Lamy](../../assets/model-numbering-lamy.png "Model numbering Lamy")
-<figcaption>
-  Explanation of the Lamy pen model numbering
+  ![Model numbering Lamy](../../assets/model-numbering-lamy.png "Model numbering Lamy")
+  <figcaption>
+    Explanation of the Lamy pen model numbering
 
-</figcaption>
-</figure>
+  </figcaption>
+  </figure>
 </div>
+
+
 <div class="span2-4">
 
 So with these numbers you could identify a Lamy Studio Platinum ballpoint with the 269 model number. The fountain pen model number (0) is not used so the Brushed steel Studio is just referenced to as 65 and not 065. 
@@ -105,6 +107,175 @@ So with these numbers you could identify a Lamy Studio Platinum ballpoint with t
 
 I am under the impression that they try to align these finish numbers across models but I'm not really sure. I also see some discrepancies between finishes. The 6 for the cp1 model is the matte black finish but for the Studio they use the 7 for the black (and blue) finish. <ref>ask lamy</ref>. 
 
+
+
+## Release timetable
+
+</div>
+
+<div class="bleed">
+
+  <div class="table-wrap" role="region" aria-labelledby="table-caption" tabindex="0">
+
+
+| Year   	| Name  	            | Color  	    | Nib  	  | Section  	| Finish    | Model Number  | Notes                   |
+|---	    |---	                |---	        |---	    |---	      |---        |---            |---                      |
+| 2005 | Brushed | Brushed steel grey | Steel | Rubber | Brushed steel | 065 | Initial release |
+| 2005 | Black | Black | Steel | Glossy steel | Matt lacquer | 066 | Initial release |
+| 2005 | Palladium | Beige palladium | Gold (14k) | Matt palladium | Matt palladium | 068 | Initial release |
+| 2005 | Blue | Bright blue | Steel | Glossy steel | Matt lacquer | 066 | Initial release [^ref-init-release] |
+
+
+
+
+  </div>
+
+[^ref-init-release]: According to Lamy it was part of the initial release, however [Internet Archive](https://web.archive.org/web/20050206014328/http://www.lamy.com/ "Internet Archive Lamy 2005") only shows the Palladium, Black and Brushed. 
+
+
+
+<div class="table-wrap" role="region" aria-labelledby="table-caption" tabindex="0">
+    <table role="table" aria-describedby="description">
+      <caption id="table-caption">Lamy Studio Special and Regular Editions</caption>
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col">Name</th>
+          <th scope="col">Color</th>
+          <th scope="col">Nib</th>
+          <th scope="col">Grip Section</th>
+          <th scope="col">Finish</th>
+          <th scope="col">Model number</th>
+          <th scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">2005</th>
+          <td data-label="Name">Brushed</td>
+          <td data-label="Color">Brushed steel grey</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber section</td>
+          <td data-label="Finish">Brushed steel</td>
+          <td data-label="ModelNo">065</td>
+          <td data-label="Notes">Initial release</td>
+        </tr>
+        <tr>
+          <th scope="row">2005</th>
+          <td data-label="Name">Black</td>
+          <td data-label="Color">Black</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Glossy steel section</td>
+          <td data-label="Finish">Matt lacquer</td>
+          <td data-label="ModelNo">066</td>
+          <td data-label="Notes">Initial release</td>
+        </tr>
+        <tr>
+          <th scope="row">2005</th>
+          <td data-label="Name">Blue</td>
+          <td data-label="Color">Bright blue</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Glossy steel section</td>
+          <td data-label="Finish">Matt lacquer</td>
+          <td data-label="ModelNo">066</td>
+          <td data-label="Notes">Initial release [^ref-init-release].</td>
+        </tr>
+        <tr>
+          <th scope="row">2005</th>
+          <td data-label="Name">Palladium</td>
+          <td data-label="Color">Beige palladium</td>
+          <td data-label="Nib">Gold (14k) nib</td>
+          <td data-label="Grip Section">Matt palladium section</td>
+          <td data-label="Finish">Matt palladium</td>
+          <td data-label="ModelNo">060686</td>
+          <td data-label="Notes">Initial release</td>
+        </tr>
+        <tr>
+          <th scope="row">2024</th>
+          <td data-label="Name">Studio Racing Green</td>
+          <td data-label="Color">Deep British green</td>
+          <td data-label="Nib">Gold nib (14k)</td>
+          <td data-label="Grip Section">Steel grip</td>
+          <td data-label="Finish">Gloss metallic</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2023</th>
+          <td data-label="Name">Studio Lilac</td>
+          <td data-label="Color">Soft lavender metallic</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Satin anodized</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2022</th>
+          <td data-label="Name">Studio Black Forest</td>
+          <td data-label="Color">Dark green, almost black</td>
+          <td data-label="Nib">Gold nib (14k)</td>
+          <td data-label="Grip Section">Steel grip</td>
+          <td data-label="Finish">Gloss lacquer</td>
+          <td data-label="Notes">Permanent color (initially SE)</td>
+        </tr>
+        <tr>
+          <th scope="row">2021</th>
+          <td data-label="Name">Studio Glacier</td>
+          <td data-label="Color">Cool ice blue</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Satin anodized</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2020</th>
+          <td data-label="Name">Studio Rose</td>
+          <td data-label="Color">Warm rose gold hue</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Steel grip</td>
+          <td data-label="Finish">Matte metallic</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2019</th>
+          <td data-label="Name">Studio Aquamarine</td>
+          <td data-label="Color">Deep turquoise</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Steel grip</td>
+          <td data-label="Finish">Anodized</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2018</th>
+          <td data-label="Name">Studio Olive</td>
+          <td data-label="Color">Matte olive green</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Matte lacquer</td>
+          <td data-label="Notes">Special Edition</td>
+        </tr>
+        <tr>
+          <th scope="row">2017</th>
+          <td data-label="Name">Studio Imperial Blue</td>
+          <td data-label="Color">Rich metallic blue</td>
+          <td data-label="Nib">Steel nib</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Gloss lacquer</td>
+          <td data-label="Notes">Became part of regular lineup</td>
+        </tr>
+        <tr>
+          <th scope="row">2016</th>
+          <td data-label="Name">Studio LX All Black</td>
+          <td data-label="Color">Matte black</td>
+          <td data-label="Nib">Steel nib (black coated)</td>
+          <td data-label="Grip Section">Rubber grip</td>
+          <td data-label="Finish">Matte lacquer</td>
+          <td data-label="Notes">Special monochrome edition</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="span2-4">
 
 The Palladium was launched with a 14k nib. The pen was available with an EF, F, M, B, OM or OB nib. The black and brushed steel
 Lamy.com
