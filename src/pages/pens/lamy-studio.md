@@ -16,7 +16,14 @@ The Lamy Studio is a pen introduced in 2005 by Lamy and was placed in their prem
 
 [^ref-a]: [iF Design - Lamy Studio](https://ifdesign.com/en/winner-ranking/project/lamy-studio/23768 "iF Design - Lamy Studio").
 
+<div class="table-wrap">
 
+| Year | Name | Color | Nib | Section | Finish | Model Number | Notes |
+|------|------|-------|-----|---------|--------|--------------|-------|
+| 2005 | Blue | Bright blue | Steel | Glossy steel | Matt lacquer | 066 | Initial release |
+| 2019 | Lx All Black | Black | Steel (black pvd coated) | Black rubber | Matt lacquer | 067 | Regular line-up |
+
+</div>
 
 ## About the designer
 Hannes Wettstein, born 10 March 1958 in Ascona Switserland - died, 5th July 2008, was one of Switserlands most important industrial designers [^ref-c]. He founded <a href="http://www.hanneswettstein.ch/">his design agency</a> in 1991. This agency was led by Stephan Hürlemann under the same name untill 2016, upon wich it was changed to <a href="https://www.huerlemann.com/">Hürlemann AG</a>.
@@ -36,7 +43,7 @@ Wettstein's story with Lamy starts around 1997 with the initial sketches for the
 
 [^ref-d]: [Lamy Scribble - Bleistift Blog](https://bleistift.blog/2014/07/lamy-scribble/ "Lamy Scribble").
 
- In 2002 Lamy released the <em>Scribble</em> mechanical pencil <ref/>.
+ In 2002 Lamy released the <em>Scribble</em> mechanical pencil REF.
 
 <figure>
 
@@ -53,7 +60,7 @@ Looking at this sketch you might argue that Wettstein already hinted to a propel
 https://hls-dhs-dss.ch/de/articles/049370/2013-10-28/
 
 
-Apparently this process went well. Since he was asked to design another pen <ref>. This time not only limited to a pencil but a full suite of rollerball, ballpoint, twin pen (ballpoint and mechanical pencil combined) and fountain pen.
+Apparently this process went well. Since he was asked to design another pen. This time not only limited to a pencil but a full suite of rollerball, ballpoint, twin pen (ballpoint and mechanical pencil combined) and fountain pen.
 
 
 ## About the design
@@ -82,7 +89,7 @@ The initial launch of the Lamy Studio netted 3 versions of the Studio. The Palla
 ### Model numbers
 Most Lamy pens follow the same modelnumber structure with 3 digits. Their position and number have a specific meaning. 
 
-The first digit defines the <em>pen type</em> with 0 for fountain pen and 1 for mechanical pencil, 3 for ballpoint and so on. The second digit identifies the <em>pen model</em>. The Lamy 2000 for example is identified with a zero (0) as well as the Logo. The Safari and Vista are identified with 1, cp1 with 5 and Studio has 6. The last digit is for the <em>pen finish</em> and I am under the impression that Lamy tries to keep them similar across models but obviously these finishes are mostly unique to a specific model, in this case the Lamy Studio. Where the brushed steel is identified with a 5 and the Violet and Royal red (and I believe most special editions <ref>). 8 is used for the Palladium and Platinum grey. 
+The first digit defines the <em>pen type</em> with 0 for fountain pen and 1 for mechanical pencil, 3 for ballpoint and so on. The second digit identifies the <em>pen model</em>. The Lamy 2000 for example is identified with a zero (0) as well as the Logo. The Safari and Vista are identified with 1, cp1 with 5 and Studio has 6. The last digit is for the <em>pen finish</em> and I am under the impression that Lamy tries to keep them similar across models but obviously these finishes are mostly unique to a specific model, in this case the Lamy Studio. Where the brushed steel is identified with a 5 and the Violet and Royal red (and I believe most special editions). 8 is used for the Palladium and Platinum grey. 
 
 </div>
 
@@ -123,8 +130,31 @@ I am under the impression that they try to align these finish numbers across mod
 | 2005 | Brushed | Brushed steel grey | Steel | Rubber | Brushed steel | 065 | Initial release |
 | 2005 | Black | Black | Steel | Glossy steel | Matt lacquer | 066 | Initial release |
 | 2005 | Palladium | Beige palladium | Gold (14k) | Matt palladium | Matt palladium | 068 | Initial release |
-| 2005 | Blue | Bright blue | Steel | Glossy steel | Matt lacquer | 066 | Initial release [^ref-init-release] |
-
+| 2005 | Blue | Bright blue (cobalt) | Steel | Glossy steel | Matt lacquer | 066 | Initial release [^ref-init-release], discontinued in 2011 to make way for the Imperial Blue in 2012 |
+| 2007 | Pearl White | Sparkle white | Gold (14k) | Glossy steel | Shiny white lacquer | 067 | Special edition |
+| 2008 | Rubin Black | Brown (mixture of ruby and black) | Gold (14k) | Glossy steel | Matt lacquer | 066 | Special edition |
+| 2009 | Pearl Black | Sparlkly glossy black | Gold (14k) | Glossy steel | Shiny lacquer | unknown | Special edition, Hongkong only |
+| 2010 | Violet | Purple | Gold (14k) | Glossy steel | Matt lacquer | 067 | Special edition |
+| 2010 | Platinum grey | Dark grey | Gold (14k) | Glossy steel | Matt lacquer | 068 | Became part of the regular line-up, not sure when officially discontinued |
+| 2011 | Pt (Platinum) | Polished silver | Gold (14k) | Glossy steel | Polished platinum | 069 | Became part of the regular line-up, not sure when officially discontinued |
+| 2012 | Royal red | Orange red-ish | Steel | Glossy steel | Matt lacquer | 067 | Special edition |
+| 2012 | Imperial blue | Dark navy blue | Steel | Glossy steel | Matt lacquer | 066 | Regular line-up, replacement of the bright blue |
+| 2014 | Wild rubin | Deep red | Gold (14k) | Glossy steel | Shiny lacquer | 067 | Special edition. Also available with steel nib |
+| 2017 | Racing green | Dark green | Steel | Glossy steel | Matt lacquer | 067 | Special edition |
+| 2017 | Piano black | Deep black | Gold (14k) | Glossy steel | Shiny lacquer | 068 | Regular line-up |
+| 2018 | Olive | Green | Steel | Glossy steel | Matt lacquer | 067 | Special edition |
+| 2018 | Terracotta | Orange | Steel | Gloss steel | Matt lacquer | 067 | Special edition |
+| 2018 | Pearl Terracotta | Sparkly Orange | Gold (14k) | Gloss steel | Shiny lacquer | unknown | Special edition, Hongkong only |
+| 2019 | Aquamarine | Turqoise | Steel | Gloss steel | Matt lacquer | 067 | Special edition |
+| 2019 | Lx All Black | Black | Steel (black pvd coated) | Black rubber | Matt lacquer | 067 | Regular line-up |
+| 2020 | Glacier | Light blue | Steel | Gloss steel | Matt lacquer | 067 | Special edition |
+| 2021 | Black forest | Dark grey with a hint of green | Steel | Gloss steel | Shiny lacquer | 069 | Special edition |
+| 2022 | Dark brown | Deep dark brown | Steel | Gloss steel | Shiny lacquer | 069 | Special edition |
+| 2023 | Rose gloss | Soft pastel pink | Gold (14k) | Gloss steel | Shiny lacquer | 069 | Special edition, EU only |
+| 2023 | Rose matt | Soft pastel pink | Steel | Gloss steel | Matt lacquer | 069 | Special edition |
+| 2024 | Piano red | Vibrant blush red | Gold (14k) | Gloss steel | Shiny lacquer | 068 | Became part of the regular line-up |
+| 2024 | Royal red | Soft dark red | Steel | Gloss steel | Matt lacquer | 067 | Became part of the regular line-up |
+| 2025 | Orion matt | Brown-ish purple red | Steel | Gloss steel | Matt lacquer | 066 | Special edition |
 
 
 
@@ -134,223 +164,11 @@ I am under the impression that they try to align these finish numbers across mod
 
 
 
-<div class="table-wrap" role="region" aria-labelledby="table-caption" tabindex="0">
-    <table role="table" aria-describedby="description">
-      <caption id="table-caption">Lamy Studio Special and Regular Editions</caption>
-      <thead>
-        <tr>
-          <th scope="col">Year</th>
-          <th scope="col">Name</th>
-          <th scope="col">Color</th>
-          <th scope="col">Nib</th>
-          <th scope="col">Grip Section</th>
-          <th scope="col">Finish</th>
-          <th scope="col">Model number</th>
-          <th scope="col">Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">2005</th>
-          <td data-label="Name">Brushed</td>
-          <td data-label="Color">Brushed steel grey</td>
-          <td data-label="Nib">Steel nib</td>
-          <td data-label="Grip Section">Rubber section</td>
-          <td data-label="Finish">Brushed steel</td>
-          <td data-label="ModelNo">065</td>
-          <td data-label="Notes">Initial release</td>
-        </tr>
-        <tr>
-          <th scope="row">2005</th>
-          <td data-label="Name">Black</td>
-          <td data-label="Color">Black</td>
-          <td data-label="Nib">Steel nib</td>
-          <td data-label="Grip Section">Glossy steel section</td>
-          <td data-label="Finish">Matt lacquer</td>
-          <td data-label="ModelNo">066</td>
-          <td data-label="Notes">Initial release</td>
-        </tr>
-        <tr>
-          <th scope="row">2005</th>
-          <td data-label="Name">Blue</td>
-          <td data-label="Color">Bright blue</td>
-          <td data-label="Nib">Steel nib</td>
-          <td data-label="Grip Section">Glossy steel section</td>
-          <td data-label="Finish">Matt lacquer</td>
-          <td data-label="ModelNo">066</td>
-          <td data-label="Notes">Initial release [^ref-init-release].</td>
-        </tr>
-        <tr>
-          <th scope="row">2005</th>
-          <td data-label="Name">Palladium</td>
-          <td data-label="Color">Beige palladium</td>
-          <td data-label="Nib">Gold (14k) nib</td>
-          <td data-label="Grip Section">Matt palladium section</td>
-          <td data-label="Finish">Matt palladium</td>
-          <td data-label="ModelNo">060686</td>
-          <td data-label="Notes">Initial release</td>
-        </tr>
-        <tr>
-          <th scope="row">2024</th>
-          <td data-label="Name">Studio Racing Green</td>
-          <td data-label="Color">Deep British green</td>
-          <td data-label="Nib">Gold nib (14k)</td>
-          <td data-label="Grip Section">Steel grip</td>
-          <td data-label="Finish">Gloss metallic</td>
-          <td data-label="Notes">Special Edition</td>
-        </tr>
-        <tr>
-          <th scope="row">2023</th>
-          <td data-label="Name">Studio Lilac</td>
-          <td data-label="Color">Soft lavender metallic</td>
-          <td data-label="Nib">Steel nib</td>
-          <td data-label="Grip Section">Rubber grip</td>
-          <td data-label="Finish">Satin anodized</td>
-          <td data-label="Notes">Special Edition</td>
-        </tr>
-        <tr>
-          <th scope="row">2022</th>
-          <td data-label="Name">Studio Black Forest</td>
-          <td data-label="Color">Dark green, almost black</td>
-          <td data-label="Nib">Gold nib (14k)</td>
-          <td data-label="Grip Section">Steel grip</td>
-          <td data-label="Finish">Gloss lacquer</td>
-          <td data-label="Notes">Permanent color (initially SE)</td>
-        </tr>
-        <tr>
-          <th scope="row">2021</th>
-          <td data-label="Name">Studio Glacier</td>
-          <td data-label="Color">Cool ice blue</td>
-          <td data-label="Nib">Steel nib</td>
-          <td data-label="Grip Section">Rubber grip</td>
-          <td data-label="Finish">Satin anodized</td>
-          <td data-label="Notes">Special Edition</td>
-        </tr>
-        <tr>
-          <th scope="row">2020</th>
-          <td data-label="Name">Studio Rose</td>
-          <td data-label="Color">Warm rose gold hue</td>
-          <td data-label="Nib">Steel nib</td>
-          <td data-label="Grip Section">Steel grip</td>
-          <td data-label="Finish">Matte metallic</td>
-          <td data-label="Notes">Special Edition</td>
-        </tr>
-        <tr>
-          <th scope="row">2019</th>
-          <td data-label="Name">Studio Aquamarine</td>
-          <td data-label="Color">Deep turquoise</td>
-          <td data-label="Nib">Steel nib</td>
-          <td data-label="Grip Section">Steel grip</td>
-          <td data-label="Finish">Anodized</td>
-          <td data-label="Notes">Special Edition</td>
-        </tr>
-        <tr>
-          <th scope="row">2018</th>
-          <td data-label="Name">Studio Olive</td>
-          <td data-label="Color">Matte olive green</td>
-          <td data-label="Nib">Steel nib</td>
-          <td data-label="Grip Section">Rubber grip</td>
-          <td data-label="Finish">Matte lacquer</td>
-          <td data-label="Notes">Special Edition</td>
-        </tr>
-        <tr>
-          <th scope="row">2017</th>
-          <td data-label="Name">Studio Imperial Blue</td>
-          <td data-label="Color">Rich metallic blue</td>
-          <td data-label="Nib">Steel nib</td>
-          <td data-label="Grip Section">Rubber grip</td>
-          <td data-label="Finish">Gloss lacquer</td>
-          <td data-label="Notes">Became part of regular lineup</td>
-        </tr>
-        <tr>
-          <th scope="row">2016</th>
-          <td data-label="Name">Studio LX All Black</td>
-          <td data-label="Color">Matte black</td>
-          <td data-label="Nib">Steel nib (black coated)</td>
-          <td data-label="Grip Section">Rubber grip</td>
-          <td data-label="Finish">Matte lacquer</td>
-          <td data-label="Notes">Special monochrome edition</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 <div class="span2-4">
 
 The Palladium was launched with a 14k nib. The pen was available with an EF, F, M, B, OM or OB nib. The black and brushed steel
 Lamy.com
 2006 had Palladium, Brushed en Black
-
-Website van Lamy in 2005 toont de Palladium, Zwarte en Brushed variant (lijkt de initial releases)
-https://web.archive.org/web/20050206014328/http://www.lamy.com/
-
-
-https://www.fountainpennetwork.com/forum/topic/2950-lamy-studio-palladium-finish/#comment-25227
-
-... waarschijnlijk brushed, zwart en blauw (checken of de palladium ook al bij de initial release was)
-
-reference to black Studio in 2007: https://www.fountainpennetwork.com/forum/topic/41978-lamy-studio/
-Also mentioned a brushed version in 2006 in the same article and a blue one at least in 2007
-Also Palladium mentioned in 2007
-
-Snapshot 15 mei 2006
-https://web.archive.org/web/20060515191703/http://lamy.com/de/endverbraucher/produkte/schreibsysteme/fuellhalter?shownavi=true
-- Palladium (highlighted)
-- Black
-- Brushed
-
-Snapshot 9 december 2006
-https://web.archive.org/web/20061209000527/http://www.lamy.com:80/en/endverbraucher/produkte/schreibsysteme/fuellhalter?shownavi=true
-- Palladium
-- Black
-- Blue (Introductie!!! van Regular blue)
-- Brushed
-
-2007 checken
-https://web.archive.org/web/20070210012254/http://www.lamy.com/en/endverbraucher/produkte/schreibsysteme/fuellhalter?shownavi=true
-Snapshot 10 feb 2007
-- Palladium
-- Black
-- Blue (INTRODUCTIE!, kan ook eind 2006 zijn geweest)
-- Brushed (065)
-
-Snapshot 16 mei 2008:
-https://web.archive.org/web/20080516010002/http://www.lamy.com/products/writing_systems/fountain_pens/index_eng.html
-- Regular (model number 065)
-- Palladium (068)
-- Blue (model number 067)
-- Black (model number 067)
-(november staat rubin Black erop dus intro moet in 2008 zijn geweest)
-
-Snapshot 21 nov 2008
-https://web.archive.org/web/20081121110531/http://www.lamy.com/produkte/schreibsysteme/fuellhalter/index_ger.html
-- Regular (model number 065)
-- Palladium (068)
-- Blue (model number 067)
-- Black (model number 067)
-- Rubin Black (model number 066)
-
-
-
-Snapshot 26 november 2011:
-- Platinum Grey ("068 Platinum grey")
-- Palladium ("068")
-- Violet (266)
-- Regular (67 blue)
-- Black (67 Black)
-- Brushed (ballpoint wordt Stahl genoemd) (065)
-- Platinum (69)
-
-Snapshot 14 october 2012
-Zoals 2011 behalve:
-- Geen violet
-- Royal Red
-- Geen regular blue maar Imperial Blue
-
-
-Snapshot 13 nov 2012 had de Royal Red (Preis: 85.00 €)
-https://web.archive.org/web/20121113111913/http://www.lamy.com/ger/b2c/studio/066_royalred
-
 
 
 ## Ballpoint redesign
@@ -368,45 +186,6 @@ Introtekst voor special editions. Tijdelijke uitgave, niet gelimiteerd (en/of ge
 Ballpoint was still with the short section in 2012
 
 2011 catalog: https://www.scribd.com/document/94065548/Lamy-Catalogue-US-2011
-
-Present in the 2011 catalog:
-- 65 (Brushed steel)
-- 67 (Black and Blue)
-- 68 (Palladium and Grey (SE), called: Platinum grey lacquer finish (US name))
-- 69 (Platinum)
-
-2011 had the old color blue. So the change happened in 2012. 
-
-2011
-
-2012 Had the new Imperial Blue version already. (not the old color)
-2012 also had the Black and the Brushed finish
-
-
-Lamy Studio
-
-1. 2007 Pearl White (85 roller + 75 gold fp) check
-2. 2008 Rubin Black (72 roller + 75 gold fp) check
-3. 2009 Violet Purple (78 staal + 75 gold fp) (https://web.archive.org/web/20110812154552/http://www.lamy.com/ger/b2c/studio/066_violet speaks only of "Violet" not "Violet Purple")
-4. 2009 Platinum Grey (175 14k fountain)
-5. 2009 Pearl Black (hongkong only)
-6. 2010 Platinum Plated (216) Proof: https://web.archive.org/web/20191222172108/http://kmpn.blogspot.com/2010/
-7. 2012 Royal Red (https://web.archive.org/web/20121014125730/http://www.lamy.com/ger/b2c/studio)
-8. 2014 Wild Rubin 95 check
-9. 2017 Racing Green 45 check
-10. 2017 Piano Black (75) check (regular line up)
-11. 2018 Olive Green (47) check
-12. 2018 Terracotta (50)
-13. 2018 Pearl Terracotta (hongkong only)
-14. 2019 Aquamarine (60)
-15. 2019 Black LX (90) (regular line up)
-16. 2020 Glacier
-17. 2021 Black Forest
-18. 2022 Dark Brown
-19. 2023 Rose (matte)
-20. 2024 Rose Glossy (EU only edition)
-21. 2024 Royal red
-22. 2024 Piano red
 
 
 

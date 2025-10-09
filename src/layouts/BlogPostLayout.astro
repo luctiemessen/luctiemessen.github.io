@@ -3,9 +3,11 @@ import MainLayout from './MainLayout.astro';
 // import { Image } from 'astro:assets';
 // import Image from "astro:assets";
 
+// import { initTablePreviews } from '../utils.js';
+
 
 // utils import
-import {formatDate} from "../js/utils";
+import {formatDate } from "../js/utils";
 
 const {frontmatter} = Astro.props;
 const { title, description, date, draft, dutch} = frontmatter;
@@ -21,5 +23,14 @@ const { title, description, date, draft, dutch} = frontmatter;
 </header>
 
 <slot />
-
+<!-- client-side, na <slot/> zodat de tabel al in de DOM staat -->
+<script type="module" is:inline>
+  import { initTablePreviews } from '/src/js/utils';
+    initTablePreviews({
+      // optioneel: kun je hier overriden
+      // basePath: '/assets/lamy-studio/',
+      // ext: '.webp',
+      // overrides: { "Lx All Black": "2019-lx-all-black.webp" }
+    });
+  </script>
 </MainLayout>

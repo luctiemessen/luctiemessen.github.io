@@ -554,75 +554,6 @@ ref::before {
     content: "[ref] "
 }
 
-
-.sr-only {
-    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
-  }
-
-  .table-wrap {
-    max-width: 100%;
-    overflow-x: auto;
-  }
-
-  table[role="table"] {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  caption {
-    text-align: left;
-    font-weight: 600;
-    margin-bottom: .75rem;
-  }
-
-  thead th {
-    text-align: left;
-    border-bottom: 2px solid currentColor;
-    padding: .5rem .75rem;
-  }
-
-  tbody td, tbody th[scope="row"] {
-    padding: .5rem .75rem;
-    border-bottom: 1px solid rgba(0,0,0,.15);
-  }
-
-  @media (max-width: 700px) {
-    thead {
-      position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; overflow: hidden;
-    }
-
-    table[role="table"], tbody, tr, td, th[scope="row"] {
-      display: block; width: 100%;
-    }
-
-    tbody tr {
-      border: 1px solid rgba(0,0,0,.15);
-      border-radius: .5rem;
-      padding: .5rem .25rem;
-      margin-bottom: .75rem;
-      box-shadow: 0 1px 2px rgba(0,0,0,.04);
-    }
-
-    tbody th[scope="row"] {
-      font-size: 1rem;
-      font-weight: 700;
-      border: 0; padding: .5rem .75rem .25rem;
-    }
-
-    tbody td {
-      border: 0;
-      padding: .25rem .75rem;
-    }
-
-    tbody td::before {
-      content: attr(data-label) ": ";
-      font-weight: 600;
-      display: inline-block;
-      min-width: 9ch;
-    }
-  }
-
-
 @media all and (min-width: 480px) and (max-width: 768px) {
      :root {
         line-height: 1.5rem;
@@ -674,4 +605,225 @@ ref::before {
     :has(:target) {
         scroll-behavior: smooth;
     }
+}
+
+/* ===== Simpele responsive Markdown-tabel ===== */
+
+/* Desktop / normaal gedrag */
+.table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--metadata-font-family);
+    font-size: var(--small-font-size);
+  }
+  .table-wrap th,
+  .table-wrap td {
+    padding: .6rem .8rem;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    text-align: left;
+  }
+  .table-wrap thead th {
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0,0,0,.18);
+  }
+  
+  /* Mobile: stapel elke rij als "kaartje" met labels per cel */
+  @media (max-width: 700px) {
+    .table-wrap {
+      /* wat lucht tussen kaartjes */
+    }
+  
+    .table-wrap table,
+    .table-wrap thead,
+    .table-wrap tbody,
+    .table-wrap th,
+    .table-wrap td,
+    .table-wrap tr {
+      display: block;
+    }
+  
+    /* verberg de kop, we tonen labels via ::before */
+    .table-wrap thead {
+      position: absolute;
+      width: 1px; height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+  
+    .table-wrap tr {
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 10px;
+      padding: .6rem .8rem;
+      margin: .8rem 0;
+      background: transparent;
+    }
+  
+    .table-wrap td,
+    .table-wrap th[scope="row"] {
+      /* label links, waarde rechts */
+      display: grid;
+      grid-template-columns: 10ch 1fr;
+      gap: .8rem;
+      padding: .35rem 0;
+      border: 0;
+      white-space: normal;
+    }
+  
+    /* labels via nth-child (volgorde uit je Markdown-tabel) */
+    .table-wrap tr > *:nth-child(1)::before { content: "Year"; font-weight: 600; }
+    .table-wrap tr > *:nth-child(2)::before { content: "Name"; font-weight: 600; }
+    .table-wrap tr > *:nth-child(3)::before { content: "Color"; font-weight: 600; }
+    .table-wrap tr > *:nth-child(4)::before { content: "Nib"; font-weight: 600; }
+    .table-wrap tr > *:nth-child(5)::before { content: "Section"; font-weight: 600; }
+    .table-wrap tr > *:nth-child(6)::before { content: "Finish"; font-weight: 600; }
+    .table-wrap tr > *:nth-child(7)::before { content: "Model #"; font-weight: 600; }
+    .table-wrap tr > *:nth-child(8)::before { content: "Notes"; font-weight: 600; }
+  
+    /* maak Notes lekker breed en bovenaan uitgelijnd */
+    .table-wrap tr > *:nth-child(8) {
+      align-items: start;
+    }
+  }
+
+
+  /* ===== Simpele, responsive Markdown-tabel + nette voetnoten ===== */
+
+/* Basis: nette, rustige tabel */
+.markdown-body table,
+.prose table,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.markdown-body th, .markdown-body td,
+.prose th, .prose td,
+table th, table td {
+  padding: .6rem .8rem;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown-body thead th,
+.prose thead th,
+table thead th {
+  font-weight: 600;
+  border-bottom: 2px solid rgba(0,0,0,.18);
+}
+
+/* Kleurvarianten voor dark mode (optioneel, non-breaking) */
+@media (prefers-color-scheme: dark) {
+  .markdown-body th, .markdown-body td,
+  .prose th, .prose td,
+  table th, table td {
+    border-color: rgba(255,255,255,.16);
+  }
+  .markdown-body thead th,
+  .prose thead th,
+  table thead th {
+    border-bottom-color: rgba(255,255,255,.22);
+  }
+}
+
+/* ===== Mobile layout: stapel elke tabelrij als “kaartje” ===== */
+@media (max-width: 640px) {
+  /* Toon elk TR als kaartje en verberg de THEAD (labels komen via ::before) */
+  .markdown-body table,
+  .prose table,
+  table {
+    border-collapse: separate; /* voorkomt gekke randen bij display:block */
+  }
+
+  .markdown-body thead,
+  .prose thead,
+  table thead {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .markdown-body tbody tr,
+  .prose tbody tr,
+  table tbody tr {
+    display: block;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 12px;
+    padding: .6rem .8rem;
+    margin: .8rem 0;
+    background: transparent;
+  }
+
+  /* Maak cellen blokken met label + waarde naast elkaar */
+  .markdown-body tbody td,
+  .prose tbody td,
+  table tbody td,
+  .markdown-body tbody th[scope="row"],
+  .prose tbody th[scope="row"],
+  table tbody th[scope="row"] {
+    display: grid;
+    grid-template-columns: 10ch 1fr;
+    gap: .75rem;
+    padding: .35rem 0;
+    border: 0;
+    white-space: normal;
+  }
+
+  /* Labels via nth-child — pas aan als je kolomnamen wijzigt */
+  /* Werkt voor 2-koloms tabel: Kenmerk | Details */
+  .markdown-body tbody tr > *:nth-child(1)::before,
+  .prose tbody tr > *:nth-child(1)::before,
+  table tbody tr > *:nth-child(1)::before {
+    content: "Kenmerk";
+    font-weight: 600;
+  }
+  .markdown-body tbody tr > *:nth-child(2)::before,
+  .prose tbody tr > *:nth-child(2)::before,
+  table tbody tr > *:nth-child(2)::before {
+    content: "Details";
+    font-weight: 600;
+  }
+}
+
+/* ===== Voetnoten (remark-footnotes / GFM) ===== */
+.footnotes {
+  margin-top: 1rem;
+  padding-top: .5rem;
+  border-top: 1px solid rgba(0,0,0,.12);
+  font-size: 0.9rem;
+  color: inherit;
+}
+
+.footnotes ol {
+  padding-left: 1.25rem; /* nette inspringing */
+  margin: .5rem 0 0;
+}
+
+.footnotes li {
+  margin: .25rem 0;
+}
+
+.footnotes a[href^="#fnref"] {
+  text-decoration: none;
+  opacity: .8;
+  margin-left: .25rem;
+  font-size: .95em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footnotes {
+    border-top-color: rgba(255,255,255,.18);
+  }
+}
+
+/* Superscript in de tekst iets subtieler */
+sup, .footnote-ref {
+  font-size: .8em;
+  opacity: .85;
+  vertical-align: super;
 }
