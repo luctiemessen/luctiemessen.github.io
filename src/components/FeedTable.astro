@@ -1,9 +1,18 @@
 ---
 import { formatFeedDate } from "../js/utils";
 
-const { posts } = Astro.props;
+interface Post {
+    frontmatter: {
+        title: string;
+        date: string;
+        tags?: string | string[];
+    };
+    url: string;
+}
 
-function firstTag(tags) {
+const { posts } = Astro.props as { posts: Post[] };
+
+function firstTag(tags: string | string[] | undefined): string {
     if (!tags) return "";
     const list = Array.isArray(tags) ? tags : String(tags).split(" ");
     const t = list[0] || "";
@@ -21,7 +30,7 @@ function firstTag(tags) {
         </tr>
     </thead>
     <tbody>
-        {posts.map((post: { frontmatter: any; url: string }) => (
+        {posts.map((post) => (
             <tr>
                 <td class="feed-date">
                     <time datetime={post.frontmatter.date}>
