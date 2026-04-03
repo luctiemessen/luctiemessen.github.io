@@ -1,0 +1,56 @@
+---
+import { formatFeedDate } from "../js/utils";
+
+const { posts } = Astro.props;
+
+function firstTag(tags) {
+    if (!tags) return "";
+    const list = Array.isArray(tags) ? tags : String(tags).split(" ");
+    const t = list[0] || "";
+    return t.charAt(0).toUpperCase() + t.slice(1);
+}
+---
+
+<table class="feed-table" aria-label="Blog articles">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Title</th>
+            <th scope="col">Topic</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {posts.map((post: { frontmatter: any; url: string }) => (
+            <tr>
+                <td class="feed-date">
+                    <time datetime={post.frontmatter.date}>
+                        {formatFeedDate(post.frontmatter.date)}
+                    </time>
+                </td>
+                <td>
+                    <a href={post.url} class="feed-title">{post.frontmatter.title}</a>
+                </td>
+                <td class="feed-tag">{firstTag(post.frontmatter.tags)}</td>
+                <td>
+                    <a href={post.url} class="feed-read" aria-hidden="true" tabindex="-1">Read</a>
+                </td>
+            </tr>
+        ))}
+    </tbody>
+</table>
+
+<script>
+    const PERIOD_MS = 20000;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function tick() {
+        if (!reducedMotion.matches) {
+            const hue = ((Date.now() % PERIOD_MS) / PERIOD_MS) * 360;
+            document.documentElement.style.setProperty("--hue", hue.toFixed(1));
+        }
+        requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+</script>

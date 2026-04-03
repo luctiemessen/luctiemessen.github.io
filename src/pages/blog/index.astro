@@ -1,6 +1,6 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import PostCard from "../../components/PostCard.astro";
+import FeedTable from "../../components/FeedTable.astro";
 
 // utils import
 import { orderBlogPosts } from "../../js/utils";
@@ -10,17 +10,12 @@ const orderedPosts = orderBlogPosts(allPosts, {
     filterOutDrafts: true,
     filterOutFuturePosts: true,
     sortByDate: true,
-    // limit: 2,
 });
-
 ---
 
-<MainLayout title="blog">
+<MainLayout title="Blog — Luc Tiemessen">
     <div class="span2-4">
         <h1>Blog</h1>
-            <!-- <PostCard frontmatter={allPosts[0].frontmatter} url={allPosts[0].url} /> -->
-            {
-                orderedPosts.map((post: { frontmatter: any; url: any; }) => (<PostCard frontmatter={post.frontmatter} url={post.url} />) ) 
-            }
+        <FeedTable posts={orderedPosts} />
     </div>
 </MainLayout>
