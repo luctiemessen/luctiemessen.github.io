@@ -4,7 +4,7 @@ title: Schaduw schaduw aan de rand...
 date: 2010-02-04 10:50:21
 [//]: # format date like: yyyy-mm-dd
 description: Een stukje over schaduw in CSS 3
-tags: tags css
+tags: css
 draft: false
 dutch: yes
 ---

@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPostLayout.astro"
 title: Detecting movement with the HTML5 Geolocation API
 date: 2011-09-21 10:50:21
 description: no description present
-tags: tags css
+tags: web
 draft: false
 ---
 <div class="span2-4">

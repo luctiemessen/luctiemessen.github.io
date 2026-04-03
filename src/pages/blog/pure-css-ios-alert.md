@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPostLayout.astro"
 title: Pure CSS iOS alerts
 date: 2011-10-14 10:50:21
 description: no description present
-tags: tags css
+tags: css
 draft: false
 ---
 <div class="span2-4">
