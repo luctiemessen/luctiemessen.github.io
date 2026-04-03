@@ -26,6 +26,7 @@ input, textarea, button, select {
 
 :root {
     color-scheme: light dark;
+    --hue: 200;
     --base-font-family: 'Lora', serif;
     --heading-font-family: 'Playfair', serif;
     --mono-font-family: 'Source Code Pro', monospace;
@@ -504,6 +505,19 @@ a:hover {
     margin-bottom: 0;
 }
 
+.feed-section-label {
+    font-family: var(--metadata-font-family);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    opacity: 0.5;
+    margin-top: var(--base-line-height);
+    margin-bottom: 0;
+    line-height: var(--base-line-height);
+}
+
 .publication-date {
     position: relative;
     top: calc(var(--base-line-height) * -2);
@@ -605,6 +619,115 @@ ref::before {
     :has(:target) {
         scroll-behavior: smooth;
     }
+}
+
+/* ===== Feed table ===== */
+
+.feed-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--metadata-font-family);
+}
+
+.feed-table thead tr {
+    border-bottom: 1px solid var(--grid-color);
+}
+
+.feed-table thead th {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    opacity: 0.5;
+    padding: 0.6rem 0.75rem 0.6rem 0;
+    text-align: left;
+}
+
+.feed-table thead th:last-child {
+    text-align: right;
+}
+
+.feed-table tbody tr {
+    border-bottom: 1px solid var(--grid-color);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.feed-table tbody tr:hover {
+    background-color: hsl(var(--hue), 80%, 90%);
+    color: hsl(var(--hue), 60%, 20%);
+}
+
+@media (prefers-color-scheme: dark) {
+    .feed-table tbody tr:hover {
+        background-color: hsl(var(--hue), 60%, 20%);
+        color: hsl(var(--hue), 80%, 90%);
+    }
+}
+
+.feed-table tbody tr:hover .feed-date,
+.feed-table tbody tr:hover .feed-tag,
+.feed-table tbody tr:hover .feed-read,
+.feed-table tbody tr:hover .feed-title {
+    color: inherit;
+    opacity: 0.85;
+}
+
+.feed-table td {
+    padding: 0.75rem 0.75rem 0.75rem 0;
+    vertical-align: middle;
+}
+
+.feed-table td:last-child {
+    text-align: right;
+    padding-right: 0;
+}
+
+.feed-date {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.5;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.03em;
+    width: 7rem;
+}
+
+.feed-title {
+    font-family: var(--base-font-family);
+    font-size: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    line-height: 1.3;
+    display: block;
+}
+
+.feed-title:hover {
+    color: var(--link-hover-color);
+}
+
+.feed-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    opacity: 0.5;
+    white-space: nowrap;
+    width: 5rem;
+}
+
+.feed-read {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.5;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    padding-left: 1rem;
+}
+
+.feed-read::after {
+    content: " →";
 }
 
 /* ===== Simpele responsive Markdown-tabel ===== */
