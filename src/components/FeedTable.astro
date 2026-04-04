@@ -53,6 +53,7 @@ function firstTag(tags: string | string[] | undefined): string {
     const PERIOD_MS = 20000;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+    // Desktop: cycle hue over time
     function tick() {
         if (!reducedMotion.matches) {
             const hue = ((Date.now() % PERIOD_MS) / PERIOD_MS) * 360;
@@ -62,4 +63,43 @@ function firstTag(tags: string | string[] | undefined): string {
     }
 
     requestAnimationFrame(tick);
+
+    // Mobile: long-press (300ms hold) snaps row to current hue, clears on release
+    const LONG_PRESS_MS = 300;
+    let pressTimer: ReturnType<typeof setTimeout> | null = null;
+    let pressedRow: HTMLElement | null = null;
+
+    function startPress(row: HTMLElement) {
+        pressTimer = setTimeout(() => {
+            if (reducedMotion.matches) return;
+            const hue = ((Date.now() % PERIOD_MS) / PERIOD_MS) * 360;
+            const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            row.style.backgroundColor = isDark
+                ? `hsl(${hue.toFixed(1)}, 60%, 20%)`
+                : `hsl(${hue.toFixed(1)}, 80%, 90%)`;
+            row.style.color = isDark
+                ? `hsl(${hue.toFixed(1)}, 80%, 90%)`
+                : `hsl(${hue.toFixed(1)}, 60%, 20%)`;
+            pressedRow = row;
+        }, LONG_PRESS_MS);
+    }
+
+    function endPress() {
+        if (pressTimer) {
+            clearTimeout(pressTimer);
+            pressTimer = null;
+        }
+        if (pressedRow) {
+            pressedRow.style.backgroundColor = "";
+            pressedRow.style.color = "";
+            pressedRow = null;
+        }
+    }
+
+    document.querySelectorAll<HTMLElement>(".feed-table tbody tr").forEach((row) => {
+        row.addEventListener("touchstart", () => startPress(row), { passive: true });
+        row.addEventListener("touchend", endPress, { passive: true });
+        row.addEventListener("touchcancel", endPress, { passive: true });
+        row.addEventListener("touchmove", endPress, { passive: true });
+    });
 </script>

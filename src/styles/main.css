@@ -741,6 +741,48 @@ ref::before {
     content: " →";
 }
 
+@media (max-width: 640px) {
+    /* Reset the generic mobile table styles that break the feed table */
+    .feed-table,
+    .feed-table thead,
+    .feed-table tbody,
+    .feed-table tr,
+    .feed-table th,
+    .feed-table td {
+        display: revert;
+        border: revert;
+        border-radius: 0;
+        padding: revert;
+        margin: 0;
+        white-space: normal;
+        grid-template-columns: none;
+    }
+
+    /* Restore proper table structure */
+    .feed-table               { display: table; border-collapse: collapse; width: 100%; }
+    .feed-table thead         { display: none; } /* no header needed — just date + title */
+    .feed-table tbody         { display: table-row-group; }
+    .feed-table tbody tr      { display: table-row; border-bottom: 1px solid var(--grid-color); background: transparent; }
+    .feed-table td            {
+        display: table-cell;
+        padding: calc((var(--base-line-height) - 1px) / 2) 0.5rem calc((var(--base-line-height) - 1px) / 2) 0;
+        line-height: var(--base-line-height);
+        vertical-align: middle;
+        border: none;
+    }
+    .feed-table td:last-child { text-align: right; padding-right: 0; }
+
+    /* Suppress the ::before labels injected by the generic mobile table CSS */
+    .feed-table td::before { display: none; content: none; }
+
+    /* Hide topic and read columns — only date + title on mobile */
+    .feed-table td:nth-child(3),
+    .feed-table td:nth-child(4) { display: none; }
+
+    /* Tighter date column */
+    .feed-date { width: 4.5rem; font-size: 0.65rem; }
+}
+
 /* ===== Simpele responsive Markdown-tabel ===== */
 
 /* Desktop / normaal gedrag */
