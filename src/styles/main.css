@@ -72,8 +72,8 @@ input, textarea, button, select {
 
 @media (prefers-color-scheme: dark) {
      :root {
-        --text-color: #cfc6ae;
-        --heading-color: #e2e2e2;
+        --text-color: #e4e2dd;
+        --heading-color: #f0efec;
         --background-color: #1a1c1c;
         --link-color: #cfc6ae;
         --link-hover-color: #ffffff;
