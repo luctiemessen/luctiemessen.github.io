@@ -36,7 +36,7 @@ input, textarea, button, select {
     --base-line-height: 1.5rem;
     font-size: var(--base-font-size);
     line-height: var(--base-line-height);
-    --text-color: #1a1c1c;
+    --text-color: #4c4634;
     --background-color: #f9f9f9;
     --accent-color: #f4d03f;
     --accent-support-color: rgba(244, 208, 63, 0.15);
@@ -129,19 +129,20 @@ body,
 
 h1,
 .h1 {
-    font-size: clamp(2.25rem, 1.5rem + 3.75vw, 4.25rem);
-    line-height: 1.05;
+    font-size: clamp(2.75rem, 2.25rem + 2.6vw, 3.5rem);
+    line-height: 1.1;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
     font-family: var(--heading-font-family);
     font-weight: 400;
     font-optical-sizing: auto;
     letter-spacing: -0.025em;
+    color: #1a1c1c;
 }
 
 h2,
 .h2 {
-    font-size: clamp(1.75rem, 1.25rem + 2.08vw, 2.625rem);
+    font-size: clamp(2rem, 1.75rem + 1.3vw, 2.5rem);
     line-height: 1.15;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -149,30 +150,33 @@ h2,
     font-weight: 400;
     font-optical-sizing: auto;
     letter-spacing: -0.02em;
+    color: #1a1c1c;
 }
 
 h3,
 .h3 {
-    font-size: clamp(1.25rem, 1rem + 1.04vw, 1.625rem);
-    line-height: 1.25;
+    font-size: 1.875rem;
+    line-height: 1.2;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
     font-family: var(--heading-font-family);
-    font-weight: 500;
+    font-weight: 400;
     font-optical-sizing: auto;
     letter-spacing: -0.015em;
+    color: #1a1c1c;
 }
 
 h4,
 .h4 {
-    font-size: clamp(1.1rem, 0.95rem + 0.52vw, 1.2rem);
-    line-height: 1.35;
+    font-size: 1.375rem;
+    line-height: 1.3;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
     font-family: var(--heading-font-family);
     font-weight: 500;
     font-optical-sizing: auto;
     letter-spacing: -0.01em;
+    color: #1a1c1c;
 }
 
 h5,
@@ -711,8 +715,9 @@ a:hover {
 
 .article-meta {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 0;
     gap: 1rem;
     margin-bottom: calc(var(--base-line-height) * 0.5);
 }
@@ -728,7 +733,7 @@ a:hover {
     font-size: 0.625rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     color: var(--information-color);
     white-space: nowrap;
     transition: opacity 0.15s ease;
@@ -737,17 +742,24 @@ a:hover {
 .article-tag-sep {
     font-family: var(--metadata-font-family);
     font-size: 0.625rem;
-    color: var(--text-color);
-    opacity: 0.25;
+    color: var(--grid-color);
+    opacity: 0.3;
+    margin: 0 0.3em;
+}
+
+.article-meta-sep {
+    font-family: var(--metadata-font-family);
+    font-size: 0.625rem;
+    color: var(--grid-color);
+    margin: 0 0.75em;
 }
 
 .article-date {
     font-family: var(--metadata-font-family);
     font-size: 0.625rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-color);
-    opacity: 0.4;
+    letter-spacing: 0.2em;
+    color: #4c4634;
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
 }

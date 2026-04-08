@@ -7,8 +7,11 @@ export function formatDate(date) {
 }
 
 export function formatFeedDate(date) {
-    const d = new Date(date);
-    return `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}`;
+    return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    }).toUpperCase();
 }
 
 export function slugify(text) {
