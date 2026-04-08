@@ -26,7 +26,7 @@ The Lamy Studio is a pen introduced in 2005 by Lamy and was placed in their prem
 </div>
 
 ## About the designer
-Hannes Wettstein, born 10 March 1958 in Ascona Switserland - died, 5th July 2008, was one of Switserlands most important industrial designers [^ref-c]. He founded <a href="http://www.hanneswettstein.ch/">his design agency</a> in 1991. This agency was led by Stephan Hürlemann under the same name untill 2016, upon wich it was changed to <a href="https://www.huerlemann.com/">Hürlemann AG</a>.
+Hannes Wettstein, born 10 March 1958 in Ascona Switserland - died, 5th July 2008, was one of Switserlands most important industrial designers [^ref-c]. He founded <a href="http://www.hanneswettstein.ch/">his design agency</a> in 1991. His work mainly revolved around futniture but watches, This agency was led by Stephan Hürlemann under the same name untill 2016, upon wich it was changed to <a href="https://www.huerlemann.com/">Hürlemann AG</a>.
 
 [^ref-c]: [Suche nach den Archetypen von morgen - NNZ](https://www.nzz.ch/suche_nach_den_archetypen_von_morgen-ld.497054 "Suche nach den Archetypen von morgen").
 
