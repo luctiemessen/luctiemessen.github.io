@@ -1,8 +1,6 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import FeedTable from "../../components/FeedTable.astro";
-
-// utils import
+import PostList from "../../components/PostList.astro";
 import { orderBlogPosts } from "../../js/utils";
 
 const allPosts = await Astro.glob("./*md");
@@ -16,6 +14,6 @@ const orderedPosts = orderBlogPosts(allPosts, {
 <MainLayout title="Blog — Luc Tiemessen">
     <div class="span2-4">
         <h1>Blog</h1>
-        <FeedTable posts={orderedPosts} />
+        <PostList posts={orderedPosts} />
     </div>
 </MainLayout>

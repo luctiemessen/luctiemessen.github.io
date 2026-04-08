@@ -649,6 +649,121 @@ a:hover {
     padding-left: calc(1rem - 2px);
 }
 
+/* ===== Editorial article list (home page) ===== */
+
+.article-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.article-card {
+    position: relative;
+    padding: calc(var(--base-line-height) * 1.5) 0;
+    border-top: 1px solid var(--grid-color);
+}
+
+.article-card:last-child {
+    border-bottom: 1px solid var(--grid-color);
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: calc(var(--base-line-height) * 0.5);
+}
+
+.article-tags {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.article-tag {
+    font-family: var(--metadata-font-family);
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--information-color);
+    white-space: nowrap;
+    transition: opacity 0.15s ease;
+}
+
+.article-tag-sep {
+    font-family: var(--metadata-font-family);
+    font-size: 0.625rem;
+    color: var(--text-color);
+    opacity: 0.25;
+}
+
+.article-date {
+    font-family: var(--metadata-font-family);
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-color);
+    opacity: 0.4;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.article-title {
+    font-family: var(--heading-font-family);
+    font-size: clamp(1.4rem, 1.1rem + 1.5vw, 2rem);
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+}
+
+.article-title a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.15s ease;
+}
+
+/* Extend click target to entire card */
+.article-title a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.article-card:hover .article-title a {
+    color: var(--link-hover-color);
+}
+
+.article-card:hover .article-tag {
+    opacity: 0.65;
+}
+
+.view-all {
+    display: inline-block;
+    margin-top: var(--base-line-height);
+    font-family: var(--metadata-font-family);
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    color: var(--text-color);
+    opacity: 0.5;
+    transition: opacity 0.15s ease;
+}
+
+.view-all::after {
+    content: " →";
+}
+
+.view-all:hover {
+    opacity: 1;
+    color: var(--link-hover-color);
+}
+
 .wrapper {
     display: grid;
     padding: 5rem 3rem 0;
