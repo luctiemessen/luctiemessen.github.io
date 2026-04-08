@@ -1,25 +1,25 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import FeedTable from "../components/FeedTable.astro";
-
-// utils import
+import PostList from "../components/PostList.astro";
 import { orderBlogPosts } from "../js/utils";
 
 const allPosts = await Astro.glob("./blog/*md");
-const orderedPosts = orderBlogPosts(allPosts, {
+const recentPosts = orderBlogPosts(allPosts, {
     filterOutDrafts: true,
     filterOutFuturePosts: true,
     sortByDate: true,
+    limit: 5,
 });
 ---
 
 <MainLayout title="Luc Tiemessen, Designer">
-	<div class="lead span2-4">
-		<p>Hi there, I'm a designer from Utrecht, <a href="http://www.ing.nl">working</a> in Amsterdam on web and native mobile apps that are easy to understand and a joy to use. I like to spend time thinking and <a href="/blog/">writing</a> about technology, design and <a href="/pens/">fountain pens</a>.</p>
-		<p><a href="/about/">Read more about me</a>.</p>
-	</div>
-	<div class="span2-4">
-		<h2 class="feed-section-label">Writing</h2>
-		<FeedTable posts={orderedPosts} />
-	</div>
+    <div class="lead span2-4">
+        <p>Hi there, I'm a designer from Utrecht, <a href="http://www.ing.nl">working</a> in Amsterdam on web and native mobile apps that are easy to understand and a joy to use. I like to spend time thinking and <a href="/blog/">writing</a> about technology, design and <a href="/pens/">fountain pens</a>.</p>
+        <p><a href="/about/">Read more about me</a>.</p>
+    </div>
+    <div class="span2-4">
+        <h2 class="feed-section-label">Recent writing</h2>
+        <PostList posts={recentPosts} />
+        <a href="/blog/" class="view-all">View all articles</a>
+    </div>
 </MainLayout>

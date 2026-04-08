@@ -1,0 +1,47 @@
+---
+import { formatFeedDate } from "../js/utils";
+
+interface Post {
+    frontmatter: {
+        title: string;
+        date: string;
+        tags?: string | string[];
+    };
+    url: string;
+}
+
+const { posts } = Astro.props as { posts: Post[] };
+
+function getTags(tags: string | string[] | undefined): string[] {
+    if (!tags) return [];
+    return Array.isArray(tags) ? tags : String(tags).split(" ").filter(Boolean);
+}
+---
+
+<ol class="article-list" aria-label="Recent articles">
+    {posts.map((post) => {
+        const tags = getTags(post.frontmatter.tags);
+        return (
+            <li class="article-card">
+                <article>
+                    <div class="article-meta">
+                        <span class="article-tags" aria-label="Tags">
+                            {tags.slice(0, 2).map((tag, i) => (
+                                <>
+                                    {i > 0 && <span class="article-tag-sep" aria-hidden="true">·</span>}
+                                    <span class="article-tag">{tag}</span>
+                                </>
+                            ))}
+                        </span>
+                        <time class="article-date" datetime={post.frontmatter.date}>
+                            {formatFeedDate(post.frontmatter.date)}
+                        </time>
+                    </div>
+                    <h2 class="article-title">
+                        <a href={post.url}>{post.frontmatter.title}</a>
+                    </h2>
+                </article>
+            </li>
+        );
+    })}
+</ol>
