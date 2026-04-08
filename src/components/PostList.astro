@@ -33,6 +33,7 @@ function getTags(tags: string | string[] | undefined): string[] {
                                 </>
                             ))}
                         </span>
+                        {tags.length > 0 && <span class="article-meta-sep" aria-hidden="true">/</span>}
                         <time class="article-date" datetime={post.frontmatter.date}>
                             {formatFeedDate(post.frontmatter.date)}
                         </time>

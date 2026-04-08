@@ -9,7 +9,7 @@ title: 'Styleguide'
 You are currently reading a lead paragraph which is used to introduce an article or page. It has a bit bigger font size and a visual accent at the bottom.</p>
 
 #### Typography
-I've set the body copy in <a href="https://fonts.google.com/specimen/Lora">Lora</a>. The headings are set in <a href="https://fonts.google.com/specimen/Playfair">Playfair</a> and the code snippets in <a href="https://fonts.google.com/specimen/Source+Code+Pro">Source Code Pro</a> all through <a href="https://www.fonts.google.com">Google Fonts</a>. 
+I've set the body copy in <a href="https://fonts.google.com/specimen/Inter">Inter</a>. The headings are set in <a href="https://fonts.google.com/specimen/Newsreader">Newsreader</a> and the code snippets in <a href="https://fonts.google.com/specimen/Source+Code+Pro">Source Code Pro</a> all through <a href="https://www.fonts.google.com">Google Fonts</a>.
 
 # Heading 1
 Aute occaecat mollit ex eiusmod aute voluptate in Lorem et consectetur. Anim fugiat enim eu ullamco consequat qui officia. Lorem occaecat id sit do adipisicing dolore occaecat magna. Aliquip esse consectetur voluptate exercitation aute id ad duis in cupidatat dolor ex nisi nisi. Fugiat elit in occaecat occaecat commodo cupidatat consectetur ullamco enim et non occaecat reprehenderit. Ullamco aute cupidatat ipsum eu mollit labore.
