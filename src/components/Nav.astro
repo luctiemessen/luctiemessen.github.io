@@ -36,6 +36,7 @@ import navData from "../data/navData";
         <span class="material-symbols-outlined" aria-hidden="true">north</span>
     </a>
     <nav class="mobile-menu glass-pill" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+        <a href="/" data-navLink tabindex="-1">Home</a>
         {navData.map((item) => (
             <a href={item.path} data-navLink tabindex="-1">{item.name}</a>
         ))}
