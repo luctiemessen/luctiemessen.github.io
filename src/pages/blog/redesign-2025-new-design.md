@@ -3,13 +3,13 @@ layout: "../../layouts/BlogPostLayout.astro"
 title: "Redesign 2025: A new look inspired by Google Stitch"
 date: 2026-04-14
 description: A walkthrough of the biggest design changes in the 2025 site redesign — new typography, a floating glass nav, an editorial article list, and a warmer color palette, all inspired by a prompt I fed into Google Stitch.
-tags: web design personal
+tags: AI design personal
 draft: true
 ---
 
 <div class="span2-4">
   <p class="lead">Every few years the site needs a proper rethink. Not just a lick of paint, but a genuine reconsideration of what the thing should feel like. This is a writeup of what changed, why, and where the ideas came from.</p>
-</div>
+
 
 ## Where the ideas came from
 
@@ -88,3 +88,4 @@ The fixes involved introducing a `--heading-color` CSS variable (separate from `
 Using Stitch as a starting point saved a lot of time that would otherwise have gone into making font pairing decisions and building out a colour system from scratch. But it's worth being clear about what Stitch did and didn't do. It produced a static HTML prototype with inline Tailwind classes — visually polished but not a real design system. Translating that into a maintainable set of CSS custom properties, component abstractions, and proper dark mode support was where the actual work was.
 
 The result feels like the site I wanted. More considered, more editorial, more itself.
+</div>
