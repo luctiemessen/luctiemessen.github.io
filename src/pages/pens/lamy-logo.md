@@ -8,8 +8,7 @@ draft: true
 
 ---
 
-<div class="span2-4">
-  <p class="lead">Information about the Lamy Logo
+<p class="lead">Information about the Lamy Logo
 </p>
 
 ## First introduction
@@ -19,7 +18,3 @@ The model seems to be introduced in 1984 (with a ballpoint (blue, red and green)
 In 1985 there was also a white version of both pens.
 
 Page 26 tells that 1986 was the introduction of the a Lamy Logo (FH) fountain pen. In a steel finish. Most probably similar to the one with the steel finish and the black top and end cap [reference needed].
-
-
-
-

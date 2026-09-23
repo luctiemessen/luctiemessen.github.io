@@ -1,0 +1,28 @@
+---
+/**
+ * Layout for simple pages (about, pens, 404): a title, then running text.
+ */
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  /** Page name, used in <title>. */
+  title: string;
+  /** Heading on the page, when it differs from the title. */
+  heading?: string;
+  description?: string;
+}
+
+const { title, heading = title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="page-grid" id="top">
+    <header class="post-header wide">
+      <h1 class="post-title">{heading}</h1>
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

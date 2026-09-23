@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Tokens
+   Kleuren, letters en maten. Wil je de look van de site veranderen,
+   dan begin je hier. Alle andere bestanden gebruiken alleen deze variabelen.
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* Letters: Newsreader en Cabin komen lokaal via Fontsource (BaseLayout.astro),
+     code en toetsen gebruiken de systeemletter. */
+  --font-serif: 'Newsreader Variable', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --font-sans: 'Cabin Variable', 'Gill Sans', 'Gill Sans MT', Calibri, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+
+  /* Kleuren, licht */
+  --paper: #f7f5f1;
+  --paper-raised: #fdfcfa;
+  --ink: #1d1c1a;
+  --ink-2: #4a4741;
+  --ink-3: #736e65;
+  --rule: #e3dfd6;
+  --rule-strong: #cbc5b9;
+  --accent: #2f6f4f;
+  --accent-tint: #e1ebe3;
+  --code-bg: #eeebe4;
+  --scrim: rgb(29 28 26 / 0.16);
+  --shadow: 0 0 48px rgb(29 28 26 / 0.08);
+
+  /* Maatvoering */
+  --measure: 40rem; /* breedte tekstkolom: ± 70 tekens per regel */
+  --note-w: 15.5rem; /* breedte van de notenkolom rechts */
+  --note-gap: 3rem; /* ruimte tussen tekst en noten */
+  --gutter: 1.25rem; /* minimale zijmarge op mobiel */
+  --header-h: 3.75rem;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Donkere modus volgt het systeem, tenzij <html data-theme="light|dark"> is gezet
+   (dat doet alleen de themakeuze op /styleguide/). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #1c1d1b;
+    --paper-raised: #232421;
+    --ink: #e9e6e0;
+    --ink-2: #bfbab1;
+    --ink-3: #969186;
+    --rule: #33342f;
+    --rule-strong: #4a4b45;
+    --accent: #8bc6a1;
+    --accent-tint: #26352b;
+    --code-bg: #272824;
+    --scrim: rgb(0 0 0 / 0.4);
+    --shadow: 0 0 48px rgb(0 0 0 / 0.35);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #1c1d1b;
+  --paper-raised: #232421;
+  --ink: #e9e6e0;
+  --ink-2: #bfbab1;
+  --ink-3: #969186;
+  --rule: #33342f;
+  --rule-strong: #4a4b45;
+  --accent: #8bc6a1;
+  --accent-tint: #26352b;
+  --code-bg: #272824;
+  --scrim: rgb(0 0 0 / 0.4);
+  --shadow: 0 0 48px rgb(0 0 0 / 0.35);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}

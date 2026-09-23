@@ -8,11 +8,7 @@ draft: true
 
 ---
 
-<div class="span2-4">
- 
-<div class="lead">
-At work we've been in discussion with some of our a11y specialist about not using carousels. Although, carousels are not really my favourite solution. I'd like to see if I can make an accessible one.
-</div>
+<p class="lead">At work we've been in discussion with some of our a11y specialist about not using carousels. Although, carousels are not really my favourite solution. I'd like to see if I can make an accessible one.</p>
 
 ```css
 .carousel {
@@ -62,7 +58,7 @@ el.scrollIntoView() {
     flex-shrink: 0;
     height: 250px;
     width: 250px;
-    background-color: var(--information-color);
+    background-color: var(--accent);
     scroll-snap-align: start;
 }
 
@@ -97,11 +93,8 @@ stuff
 https://www.w3.org/WAI/tutorials/carousels/structure/
 
 
-
 https://www.reddit.com/r/webdev/comments/v1rjlk/how_do_nike_and_apple_make_such_smooth_and_touch/
 
 https://jsfiddle.net/54fy6Lo2/
 
 https://www.w3.org/WAI/tutorials/carousels/full-code/
-
-

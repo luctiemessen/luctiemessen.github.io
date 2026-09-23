@@ -1,0 +1,865 @@
+/* ==========================================================================
+   Artikel
+   Kop van een stuk, lopende tekst (.prose), code, tabellen, noten in de
+   rechtermarge en de navigatie onder een stuk.
+
+   Alles wat met .prose begint staat in de laag "prose". Onderdelen buiten
+   die laag (zoals .post-tags of .entry) winnen daardoor altijd, ook als je
+   ze midden in een artikel zet.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Kop van het artikel
+   -------------------------------------------------------------------------- */
+
+.post-header {
+  grid-row: 1;
+  margin-bottom: clamp(2.25rem, 5vw, 3.5rem);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.post-tags li {
+  margin: 0;
+  padding: 0.3rem 0.6rem 0.32rem;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  font: 500 0.8125rem/1 var(--font-sans);
+  color: var(--ink-2);
+}
+
+.post-title {
+  max-width: 20em;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2.375rem, 1.4rem + 3.6vw, 4rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
+  margin: 1.5rem 0 0;
+  font: 400 0.9375rem/1.4 var(--font-sans);
+  color: var(--ink-3);
+}
+
+.post-meta__author {
+  color: var(--ink-2);
+}
+
+.post-meta__author a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.post-meta__author a:hover {
+  color: var(--accent);
+}
+
+/* Meldingen boven het artikel (taal, concept). */
+.post-header aside {
+  margin-top: 1.75rem;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   Lopende tekst
+   ========================================================================== */
+
+@layer prose {
+  .prose {
+    grid-row: 2;
+    font-size: clamp(1.125rem, 1rem + 0.4vw, 1.25rem);
+    line-height: 1.62;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 7 3 3;
+    overflow-wrap: break-word;
+  }
+
+  .prose > :first-child {
+    margin-top: 0;
+  }
+
+  .prose p {
+    margin: 0 0 1.05em;
+    text-wrap: pretty;
+  }
+
+  /* ---------- Intro-alinea: groter, met een streepje als accent ---------- */
+
+  .prose .lead {
+    margin-bottom: 1.8em;
+    font-size: 1.28em;
+    line-height: 1.45;
+    color: var(--ink-2);
+  }
+
+  .prose .lead::after {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 2px;
+    margin-top: 0.9em;
+    background: var(--accent);
+  }
+
+  /* ---------- Koppen ---------- */
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    font-family: var(--font-serif);
+    line-height: 1.2;
+    text-wrap: balance;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+  }
+
+  .prose h1 {
+    margin: 1.9em 0 0.5em;
+    font-size: 2.1em;
+    font-weight: 450;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+
+  .prose h2 {
+    margin: 2.1em 0 0.55em;
+    font-size: 1.6em;
+    font-weight: 560;
+    letter-spacing: -0.01em;
+  }
+
+  .prose h3 {
+    margin: 1.8em 0 0.45em;
+    font-size: 1.22em;
+    font-weight: 600;
+  }
+
+  .prose h4 {
+    margin: 1.6em 0 0.4em;
+    font-size: 1em;
+    font-weight: 650;
+  }
+
+  .prose h2 + h3 {
+    margin-top: 0.9em;
+  }
+
+  /* ---------- Tekstopmaak ---------- */
+
+  .prose strong,
+  .prose b {
+    font-weight: 620;
+  }
+
+  /* <cite>: titel van een werk (boek, artikel, film) */
+  .prose cite {
+    font-style: italic;
+  }
+
+  .prose abbr[title] {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--ink-3);
+    text-underline-offset: 0.2em;
+    cursor: help;
+  }
+
+  .prose del {
+    color: var(--ink-3);
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--ink-3);
+  }
+
+  .prose ins {
+    padding: 0 0.15em;
+    border-radius: 3px;
+    background: var(--accent-tint);
+    text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .prose sup,
+  .prose sub {
+    font-size: 0.72em;
+    line-height: 0;
+  }
+
+  .prose sup {
+    vertical-align: 0.5em;
+  }
+
+  .prose sub {
+    vertical-align: -0.25em;
+  }
+
+  .prose kbd {
+    display: inline-block;
+    padding: 0.22em 0.45em 0.2em;
+    border: 1px solid var(--rule-strong);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    background: var(--paper-raised);
+    font: 500 0.72em/1 var(--font-sans);
+    color: var(--ink-2);
+    white-space: nowrap;
+    vertical-align: 0.12em;
+  }
+
+  .prose code {
+    font-family: var(--font-mono);
+    font-size: 0.82em;
+    font-variant-numeric: normal;
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+    background: var(--code-bg);
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+
+  /* Werknotitie in een concept (<ref>…</ref>): valt op, zodat je hem niet vergeet. */
+  .prose ref {
+    font-family: var(--font-sans);
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #b3261e;
+  }
+
+  .prose ref::before {
+    content: '[ref] ';
+  }
+
+  /* ---------- Citaat ---------- */
+
+  .prose blockquote {
+    margin: 1.6em 0;
+    padding: 0.1em 0 0.1em 1.15em;
+    border-left: 2px solid var(--rule-strong);
+    color: var(--ink-2);
+  }
+
+  .prose blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* <cite> in een citaat: de bron, op een eigen regel */
+  .prose blockquote cite {
+    display: block;
+    margin-top: 0.65em;
+    font: 400 0.8em/1.45 var(--font-sans);
+    color: var(--ink-3);
+  }
+
+  .prose blockquote cite::before {
+    content: '— ';
+  }
+
+  .prose blockquote cite a {
+    color: inherit;
+  }
+
+  /* ---------- Kaders: <aside> en <aside class="information"> ---------- */
+
+  :is(.prose, .post-header) aside {
+    position: relative;
+    margin: 1.6em 0;
+    padding: 0.9em 1.15em 1em;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--ink) 4.5%, transparent);
+    font-size: 0.9em;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  :is(.prose, .post-header) aside.information {
+    padding-left: 3.1em;
+    background: var(--accent-tint);
+    color: var(--ink);
+  }
+
+  /* Een klein "i" in een cirkeltje, op de hoogte van de eerste regel. */
+  :is(.prose, .post-header) aside.information::before {
+    content: 'i';
+    position: absolute;
+    left: 1.1em;
+    top: 1.4em;
+    display: grid;
+    place-items: center;
+    width: 1.3em;
+    height: 1.3em;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    font: 700 0.8em/1 var(--font-sans);
+    color: var(--accent);
+  }
+
+  :is(.prose, .post-header) aside > :first-child {
+    margin-top: 0;
+  }
+
+  :is(.prose, .post-header) aside > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---------- Lijsten ---------- */
+
+  .prose ul,
+  .prose ol {
+    margin: 0 0 1.1em;
+    padding-left: 1.4em;
+  }
+
+  .prose li {
+    margin: 0.35em 0;
+    padding-left: 0.2em;
+  }
+
+  .prose li::marker {
+    color: var(--ink-3);
+  }
+
+  .prose ol > li::marker {
+    font-family: var(--font-sans);
+    font-size: 0.85em;
+    font-weight: 500;
+  }
+
+  .prose li > ul,
+  .prose li > ol {
+    margin: 0.35em 0 0.2em;
+  }
+
+  .prose ul ul {
+    list-style-type: '–  ';
+  }
+
+  .prose ol ol {
+    list-style-type: lower-alpha;
+  }
+
+  /* ---------- Scheiding ---------- */
+
+  .prose hr {
+    margin: 2.6em 0;
+    border: 0;
+    text-align: center;
+    color: var(--ink-3);
+  }
+
+  .prose hr::before {
+    content: '⁂';
+    font-size: 1.1em;
+    letter-spacing: 0.2em;
+  }
+
+  /* ---------- Codeblokken ---------- */
+
+  .prose pre {
+    margin: 1.5em 0;
+    padding: 1rem 1.15rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    background: var(--code-bg);
+    color: var(--ink);
+    font-size: 0.8em;
+    line-height: 1.55;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+
+  .prose pre code {
+    padding: 0;
+    background: none;
+    font-size: inherit;
+  }
+
+  /* ---------- Breder dan de tekst: .bleed ---------- */
+
+  .prose .bleed {
+    margin: 2em 0;
+  }
+
+  .prose .bleed > :first-child {
+    margin-top: 0;
+  }
+
+  .prose .bleed > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---------- Beeld ---------- */
+
+  .prose figure {
+    margin: 2em 0;
+  }
+
+  .prose figure > a {
+    display: block;
+  }
+
+  /* Markdown zet een afbeelding in een <p>; in een figure hoort daar geen marge bij. */
+  .prose figure > p {
+    margin: 0;
+  }
+
+  .prose img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+  }
+
+  .prose figcaption {
+    margin-top: 0.65rem;
+    font: 400 0.875rem/1.45 var(--font-sans);
+    color: var(--ink-3);
+    text-wrap: pretty;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+  }
+
+  /* ---------- Tabellen ---------- */
+
+  .prose table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 1.6em 0;
+    border-collapse: collapse;
+    font: 400 0.875rem/1.45 var(--font-sans);
+    hyphens: manual;
+    -webkit-hyphens: manual;
+  }
+
+  /* Tabel in een scrollbaar vak (zie de styleguide voor de opmaak). */
+  .prose .table-wrap {
+    margin: 2em 0;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .prose .table-wrap:focus-visible {
+    outline-offset: 6px;
+  }
+
+  .prose .table-wrap table {
+    display: table;
+    width: 100%;
+    margin: 0;
+  }
+
+  .prose caption {
+    caption-side: top;
+    padding-bottom: 0.85rem;
+    font: 400 1.0625rem/1.4 var(--font-serif);
+    color: var(--ink-2);
+    text-align: left;
+  }
+
+  .prose th,
+  .prose td {
+    padding: 0.6rem 1rem 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .prose thead th {
+    padding-top: 0;
+    border-bottom-color: var(--rule-strong);
+    font-weight: 500;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  .prose tbody th {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .prose tbody tr {
+    transition: background-color 0.15s ease;
+  }
+
+  .prose tbody tr:hover {
+    background: color-mix(in srgb, var(--ink) 3.5%, transparent);
+  }
+
+  /* Op een telefoon: elke rij als een blokje, met de kolomnaam ervoor
+     (werkt voor cellen met een data-label). */
+  @media (max-width: 40rem) {
+    .prose table:has(td[data-label]) thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+
+    .prose table:has(td[data-label]),
+    .prose table:has(td[data-label]) caption,
+    .prose table:has(td[data-label]) tbody,
+    .prose table:has(td[data-label]) tr,
+    .prose table:has(td[data-label]) th,
+    .prose table:has(td[data-label]) td {
+      display: block;
+    }
+
+    .prose table:has(td[data-label]) tr {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .prose table:has(td[data-label]) tbody th {
+      padding: 0 0 0.35rem;
+      border: 0;
+      font: 400 1.125rem/1.3 var(--font-serif);
+    }
+
+    .prose table:has(td[data-label]) td {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 0.75rem;
+      padding: 0.2rem 0;
+      border: 0;
+    }
+
+    .prose table:has(td[data-label]) td::before {
+      content: attr(data-label);
+      color: var(--ink-3);
+    }
+
+    .prose table:has(td[data-label]) tbody tr:hover {
+      background: none;
+    }
+  }
+
+  /* ---------- Voetnootverwijzingen in de tekst ---------- */
+
+  .prose sup:has(> a[data-footnote-ref]) {
+    font-size: 0.68em;
+    vertical-align: 0.55em;
+    margin-left: 0.04em;
+  }
+
+  .prose a[data-footnote-ref] {
+    display: inline-block;
+    padding: 0.12em 0.22em;
+    border-radius: 3px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .prose a[data-footnote-ref].is-highlighted {
+    background: var(--accent-tint);
+  }
+
+  /* ---------- Voetnoten onderaan (smalle schermen, of zonder JavaScript) ---------- */
+
+  .prose .footnotes {
+    margin-top: 3.5em;
+    padding-top: 1.5em;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85em;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  .prose .footnotes ol {
+    padding-left: 1.3em;
+  }
+
+  .prose .footnotes li {
+    margin: 0.6em 0;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    scroll-margin-top: calc(var(--header-h) + var(--safe-top) + 2rem);
+    transition: background-color 0.3s ease;
+  }
+
+  .prose .footnotes li::marker {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .prose .footnotes li:target {
+    background: var(--accent-tint);
+  }
+
+  .prose .footnotes p {
+    margin: 0 0 0.5em;
+  }
+
+  .prose .footnotes a[data-footnote-backref] {
+    margin-left: 0.2em;
+    font-family: var(--font-sans);
+    text-decoration: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Syntaxkleuren (Shiki met een licht en een donker thema, zie astro.config.mjs)
+   -------------------------------------------------------------------------- */
+
+.astro-code,
+.astro-code span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .astro-code,
+  :root:not([data-theme='light']) .astro-code span {
+    color: var(--shiki-dark);
+    font-style: var(--shiki-dark-font-style);
+    font-weight: var(--shiki-dark-font-weight);
+    text-decoration: var(--shiki-dark-text-decoration);
+  }
+}
+
+:root[data-theme='dark'] .astro-code,
+:root[data-theme='dark'] .astro-code span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
+}
+
+/* --------------------------------------------------------------------------
+   De rechtermarge: .bleed en bijschriften (≥ 70rem)
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 70rem) {
+  /* .bleed loopt door tot en met de notenkolom. */
+  .prose .bleed {
+    margin-right: calc(-1 * (var(--note-gap) + var(--note-w)));
+  }
+
+  /* Een afbeelding in de tekstkolom krijgt haar bijschrift in de marge,
+     uitgelijnd met de onderkant van de afbeelding. */
+  .prose figure {
+    position: relative;
+  }
+
+  .prose figure > figcaption {
+    position: absolute;
+    bottom: 0;
+    left: calc(100% + var(--note-gap));
+    width: var(--note-w);
+    margin: 0;
+  }
+
+  /* In een .bleed is er geen marge meer over: bijschrift eronder. */
+  .prose .bleed figure > figcaption,
+  .prose figure.bleed > figcaption {
+    position: static;
+    width: auto;
+    max-width: var(--measure);
+    margin-top: 0.65rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Noten in de rechtermarge (sidenotes.ts)
+   -------------------------------------------------------------------------- */
+
+.sidenotes {
+  display: none;
+}
+
+@media (min-width: 70rem) {
+  .sidenotes {
+    display: block;
+    grid-column: notes;
+    grid-row: 2;
+    position: relative;
+  }
+
+  .has-sidenotes .prose .footnotes {
+    display: none;
+  }
+}
+
+.sidenote {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0.35rem 0.6rem 0.4rem 0.75rem;
+  margin-left: -0.75rem;
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  font-variant-numeric: oldstyle-nums;
+  color: var(--ink-3);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.sidenote p {
+  margin: 0 0 0.5em;
+}
+
+.sidenote p:last-child {
+  margin-bottom: 0;
+}
+
+.sidenote a {
+  color: inherit;
+}
+
+.sidenote code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.sidenote__num {
+  margin-right: 0.4em;
+  font-family: var(--font-sans);
+  font-size: 0.9em;
+  font-weight: 700;
+  font-variant-numeric: lining-nums;
+  color: var(--accent);
+}
+
+.sidenote.is-highlighted {
+  color: var(--ink);
+  background: var(--accent-tint);
+  border-left-color: var(--accent);
+}
+
+.sidenote.is-highlighted a {
+  color: var(--accent);
+}
+
+/* Onzichtbaar meetpuntje op de basislijn, gebruikt door sidenotes.ts. */
+.baseline-probe {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: baseline;
+}
+
+/* Zwevend notitievenster voor middelgrote schermen met een muis. */
+.fn-popover {
+  position: fixed;
+  z-index: 60;
+  width: min(22rem, calc(100vw - 2rem));
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--paper-raised);
+  box-shadow: var(--shadow);
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    transform 0.2s var(--ease-out);
+}
+
+.fn-popover[data-open] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.fn-popover p {
+  margin: 0 0 0.5em;
+}
+
+.fn-popover p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Onder een stuk: vorige en volgende
+   -------------------------------------------------------------------------- */
+
+.post-footer {
+  grid-row: 3;
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.post-nav a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.post-nav__label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font: 400 0.875rem/1.3 var(--font-sans);
+  color: var(--ink-3);
+}
+
+.post-nav__title {
+  font-size: 1.1875rem;
+  line-height: 1.3;
+  transition: color 0.15s ease;
+}
+
+.post-nav a:hover .post-nav__title {
+  color: var(--accent);
+}
+
+.post-nav__next {
+  grid-column: 2;
+  text-align: right;
+}
+
+@media (max-width: 36rem) {
+  .post-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .post-nav__next {
+    grid-column: 1;
+    text-align: left;
+  }
+}

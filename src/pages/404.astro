@@ -1,18 +1,9 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-
+import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<MainLayout title="My Blog">
-    <div class="span2-4">
-        
-        <h2>Oops! This is embarrassing!</h2>
-        
-        <p>Looks like you’ve ventured into the unknown... 🚀  </p>
-        <p>This page must have gone on vacation, or maybe it’s hiding under the couch cushions. Either way, it's not here!</p>
-
-        <p>But don’t worry, you’re still in the right place to find your way back.<br />
-        <a href="/">Go home</a> and let’s try this again! 😅</p>
-
-    </div>
-</MainLayout>
+<PageLayout title="Page not found" heading="Oops! This is embarrassing!">
+  <p>Looks like you’ve ventured into the unknown... 🚀</p>
+  <p>This page must have gone on vacation, or maybe it’s hiding under the couch cushions. Either way, it's not here!</p>
+  <p>But don’t worry, you’re still in the right place to find your way back.<br /><a href="/">Go home</a> and let’s try this again! 😅</p>
+</PageLayout>

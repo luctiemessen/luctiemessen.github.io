@@ -1,36 +1,114 @@
 ---
-import MainLayout from './MainLayout.astro';
-// import { Image } from 'astro:assets';
-// import Image from "astro:assets";
+/**
+ * Layout for every markdown article (blog posts and pens).
+ *
+ * Keeps the existing frontmatter: title, description, date, tags, draft, dutch.
+ * Adds the left rail (headings + reading progress), footnotes in the margin,
+ * and links to the previous and next post.
+ */
+import type { MarkdownHeading } from 'astro';
+import BaseLayout from './BaseLayout.astro';
+import TocRail from '../components/TocRail.astro';
+import {
+  formatDate,
+  getPosts,
+  parseDate,
+  postUrl,
+  readingTime,
+  tagList,
+  type PostFrontmatter,
+} from '../lib/posts';
 
-// import { initTablePreviews } from '../utils.js';
+interface Props {
+  frontmatter: PostFrontmatter;
+  headings?: MarkdownHeading[];
+  rawContent?: () => string;
+  url?: string;
+}
 
+const { frontmatter, headings = [], rawContent, url } = Astro.props;
+const { title, description, draft, dutch } = frontmatter;
+const date = parseDate(frontmatter.date);
+const tags = tagList(frontmatter.tags);
+const minutes = readingTime(rawContent?.() ?? '');
 
-// utils import
-import {formatDate } from "../js/utils";
+// Headings for the rail: h2 and h3, minus the hidden "Footnotes" heading.
+const toc = headings
+  .filter((h) => h.depth >= 2 && h.depth <= 3 && h.slug !== 'footnote-label')
+  .map((h) => ({ id: h.slug, text: h.text, depth: h.depth }));
 
-const {frontmatter} = Astro.props;
-const { title, description, date, draft, dutch} = frontmatter;
+// Previous (older) and next (newer) post. Only for published blog posts.
+const posts = await getPosts();
+const index = posts.findIndex((post) => post.url === url);
+const newer = index > 0 ? posts[index - 1] : undefined;
+const older = index >= 0 ? posts[index + 1] : undefined;
 ---
 
+<BaseLayout title={title} description={description} toc={toc} progress type="article">
+  <article class="page-grid" id="top" data-post lang={dutch ? 'nl' : undefined}>
+    <header class="post-header wide">
+      {
+        tags.length > 0 && (
+          <ul class="post-tags" aria-label="Tags">
+            {tags.map((tag) => (
+              <li>{tag}</li>
+            ))}
+          </ul>
+        )
+      }
+      <h1 class="post-title">{title}</h1>
+      <p class="post-meta">
+        {date && <time datetime={date.toISOString()}>{formatDate(date)}</time>}
+        <span>{minutes} min read</span>
+      </p>
+      {
+        dutch && (
+          <aside class="information" lang="en">
+            <p>This article is written in Dutch. Use your browser's translation function if you need it.</p>
+          </aside>
+        )
+      }
+      {
+        draft && (
+          <aside lang="en">
+            <p>This article is a draft.</p>
+          </aside>
+        )
+      }
+    </header>
 
-<MainLayout {title} {description}>
-<header class="article-header span2-4">
-    {dutch && <aside class="information">This article is written in dutch. Use your browser's translator function if you want to translate this.</aside>}
-    <h1>{title}</h1>
-    <time class="publication-date smaller">{formatDate(date)}</time>
-    {draft && <aside>Item is in draft mode</aside>}
-</header>
+    <div class="prose" data-post-body>
+      <slot />
+    </div>
 
-<slot />
-<!-- client-side, na <slot/> zodat de tabel al in de DOM staat -->
-<script type="module" is:inline>
-  import { initTablePreviews } from '/src/js/utils';
-    initTablePreviews({
-      // optioneel: kun je hier overriden
-      // basePath: '/assets/lamy-studio/',
-      // ext: '.webp',
-      // overrides: { "Lx All Black": "2019-lx-all-black.webp" }
-    });
+    <div class="sidenotes" data-sidenotes></div>
+
+    {
+      (older || newer) && (
+        <footer class="post-footer" lang="en">
+          <nav class="post-nav" aria-label="More articles">
+            {older && (
+              <a class="post-nav__prev" href={postUrl(older)}>
+                <span class="post-nav__label">Previous</span>
+                <span class="post-nav__title">{older.frontmatter.title}</span>
+              </a>
+            )}
+            {newer && (
+              <a class="post-nav__next" href={postUrl(newer)}>
+                <span class="post-nav__label">Next</span>
+                <span class="post-nav__title">{newer.frontmatter.title}</span>
+              </a>
+            )}
+          </nav>
+        </footer>
+      )
+    }
+  </article>
+
+  <TocRail items={toc} title={title} />
+
+  <script>
+    import { initSidenotes } from '../scripts/sidenotes';
+    document.querySelectorAll<HTMLElement>('[data-post]').forEach(initSidenotes);
   </script>
-</MainLayout>
+</BaseLayout>

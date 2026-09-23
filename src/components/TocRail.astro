@@ -1,0 +1,43 @@
+---
+/**
+ * The left rail: a thin line that fills as you read, with a tick per heading.
+ * The titles appear when you move the mouse to the left edge of the screen.
+ */
+interface Props {
+  /** Headings (h2/h3), in document order. */
+  items: { id: string; text: string; depth: number }[];
+  /** First item: the title of the page. */
+  title: string;
+  /** CSS selector of the element that wraps the page content, and the target of the title link. */
+  target?: string;
+  label?: string;
+}
+
+const { items, title, target = '#top', label = 'Contents' } = Astro.props;
+---
+
+<nav class="toc-rail" aria-label={label} data-toc-rail data-target={target}>
+  <div class="toc-rail__backdrop" aria-hidden="true"></div>
+  <div class="toc-rail__track" aria-hidden="true"><div class="toc-rail__fill"></div></div>
+  <ol class="toc-rail__list">
+    <li class="toc-rail__item" data-depth="1" style="--i: 0">
+      <span class="toc-rail__tick" aria-hidden="true"></span>
+      <a class="toc-rail__link" href={target}>{title}</a>
+    </li>
+    {
+      items.map((item, i) => (
+        <li class="toc-rail__item" data-depth={item.depth} style={`--i: ${i + 1}`}>
+          <span class="toc-rail__tick" aria-hidden="true" />
+          <a class="toc-rail__link" href={`#${item.id}`}>
+            {item.text}
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<script>
+  import { initTocRail } from '../scripts/toc-rail';
+  document.querySelectorAll<HTMLElement>('[data-toc-rail]').forEach(initTocRail);
+</script>

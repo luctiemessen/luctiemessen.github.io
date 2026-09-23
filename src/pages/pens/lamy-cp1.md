@@ -8,8 +8,7 @@ draft: true
 
 ---
 
-<div class="span2-4">
-  <p class="lead">Information about the Lamy CP1
+<p class="lead">Information about the Lamy CP1
 </p>
 
 ## First introduction
