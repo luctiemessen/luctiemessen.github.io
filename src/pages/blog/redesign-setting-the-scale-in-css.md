@@ -8,8 +8,7 @@ draft: false
 
 ---
 
-<div class="span2-4">
-  <p class="lead">Now we have the headings and body copy in place, it is time to start going to the browser and set the typographic scale.
+<p class="lead">Now we have the headings and body copy in place, it is time to start going to the browser and set the typographic scale.
 </p>
 
 ## Redesign series
@@ -21,7 +20,7 @@ This is part of a 3 chapter series on redesign:
 ## Responsive scale
 Ever since the influential [Responsive design](https://alistapart.com/article/responsive-web-design/ "A List Apart: Responsive Web Design" ) article was published I used media queries to define the styles of all typography (and other components) to fit them properly on different view ports. Sometimes resulting in splitting hairs between 2 breakpoints that are only a few pixels apart since some things just looked off in a specific view port width or height. Over the years I tried to simplify my media queries as much as I can. Thankfully, we now have a lot more fluid type (and space) setting properties at our disposal in CSS. 
 
-My aim was to have a fluid scale that follows a vertical grid that has a `1.5rem` of line height. I just wanted my type to follow a grid (which I'm able to <a onclick="toggleGrid()">show and hide</a>). To me it is just professional honor to have everything align properly to a vertical grid. Obviously images will mess up the grid lines but for all text things it should follow a vertical rhythm. 
+My aim was to have a fluid scale that follows a vertical grid that has a `1.5rem` of line height. I just wanted my type to follow a grid (which I'm able to show and hide). To me it is just professional honor to have everything align properly to a vertical grid. Obviously images will mess up the grid lines but for all text things it should follow a vertical rhythm. 
 
 There are a lot of tools like [Utopia](https://utopia.fyi/ "Utopia by clearleft" ), [Gridlover](https://gridlover.net/ "Gridlover") and [Modular Scale](https://www.modularscale.com/ "Modular scale by Tim Brown") for defining scales based on a particular base font size. I'm not always a fan of using tools like these since they tend to prevent you from really thinking things through yourself and just pick something from the menu and apply it to your situation. However, what these tools do is give you a lot of additional things you might not have thought about (Gridlover for example provides a lot of styling for HTML elements you might forget about (like `sub`, `sup` `small` etc.)) For me it is just a nice baseline to build upon. 
 
@@ -36,15 +35,11 @@ Well for 1 view port now I got these proportions roughly figured out. But now ho
 ### Add vw to the mix
 Media queries revolve around browser dimensions (among other things) and for me the most relevant one is the view port width. The wider the screen is, the bigger the type can be set. If only, we had a CSS property to measure the view port width. Let me introduce `vw`. It represents 1% of the view port width. So an iPhone 14 Pro in portrait has `393px` as the view port width, in landscape it is `852px`. So `1vw` of portrait on an iPhone 14 is `393 * 1% = 3,93px` (roughly `4px`). Since I was looking for a estimated font size of `18px` I could define the font-size at `calc(16px+0.5vw)` which would result in 18-ish pixels on a mobile device. Once I started with that, it felt a bit too much so I tinkered with it a bit and decided on `0.4vw` as the fluid length to add to the `16px`. It just felt better. 
 
-<figure class="">
-
-
-  <div style="background-color:var(--information-color);width:2vw;height:3rem;margin-bottom:var(--base-line-height)"><span style="background-color:var(--information-color);color:white;line-height:3rem;text-align:center;">2vw</span></div>
-  <div style="background-color:var(--information-color);width:10vw;height:3rem;margin-bottom:var(--base-line-height)"><span style="background-color:var(--information-color);color:white;line-height:3rem;text-align:center;">10vw<span></div>
-  <div style="background-color:var(--information-color);width:40vw;height:3rem;margin-bottom:var(--base-line-height)"><span style="background-color:var(--information-color);color:white;line-height:3rem;text-align:center;">40vw<span></div>
-<figcaption>
-	width of 2, 4 and 40vw
-</figcaption>
+<figure>
+  <div style="width:2vw;height:3rem;margin-bottom:1.5rem;background:var(--accent)"><span style="line-height:3rem;white-space:nowrap;background:var(--accent);color:var(--paper)">2vw</span></div>
+  <div style="width:10vw;height:3rem;margin-bottom:1.5rem;background:var(--accent)"><span style="line-height:3rem;white-space:nowrap;background:var(--accent);color:var(--paper)">10vw</span></div>
+  <div style="width:40vw;height:3rem;margin-bottom:1.5rem;background:var(--accent)"><span style="line-height:3rem;white-space:nowrap;background:var(--accent);color:var(--paper)">40vw</span></div>
+  <figcaption>width of 2, 4 and 40vw</figcaption>
 </figure>
 
 
@@ -67,10 +62,8 @@ There is however one small issue with this. What happens when we view this on a 
 #### 8K Resolution
 Let's calculate; an 8K screen renders 7680 x 4320 pixels. `0.4 * 76.8 is 30.72`. Add that to `16px` and we have a `46.72px` font-size for the base copy. And my `h1` is set at 4.25 times this size. That is a whopping `198.56px`. 
 
-<div class="">
-  <p style="font-size:198.56px;line-height:200px">198</p>
-  <p style="font-size:46.72px;line-height:50px">46</p>
-</div>
+<p style="font-size:198.56px;line-height:200px">198</p>
+<p style="font-size:46.72px;line-height:50px">46</p>
 
 And yes, I know, the pixels are smaller on those displays and probably nobody will not use the browser in full screen mode on these displays so it will not render as huge as shown here but still, it didn't feel good.
 

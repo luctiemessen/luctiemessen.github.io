@@ -1,0 +1,69 @@
+---
+/**
+ * Glass header + hamburger menu + slide-in navigation.
+ * Pass `toc` to also list the headings of the current page in the menu
+ * (useful on phones, where the left rail is hidden).
+ */
+import { NAV as links, SITE } from '../site.config';
+
+interface Props {
+  toc?: { id: string; text: string; depth: number }[];
+  /** Show reading progress as a bar under the header (narrow screens only). */
+  progress?: boolean;
+}
+
+const { toc = [], progress = false } = Astro.props;
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<header class="site-header" data-site-header>
+  <div class="site-header__inner">
+    <button
+      class="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="nav-drawer"
+      aria-label="Open menu"
+      data-menu-button
+    >
+      <span class="menu-button__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <a class="site-title" href="/">{SITE.title}</a>
+  </div>
+  {progress && <div class="site-header__progress" aria-hidden="true" />}
+</header>
+
+<div class="nav-scrim" aria-hidden="true" data-nav-scrim></div>
+
+<nav class="nav-drawer" id="nav-drawer" aria-label="Main menu" inert data-nav-drawer>
+  <ul class="nav-drawer__list">
+    {
+      links.map((item, i) => (
+        <li data-stagger style={`--i: ${i}`}>
+          <a class="nav-drawer__link" href={item.path} aria-current={isCurrent(item.path) ? 'page' : undefined}>
+            {item.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  {
+    toc.length > 0 && (
+      <section class="nav-drawer__section" data-stagger style={`--i: ${links.length}`}>
+        <h2 class="nav-drawer__heading">On this page</h2>
+        <ol class="nav-drawer__toc">
+          {toc.map((item) => (
+            <li data-depth={item.depth}>
+              <a href={`#${item.id}`}>{item.text}</a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+</nav>
+
+<script>
+  import '../scripts/site-header';
+</script>

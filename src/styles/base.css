@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Basis
+   Reset, standaardelementen, links, hulpklassen en minder beweging.
+   ========================================================================== */
+
+/* Volgorde van de lagen: basis < lopende tekst < al het andere (niet in een laag).
+   Zo winnen onderdelen zoals .post-tags of .entry altijd van de .prose-stijlen,
+   ook als ze in een artikel staan. */
+@layer base, prose;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--header-h) + var(--safe-top) + 1.5rem);
+    background: var(--paper);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    padding-bottom: var(--safe-bottom);
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.5;
+    font-optical-sizing: auto;
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  img,
+  svg,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Een link is groen met een dunne, lichte onderstreping. Wijs hem aan en de
+     streep wordt vol. Onderdelen zoals het menu en de titels in het overzicht
+     zetten hun eigen kleur. */
+  a {
+    color: var(--accent);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+    text-underline-offset: 0.18em;
+    transition: text-decoration-color 0.15s ease;
+  }
+
+  a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  ::selection {
+    background: var(--accent-tint);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Hulpklassen
+   -------------------------------------------------------------------------- */
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: calc(var(--safe-top) + 0.75rem);
+  left: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 500 0.9rem/1 var(--font-sans);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Minder beweging
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    animation-duration: 0.01ms !important;
+  }
+}

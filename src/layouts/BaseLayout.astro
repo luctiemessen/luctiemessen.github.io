@@ -1,0 +1,72 @@
+---
+/**
+ * De basis van elke pagina: <head>, header met menu, en footer.
+ *
+ * Alle CSS van de site wordt hier geladen, in deze volgorde. Zo krijgt elke
+ * pagina dezelfde stylesheet, die de browser maar één keer hoeft op te halen.
+ * Alleen /styleguide/ laadt daarnaast nog styleguide.css.
+ */
+import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource-variable/newsreader/opsz-italic.css';
+import '@fontsource-variable/cabin';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/layout.css';
+import '../styles/article.css';
+import '../styles/archive.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import { SITE } from '../site.config';
+
+interface Props {
+  /** Naam van de pagina; de sitenaam komt er vanzelf achter. Laat leeg op de homepage. */
+  title?: string;
+  description?: string;
+  toc?: { id: string; text: string; depth: number }[];
+  progress?: boolean;
+  type?: 'website' | 'article';
+  /** Taal van de pagina, bijvoorbeeld "nl" voor de styleguide. */
+  lang?: string;
+}
+
+const { title, description = SITE.description, toc, progress = false, type = 'website', lang = 'en' } = Astro.props;
+
+const fullTitle = title ? `${title} — ${SITE.title}` : SITE.homeTitle;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#f7f5f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1c1d1b" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <SiteHeader toc={toc} progress={progress} />
+    <main id="content">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <span>Designed and built by {SITE.author}, source on <a href={SITE.source}>GitHub</a>.</span>
+      <span class="site-footer__links">
+        <a href="/styleguide/">Style guide</a>
+        <a href="/rss.xml">RSS</a>
+        <span>2009–<span data-year>{new Date().getFullYear()}</span> ©</span>
+      </span>
+    </footer>
+    <script is:inline>
+      document.querySelector('[data-year]').textContent = new Date().getFullYear().toString();
+    </script>
+  </body>
+</html>

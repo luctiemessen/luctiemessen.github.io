@@ -8,8 +8,7 @@ draft: true
 
 ---
 
-<div class="span2-4">
-  <p class="lead">Information about the Lamy Studio</p>
+<p class="lead">Information about the Lamy Studio</p>
 
 ## Introduction
 The Lamy Studio is a pen introduced in 2005 by Lamy and was placed in their premium product lineup. The pen was designed by renowed designer <a href="https://de.wikipedia.org/wiki/Hannes_Wettstein" title="Hannes Wettstein Wikipedia">Hannes Wettstein</a> and has since its introduction received several design awards. In 2005 the Good Design Award [ref needed] and in 2006 the iF award [^ref-a]. 
@@ -78,7 +77,6 @@ One of the most thought about and eye catching elements of the pen is the propel
 https://www.penaddict.com/blog/2014/2/10/lamy-studio-fountain-pen-review
 
 
-
 ## The launch
 ... probeer iets te vinden van een product launch ... 
 Probably 2004 November 2004 was hij op de site van Lamy
@@ -91,7 +89,6 @@ Most Lamy pens follow the same modelnumber structure with 3 digits. Their positi
 
 The first digit defines the <em>pen type</em> with 0 for fountain pen and 1 for mechanical pencil, 3 for ballpoint and so on. The second digit identifies the <em>pen model</em>. The Lamy 2000 for example is identified with a zero (0) as well as the Logo. The Safari and Vista are identified with 1, cp1 with 5 and Studio has 6. The last digit is for the <em>pen finish</em> and I am under the impression that Lamy tries to keep them similar across models but obviously these finishes are mostly unique to a specific model, in this case the Lamy Studio. Where the brushed steel is identified with a 5 and the Violet and Royal red (and I believe most special editions). 8 is used for the Palladium and Platinum grey. 
 
-</div>
 
 <div class="bleed">
 
@@ -106,8 +103,6 @@ The first digit defines the <em>pen type</em> with 0 for fountain pen and 1 for 
 </div>
 
 
-<div class="span2-4">
-
 So with these numbers you could identify a Lamy Studio Platinum ballpoint with the 269 model number. The fountain pen model number (0) is not used so the Brushed steel Studio is just referenced to as 65 and not 065. 
 
 <ref>Hier afbeelding van maken</ref>
@@ -115,14 +110,12 @@ So with these numbers you could identify a Lamy Studio Platinum ballpoint with t
 I am under the impression that they try to align these finish numbers across models but I'm not really sure. I also see some discrepancies between finishes. The 6 for the cp1 model is the matte black finish but for the Studio they use the 7 for the black (and blue) finish. <ref>ask lamy</ref>. 
 
 
-
 ## Release timetable
 
-</div>
 
 <div class="bleed">
 
-  <div class="table-wrap" role="region" aria-labelledby="table-caption" tabindex="0">
+  <div class="table-wrap" role="region" aria-label="Release timetable" tabindex="0">
 
 
 | Year   	| Name  	            | Color  	    | Nib  	  | Section  	| Finish    | Model Number  | Notes                   |
@@ -157,14 +150,11 @@ I am under the impression that they try to align these finish numbers across mod
 | 2025 | Orion matt | Brown-ish purple red | Steel | Gloss steel | Matt lacquer | 066 | Special edition |
 
 
-
   </div>
+</div>
 
 [^ref-init-release]: According to Lamy it was part of the initial release, however [Internet Archive](https://web.archive.org/web/20050206014328/http://www.lamy.com/ "Internet Archive Lamy 2005") only shows the Palladium, Black and Brushed. 
 
-
-
-<div class="span2-4">
 
 The Palladium was launched with a 14k nib. The pen was available with an EF, F, M, B, OM or OB nib. The black and brushed steel
 Lamy.com
@@ -179,15 +169,12 @@ Snapshot van 18 september 2015 staat alleen de Platinum nog op de site met het o
 Platinum Grey zit niet meer in het assortiment. Alleen Black, Imp Blue, Brushed, Palladium en Platinum
 
 
-
 ## The Special Editions
 Introtekst voor special editions. Tijdelijke uitgave, niet gelimiteerd (en/of genummerd)
 
 Ballpoint was still with the short section in 2012
 
 2011 catalog: https://www.scribd.com/document/94065548/Lamy-Catalogue-US-2011
-
-
 
 
 #### Terracotta 2018
@@ -219,5 +206,3 @@ Taken from: https://www.flickr.com/photos/sentience/46914143962/in/photolist-2et
 Throughout this article I've used several sources, when directly cited, these are listed in the Footnotes, but some sources have been so essential that a simple footnote does not suffice to express my gratitude. These are listed below. 
 
 <a href="https://bleistift.blog/2014/07/lamy-scribble/">Lamy Scribble</a> from Bleistift.blog. This has helped a ton for drafting the background on the Scribble pen. 
-
-</div>

@@ -1,0 +1,28 @@
+---
+/**
+ * One post in an archive list: title and meta on the left,
+ * the description in the right margin (on wide screens).
+ */
+import { formatDate, formatDayMonth, parseDate, postUrl, readingTime, summary, type Post } from '../lib/posts';
+
+interface Props {
+  post: Post;
+  /** "full" (20 February 2025) or "day" (20 February, under a year heading). */
+  date?: 'full' | 'day';
+}
+
+const { post, date: format = 'full' } = Astro.props;
+const date = parseDate(post.frontmatter.date);
+const description = summary(post);
+---
+
+<li class="entry">
+  <div class="entry__main">
+    <p class="entry__title"><a href={postUrl(post)}>{post.frontmatter.title}</a></p>
+    <p class="entry-meta">
+      {date && <time datetime={date.toISOString()}>{format === 'day' ? formatDayMonth(date) : formatDate(date)}</time>}
+      <span>{readingTime(post.rawContent())} min read</span>
+    </p>
+  </div>
+  {description && <p class="entry__desc">{description}</p>}
+</li>

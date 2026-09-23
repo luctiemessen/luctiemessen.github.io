@@ -1,19 +1,61 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import PostList from "../../components/PostList.astro";
-import { orderBlogPosts } from "../../js/utils";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TocRail from '../../components/TocRail.astro';
+import PostEntry from '../../components/PostEntry.astro';
+import { formatDate, getPosts, parseDate, postUrl, readingTime, summary, type Post } from '../../lib/posts';
 
-const allPosts = await Astro.glob("./*md");
-const orderedPosts = orderBlogPosts(allPosts, {
-    filterOutDrafts: true,
-    filterOutFuturePosts: true,
-    sortByDate: true,
-});
+const [featured, ...rest] = await getPosts();
+const featuredDate = featured && parseDate(featured.frontmatter.date);
+
+// The rest of the posts, grouped per year (newest first).
+const groups: [number, Post[]][] = [];
+for (const post of rest) {
+  const year = parseDate(post.frontmatter.date)!.getFullYear();
+  const last = groups[groups.length - 1];
+  if (last && last[0] === year) last[1].push(post);
+  else groups.push([year, [post]]);
+}
+
+const toc = groups.map(([year]) => ({ id: `year-${year}`, text: String(year), depth: 2 }));
 ---
 
-<MainLayout title="Blog — Luc Tiemessen">
-    <div class="span2-4">
-        <h1>Blog</h1>
-        <PostList posts={orderedPosts} />
-    </div>
-</MainLayout>
+<BaseLayout title="Blog" description="Writing about technology, design and fountain pens." toc={toc}>
+  <div class="page-grid" id="top">
+    <header class="intro wide">
+      <h1 class="intro__title">Blog</h1>
+      <p class="intro__text">Thinking and writing about technology, design and fountain pens.</p>
+    </header>
+
+    {
+      featured && (
+        <article class="featured">
+          <p class="featured__title">
+            <a href={postUrl(featured)}>{featured.frontmatter.title}</a>
+          </p>
+          {summary(featured) && <p class="featured__desc">{summary(featured)}</p>}
+          <p class="entry-meta">
+            {featuredDate && <time datetime={featuredDate.toISOString()}>{formatDate(featuredDate)}</time>}
+            <span>{readingTime(featured.rawContent())} min read</span>
+          </p>
+        </article>
+      )
+    }
+
+    {
+      groups.map(([year, posts]) => (
+        <section class="archive wide" aria-labelledby={`year-${year}`}>
+          <h2 class="archive__year" id={`year-${year}`}>
+            {year}
+          </h2>
+          <ol class="archive__list">
+            {posts.map((post) => (
+              <PostEntry post={post} date="day" />
+            ))}
+          </ol>
+        </section>
+      ))
+    }
+  </div>
+
+  <TocRail items={toc} title="Blog" label="Archive" />
+</BaseLayout>

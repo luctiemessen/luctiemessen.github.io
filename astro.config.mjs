@@ -6,7 +6,11 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://luctiemessen.github.io',
   markdown: {
-    shikiConfig: { theme: 'css-variables' },
+    // Codeblokken volgen het lichte of donkere thema (kleuren staan in article.css).
+    shikiConfig: {
+      themes: { light: 'github-light', dark: 'github-dark' },
+      defaultColor: false,
+    },
     remarkPlugins: [[remarkFootnotes, { inlineNotes: true }]],
   },
   // integrations: [mdx(), sitemap()],

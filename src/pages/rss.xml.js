@@ -1,20 +1,20 @@
 import rss from '@astrojs/rss';
 // import sanitizeHtml from 'sanitize-html';
 
-import { orderBlogPosts } from '../js/utils';
+import { SITE } from '../site.config';
+import { getPosts, parseDate, postUrl } from '../lib/posts';
 
-export function GET(context) {
-  const postImportResult = import.meta.glob('./blog/**/*.md', { eager: true });
-  const posts = orderBlogPosts(Object.values(postImportResult));
+export async function GET(context) {
+  const posts = await getPosts();
 
   return rss({
-    title: 'Luc Tiemessen, Designer',
-    description: 'Personal site of Luc Tiemessen, Designer, thinking and writing about philosphy, design and fountain pens.',
+    title: SITE.homeTitle,
+    description: SITE.description,
     site: context.site,
     items: posts.map((post) => ({
-      link: post.url,
+      link: postUrl(post),
       title: post.frontmatter.title,
-      pubDate: post.frontmatter.date,
+      pubDate: parseDate(post.frontmatter.date),
       description: post.frontmatter.description,
       /* content: sanitizeHtml(post.compiledContent()),*/
     })),
