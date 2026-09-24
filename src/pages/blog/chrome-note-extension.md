@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPostLayout.astro"
 title:  "ChromeNote - A tiny, simple notepad for Chrome"
 date:   2025-02-20
 description: Small note about my freshly created notepad extension for Chrome.
-tags: web personal
+tags: chrome plugin
 draft: false
 
 ---

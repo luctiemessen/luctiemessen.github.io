@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPostLayout.astro"
 title:  "Redesign: Setting the scale in CSS"
 date:   2024-01-30
 description: Redesign process - Setting the typographic scale in CSS.
-tags: web personal
+tags: web css design typography
 draft: false
 
 ---

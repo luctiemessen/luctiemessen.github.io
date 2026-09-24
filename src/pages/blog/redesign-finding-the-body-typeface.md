@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPostLayout.astro"
 title:  "Redesign: Chosing the body copy typeface"
 date:   2024-01-16
 description: Elaborate description of the process of redesigning my personal site.
-tags: web personal
+tags: web design typography
 draft: false
 ---
 

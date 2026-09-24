@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPostLayout.astro"
 title:  "Redesign: Creating type hierarchy"
 date:   2024-01-21
 description: Elaborate description of the process of redesigning my personal site.
-tags: web personal
+tags: web design typography
 draft: false
 
 ---
