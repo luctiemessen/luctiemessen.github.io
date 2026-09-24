@@ -4,7 +4,7 @@ title: "Redesign 2026: notes in the margin"
 date: 2026-09-24
 description: How this site went from Lora and Playfair on a six-column grid to a warm, calm design with footnotes in the margin. The styleguide, the trade-offs behind it and what I'm aiming for.
 tags: web design personal
-draft: true
+draft: false
 ---
 
 <p class="lead">If you've been here before, you'll notice that everything looks different. New typefaces, a warm paper colour, a single green accent and, most of all, a margin that actually does something. This is how that happened, what I weighed along the way and what I want this design to do.</p>
