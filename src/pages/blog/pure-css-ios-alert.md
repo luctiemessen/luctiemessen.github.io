@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPostLayout.astro"
 title: Pure CSS iOS alerts
 date: 2011-10-14 10:50:21
-description: no description present
+description: "Recreating the iOS alert dialog in CSS."
 tags: css
 draft: false
 ---

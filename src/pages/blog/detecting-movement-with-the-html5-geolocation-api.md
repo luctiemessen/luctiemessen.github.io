@@ -2,8 +2,8 @@
 layout: "../../layouts/BlogPostLayout.astro"
 title: Detecting movement with the HTML5 Geolocation API
 date: 2011-09-21 10:50:21
-description: no description present
-tags: web
+description: "Making use of the HTML5 Geolocation API by adapting content based on GPS movement."
+tags: web javascript
 draft: false
 ---
 <p class="lead">Determining the location of the visitor of your site has become much easier with the HTML5 API. With a only a few lines of JavaScript we now can indicate the location of the user and we can even check whether the user is moving. This opens interesting ways for us designers and developers to deliver the right content to our users.</p>

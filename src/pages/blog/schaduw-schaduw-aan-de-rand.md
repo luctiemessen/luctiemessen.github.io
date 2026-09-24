@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPostLayout.astro"
 title: Schaduw schaduw aan de rand...
 date: 2010-02-04 10:50:21
 [//]: # format date like: yyyy-mm-dd
-description: Een stukje over schaduw in CSS 3
+description: Hoe we in CSS3 – zonder extra markup – meerdere schaduwen kunnen toepassen op een element.
 tags: css
 draft: false
 dutch: yes
@@ -50,7 +50,7 @@ De lengte van de horizontale afstand van de schaduw t.o.v. de box. Een negatieve
 De lengte van de verticale afstand van de schaduw t.o.v. de box. Een negatieve waarde zorgt voor een schaduw boven de box, een positieve brengt hem onder de box.
 De blur radius van de schaduw, dit is dus de lengte waarover de schaduw zich moet uitspreiden.
 De kleur van de schaduw
-Het grappige is dat ja naast Ã©Ã©n schaduw, nog een andere schaduw kunt toevoegen gewoon door er een komma achter te zetten. Hoe handig is dat! Nu kunnen we ook de schaduw aan de binnenkant gaan zettenâ€¦ Dit doen we met een extra attribuut genaamd “inset”.
+Het grappige is dat ja naast één schaduw, nog een andere schaduw kunt toevoegen gewoon door er een komma achter te zetten. Hoe handig is dat! Nu kunnen we ook de schaduw aan de binnenkant gaan zetten… Dit doen we met een extra attribuut genaamd “inset”.
 
 ```css
 .attention {
