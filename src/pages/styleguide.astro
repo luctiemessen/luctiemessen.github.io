@@ -1,16 +1,16 @@
 ---
 /**
- * Styleguide: alle stijlelementen van de site op één pagina.
+ * Styleguide: all style elements of the site on one page.
  *
- * Gebaseerd op de oorspronkelijke styleguide, aangevuld met de onderdelen
- * van dit sjabloon. De toelichting bij elk voorbeeld staat in de marge
- * (.spec__note), net als een noot.
+ * Based on the original styleguide, supplemented with the components
+ * of this template. The explanation of each example is in the margin
+ * (.spec__note), just like a note.
  *
- * De voorbeelden van het overzicht en de navigatie gebruiken echte posts en
- * dezelfde onderdelen als de rest van de site (PostEntry, .post-nav).
+ * The examples of the overview and the navigation use real posts and
+ * the same components as the rest of the site (PostEntry, .post-nav).
  *
- * Let op: houd een alinea op één regel in deze template. Astro kan
- * witruimte met een regeleinde tussen tekst en een element weghalen.
+ * Note: keep a paragraph on one line in this template. Astro can remove
+ * whitespace with a line break between text and an element.
  */
 import { Image } from 'astro:assets';
 import { Code } from 'astro:components';
@@ -23,46 +23,46 @@ import brug from '../assets/brug.jpg';
 import '../styles/styleguide.css';
 
 const toc = [
-  { id: 'kleur', text: 'Kleur', depth: 2 },
-  { id: 'letters', text: 'Letters', depth: 2 },
-  { id: 'koppen', text: 'Koppen', depth: 2 },
-  { id: 'alineas', text: 'Alinea’s', depth: 2 },
-  { id: 'tekstopmaak', text: 'Tekstopmaak', depth: 2 },
-  { id: 'kaders', text: 'Kaders en citaten', depth: 2 },
-  { id: 'lijsten', text: 'Lijsten', depth: 2 },
+  { id: 'colour', text: 'Colour', depth: 2 },
+  { id: 'typefaces', text: 'Typefaces', depth: 2 },
+  { id: 'headings', text: 'Headings', depth: 2 },
+  { id: 'paragraphs', text: 'Paragraphs', depth: 2 },
+  { id: 'text-formatting', text: 'Text formatting', depth: 2 },
+  { id: 'boxes', text: 'Boxes and quotes', depth: 2 },
+  { id: 'lists', text: 'Lists', depth: 2 },
   { id: 'code', text: 'Code', depth: 2 },
-  { id: 'beeld', text: 'Beeld', depth: 2 },
-  { id: 'tabellen', text: 'Tabellen', depth: 2 },
-  { id: 'kantlijn', text: 'Kantlijn, noten en menu', depth: 2 },
-  { id: 'onderdelen', text: 'Onderdelen', depth: 2 },
+  { id: 'images', text: 'Images', depth: 2 },
+  { id: 'tables', text: 'Tables', depth: 2 },
+  { id: 'margin-line', text: 'Margin line, notes and menu', depth: 2 },
+  { id: 'components', text: 'Components', depth: 2 },
 ];
 
 const swatches = [
-  { name: 'Papier', token: '--paper', light: '#f7f5f1', dark: '#1c1d1b', use: 'Achtergrond' },
-  { name: 'Papier, verhoogd', token: '--paper-raised', light: '#fdfcfa', dark: '#232421', use: 'Menu, toetsen, vensters' },
-  { name: 'Inkt', token: '--ink', light: '#1d1c1a', dark: '#e9e6e0', use: 'Tekst en koppen' },
-  { name: 'Inkt 2', token: '--ink-2', light: '#4a4741', dark: '#bfbab1', use: 'Intro, citaten, kaders' },
-  { name: 'Inkt 3', token: '--ink-3', light: '#736e65', dark: '#969186', use: 'Metadata, noten, bijschriften' },
-  { name: 'Lijn', token: '--rule', light: '#e3dfd6', dark: '#33342f', use: 'Scheidingslijnen' },
-  { name: 'Lijn, sterk', token: '--rule-strong', light: '#cbc5b9', dark: '#4a4b45', use: 'Kantlijn, tabelkop' },
-  { name: 'Accent', token: '--accent', light: '#2f6f4f', dark: '#8bc6a1', use: 'Links, notennummers' },
-  { name: 'Accent, licht', token: '--accent-tint', light: '#e1ebe3', dark: '#26352b', use: 'Oplichten, informatiekader' },
-  { name: 'Code', token: '--code-bg', light: '#eeebe4', dark: '#272824', use: 'Achtergrond van code' },
+  { name: 'Paper', token: '--paper', light: '#f7f5f1', dark: '#1c1d1b', use: 'Background' },
+  { name: 'Paper, raised', token: '--paper-raised', light: '#fdfcfa', dark: '#232421', use: 'Menu, keys, windows' },
+  { name: 'Ink', token: '--ink', light: '#1d1c1a', dark: '#e9e6e0', use: 'Text and headings' },
+  { name: 'Ink 2', token: '--ink-2', light: '#4a4741', dark: '#bfbab1', use: 'Intro, quotes, boxes' },
+  { name: 'Ink 3', token: '--ink-3', light: '#736e65', dark: '#969186', use: 'Metadata, notes, captions' },
+  { name: 'Line', token: '--rule', light: '#e3dfd6', dark: '#33342f', use: 'Dividers' },
+  { name: 'Line, strong', token: '--rule-strong', light: '#cbc5b9', dark: '#4a4b45', use: 'Margin line, table header' },
+  { name: 'Accent', token: '--accent', light: '#2f6f4f', dark: '#8bc6a1', use: 'Links, note numbers' },
+  { name: 'Accent, light', token: '--accent-tint', light: '#e1ebe3', dark: '#26352b', use: 'Highlights, information box' },
+  { name: 'Code', token: '--code-bg', light: '#eeebe4', dark: '#272824', use: 'Background of code' },
 ];
 
 const pens = [
-  ['2025', 'Studio Arctic Silver', 'Mat zilver, metallic', 'Staal', 'Rubber', 'Satijn metallic', 'Speciale editie'],
-  ['2024', 'Studio Racing Green', 'Diep Brits groen', 'Goud (14k)', 'Staal', 'Hoogglans metallic', 'Speciale editie'],
-  ['2023', 'Studio Lilac', 'Zacht lavendel, metallic', 'Staal', 'Rubber', 'Satijn geanodiseerd', 'Speciale editie'],
-  ['2022', 'Studio Black Forest', 'Donkergroen, bijna zwart', 'Goud (14k)', 'Staal', 'Hoogglans lak', 'Vaste kleur (eerst speciale editie)'],
-  ['2021', 'Studio Glacier', 'Koel ijsblauw', 'Staal', 'Rubber', 'Satijn geanodiseerd', 'Speciale editie'],
-  ['2020', 'Studio Rose', 'Warm roségoud', 'Staal', 'Staal', 'Mat metallic', 'Speciale editie'],
-  ['2019', 'Studio Aquamarine', 'Diep turquoise', 'Staal', 'Staal', 'Geanodiseerd', 'Speciale editie'],
-  ['2018', 'Studio Olive', 'Mat olijfgroen', 'Staal', 'Rubber', 'Matte lak', 'Speciale editie'],
-  ['2017', 'Studio Imperial Blue', 'Diep metallic blauw', 'Staal', 'Rubber', 'Hoogglans lak', 'Later vast in het assortiment'],
-  ['2016', 'Studio LX All Black', 'Mat zwart', 'Staal (zwart gecoat)', 'Rubber', 'Matte lak', 'Speciale monochrome editie'],
+  ['2025', 'Studio Arctic Silver', 'Matt silver, metallic', 'Steel', 'Rubber', 'Satin metallic', 'Special edition'],
+  ['2024', 'Studio Racing Green', 'Deep British green', 'Gold (14k)', 'Steel', 'High-gloss metallic', 'Special edition'],
+  ['2023', 'Studio Lilac', 'Soft lavender, metallic', 'Steel', 'Rubber', 'Satin anodised', 'Special edition'],
+  ['2022', 'Studio Black Forest', 'Dark green, almost black', 'Gold (14k)', 'Steel', 'High-gloss lacquer', 'Regular colour (first a special edition)'],
+  ['2021', 'Studio Glacier', 'Cool ice blue', 'Steel', 'Rubber', 'Satin anodised', 'Special edition'],
+  ['2020', 'Studio Rose', 'Warm rose gold', 'Steel', 'Steel', 'Matt metallic', 'Special edition'],
+  ['2019', 'Studio Aquamarine', 'Deep turquoise', 'Steel', 'Steel', 'Anodised', 'Special edition'],
+  ['2018', 'Studio Olive', 'Matt olive green', 'Steel', 'Rubber', 'Matt lacquer', 'Special edition'],
+  ['2017', 'Studio Imperial Blue', 'Deep metallic blue', 'Steel', 'Rubber', 'High-gloss lacquer', 'Later part of the regular range'],
+  ['2016', 'Studio LX All Black', 'Matt black', 'Steel (black coated)', 'Rubber', 'Matt lacquer', 'Special monochrome edition'],
 ];
-const penColumns = ['Naam', 'Kleur', 'Penpunt', 'Grip', 'Afwerking', 'Opmerking'];
+const penColumns = ['Name', 'Colour', 'Nib', 'Grip', 'Finish', 'Note'];
 
 const jsSample = `function showError(error) {
   if(error.code==0) {
@@ -83,7 +83,7 @@ const cssSample = `.ninja {
 
 const codeThemes = { light: 'github-light', dark: 'github-dark' } as const;
 
-// Echte posts voor de voorbeelden van het overzicht en de navigatie.
+// Real posts for the examples of the overview and the navigation.
 const posts = await getPosts();
 const [featured, ...rest] = posts;
 const featuredDate = featured && parseDate(featured.frontmatter.date);
@@ -91,31 +91,31 @@ const demoEntries = rest.slice(0, 2);
 const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.getFullYear();
 ---
 
-<BaseLayout title="Styleguide" description={`Alle stijlelementen van ${SITE.title} op één pagina.`} toc={toc} progress lang="nl">
+<BaseLayout title="Styleguide" description={`All style elements of ${SITE.title} on one page.`} toc={toc} progress>
   <article class="page-grid" id="top" data-post>
     <header class="post-header wide">
-      <ul class="post-tags" aria-label="Onderwerpen">
-        <li>Ontwerp</li>
-        <li>Referentie</li>
+      <ul class="post-tags" aria-label="Topics">
+        <li>Design</li>
+        <li>Reference</li>
       </ul>
       <h1 class="post-title">Styleguide</h1>
       <p class="post-meta">
-        <span class="post-meta__author">door <a href="/about/">{SITE.author}</a></span>
-        <span>Alle elementen van deze site op één pagina</span>
+        <span class="post-meta__author">by <a href="/about/">{SITE.author}</a></span>
+        <span>All elements of this site on one page</span>
       </p>
     </header>
 
     <div class="prose" data-post-body>
-      <p class="lead">Deze pagina laat alle stijlelementen zien die het ontwerp van deze site bepalen. Je leest nu een intro-alinea: die opent een artikel of pagina, is iets groter dan de lopende tekst en heeft een klein groen streepje als accent.</p>
+      <p class="lead">This page shows all the style elements that define the design of this site. You are now reading an intro paragraph: it opens an article or page, is slightly larger than the running text and has a small green stroke as an accent.</p>
 
       <!-- ================================================================ -->
-      <h2 id="kleur">Kleur</h2>
-      <p>Eén warme papierkleur, drie tinten inkt en één groen accent. Het groen is gereserveerd voor wat je kunt aanklikken of wat oplicht: links, notennummers en de noot die bij je muis hoort.</p>
-      <p>De donkere modus volgt de instelling van je systeem. Op deze pagina kun je hem ook zelf kiezen.</p>
-      <div class="theme-switch" role="group" aria-label="Kleurthema">
-        <button type="button" data-theme-choice="light" aria-pressed="false">Licht</button>
-        <button type="button" data-theme-choice="dark" aria-pressed="false">Donker</button>
-        <button type="button" data-theme-choice="system" aria-pressed="true">Systeem</button>
+      <h2 id="colour">Colour</h2>
+      <p>One warm paper colour, three shades of ink and one green accent. The green is reserved for what you can click or what lights up: links, note numbers and the note under your mouse.</p>
+      <p>Dark mode follows the setting of your system. On this page you can also choose it yourself.</p>
+      <div class="theme-switch" role="group" aria-label="Colour theme">
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+        <button type="button" data-theme-choice="system" aria-pressed="true">System</button>
       </div>
       <div class="bleed">
         <ul class="swatches">
@@ -136,24 +136,24 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
       </div>
 
       <!-- ================================================================ -->
-      <h2 id="letters">Letters</h2>
-      <p>Twee families die duidelijk van elkaar verschillen. De schreefletter is voor alles wat je leest, de schreefloze voor alles wat je gebruikt: menu, metadata, labels en tabellen. Beide worden lokaal gehost via Fontsource, zonder verzoeken naar Google.</p>
+      <h2 id="typefaces">Typefaces</h2>
+      <p>Two families that clearly differ from each other. The serif is for everything you read, the sans-serif for everything you use: menu, metadata, labels and tables. Both are hosted locally via Fontsource, without requests to Google.</p>
 
       <div class="spec" data-in-margin>
-        <p class="type-sample type-sample--serif">Pa’s wijze lynx bezag vroom het fikse aquaduct</p>
-        <p class="spec__note"><strong>Newsreader</strong> van Production Type. Lopende tekst, koppen en noten. Variabel in gewicht (200 tot 800) en optische grootte, dus kleine tekst wordt vanzelf iets steviger.</p>
+        <p class="type-sample type-sample--serif">The quick brown fox jumps over the lazy dog</p>
+        <p class="spec__note"><strong>Newsreader</strong> by Production Type. Running text, headings and notes. Variable in weight (200 to 800) and optical size, so small text automatically becomes slightly sturdier.</p>
       </div>
       <div class="spec" data-in-margin>
-        <p class="type-sample type-sample--sans">Pa’s wijze lynx bezag vroom het fikse aquaduct</p>
-        <p class="spec__note"><strong>Cabin</strong> van Impallari Type, een humanistische schreefloze in de lijn van Johnston en Gill. Menu, metadata, labels en tabellen.</p>
+        <p class="type-sample type-sample--sans">The quick brown fox jumps over the lazy dog</p>
+        <p class="spec__note"><strong>Cabin</strong> by Impallari Type, a humanist sans-serif in the line of Johnston and Gill. Menu, metadata, labels and tables.</p>
       </div>
       <div class="spec" data-in-margin>
-        <p class="type-sample type-sample--mono">Pa’s wijze lynx bezag vroom</p>
-        <p class="spec__note"><strong>Systeemletter</strong> voor code: SF Mono, Cascadia Mono, Menlo of Consolas, afhankelijk van je apparaat.</p>
+        <p class="type-sample type-sample--mono">The quick brown fox jumps over the lazy dog</p>
+        <p class="spec__note"><strong>System font</strong> for code: SF Mono, Cascadia Mono, Menlo or Consolas, depending on your device.</p>
       </div>
 
-      <h3>De iI1l-test</h3>
-      <p>Hopelijk verschillen deze lettervormen genoeg, zodat je een 1 niet voor een l aanziet, of een i en een I voor een l.</p>
+      <h3>The iI1l test</h3>
+      <p>Hopefully these letterforms differ enough, so that you don’t mistake a 1 for an l, or an i and an I for an l.</p>
       <ul class="glyph-test">
         <li><span class="type-sample--serif">iI1l 0O</span>Newsreader</li>
         <li><span class="type-sample--sans">iI1l 0O</span>Cabin</li>
@@ -161,189 +161,189 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
       </ul>
 
       <!-- ================================================================ -->
-      <h2 id="koppen">Koppen</h2>
-      <p>Koppen staan in Newsreader. De paginatitel is het grootst en het lichtst; hoe kleiner de kop, hoe zwaarder, zodat elke kop even duidelijk blijft.</p>
+      <h2 id="headings">Headings</h2>
+      <p>Headings are set in Newsreader. The page title is the largest and the lightest; the smaller the heading, the heavier, so that every heading stays equally clear.</p>
 
       <div class="spec" data-in-margin>
-        <p class="post-title">Titel van een stuk</p>
-        <p class="spec__note">Paginatitel, <code>.post-title</code>. Newsreader 400, van 2,4 tot 4 rem, schaalt mee met het scherm.</p>
+        <p class="post-title">Title of a piece</p>
+        <p class="spec__note">Page title, <code>.post-title</code>. Newsreader 400, from 2.4 to 4 rem, scales with the screen.</p>
       </div>
 
       <div class="spec" data-in-margin>
         <div class="spec__sample">
-          <h1>Kop 1</h1>
-          <p>Gebruik een h1 in de tekst alleen op pagina’s zonder paginatitel. In een gewoon stuk is de titel de h1 en begint de indeling bij h2.</p>
+          <h1>Heading 1</h1>
+          <p>Only use an h1 in the text on pages without a page title. In a regular piece the title is the h1 and the structure starts at h2.</p>
         </div>
-        <p class="spec__note"><code>h1</code> in de tekst. Newsreader 450, 2,1 keer de tekstgrootte.</p>
+        <p class="spec__note"><code>h1</code> in the text. Newsreader 450, 2.1 times the text size.</p>
       </div>
 
       <div class="spec" data-in-margin>
         <div class="spec__sample">
-          <h2>Kop 2</h2>
-          <p>Een h2 opent een nieuw hoofdstuk. Er staat flink wat ruimte boven, zodat je tijdens het scrollen ziet waar een nieuw deel begint.</p>
+          <h2>Heading 2</h2>
+          <p>An h2 opens a new chapter. There is a fair amount of space above it, so that while scrolling you see where a new part begins.</p>
         </div>
-        <p class="spec__note"><code>h2</code>. Newsreader 560, 1,6 keer de tekstgrootte. Verschijnt in de kantlijn.</p>
+        <p class="spec__note"><code>h2</code>. Newsreader 560, 1.6 times the text size. Appears in the margin line.</p>
       </div>
 
       <div class="spec" data-in-margin>
         <div class="spec__sample">
-          <h3>Kop 3</h3>
-          <p>Een h3 deelt een hoofdstuk op. Staat hij direct onder een h2, dan wordt de ruimte ertussen kleiner.</p>
+          <h3>Heading 3</h3>
+          <p>An h3 divides a chapter. If it is directly below an h2, the space between them becomes smaller.</p>
         </div>
-        <p class="spec__note"><code>h3</code>. Newsreader 600, 1,22 keer de tekstgrootte. Verschijnt ingesprongen in de kantlijn.</p>
+        <p class="spec__note"><code>h3</code>. Newsreader 600, 1.22 times the text size. Appears indented in the margin line.</p>
       </div>
 
       <div class="spec" data-in-margin>
         <div class="spec__sample">
-          <h4>Kop 4</h4>
-          <p>Een h4 is voor een kort tussenkopje, bijvoorbeeld boven een lijst of een voorbeeld. Hij komt niet in de kantlijn.</p>
+          <h4>Heading 4</h4>
+          <p>An h4 is for a short subheading, for example above a list or an example. It does not appear in the margin line.</p>
         </div>
-        <p class="spec__note"><code>h4</code>. Newsreader 650, even groot als de tekst.</p>
+        <p class="spec__note"><code>h4</code>. Newsreader 650, the same size as the text.</p>
       </div>
 
       <!-- ================================================================ -->
-      <h2 id="alineas">Alinea’s</h2>
+      <h2 id="paragraphs">Paragraphs</h2>
 
       <div class="spec" data-in-margin>
-        <p>Dit is een gewone alinea. De regels lopen rafelig uit aan de rechterkant: uitvullen levert op het web al snel gaten tussen woorden op. Lange woorden worden afgebroken volgens de taal van de pagina, zodat de rechterkant toch rustig blijft.</p>
-        <p class="spec__note"><strong>Lopende tekst.</strong> Newsreader 400, 18 tot 20 pixels, regelafstand 1,62. Afbreken via <code>lang="nl"</code>.</p>
+        <p>This is a regular paragraph. The lines are ragged on the right: justifying quickly creates gaps between words on the web. Long words are hyphenated according to the language of the page, so that the right edge still stays calm.</p>
+        <p class="spec__note"><strong>Running text.</strong> Newsreader 400, 18 to 20 pixels, line height 1.62. Hyphenation via <code>lang="en"</code>.</p>
       </div>
 
-      <h3>Intro-alinea</h3>
-      <p>De alinea bovenaan deze pagina. Geef een <code>p</code> de klasse <code>lead</code> en hij wordt groter en lichter, met een streepje in de accentkleur eronder.</p>
+      <h3>Intro paragraph</h3>
+      <p>The paragraph at the top of this page. Give a <code>p</code> the class <code>lead</code> and it becomes larger and lighter, with a stroke in the accent colour below it.</p>
 
-      <h3>Regellengte</h3>
-      <p>Een regel leest het prettigst bij 45 tot 75 tekens; 66 geldt als ideaal.<sup><a href="#user-content-fn-regellengte-a" id="user-content-fnref-regellengte-a" data-footnote-ref aria-describedby="footnote-label">1</a></sup><sup><a href="#user-content-fn-regellengte-b" id="user-content-fnref-regellengte-b" data-footnote-ref aria-describedby="footnote-label">2</a></sup><sup><a href="#user-content-fn-regellengte-c" id="user-content-fnref-regellengte-c" data-footnote-ref aria-describedby="footnote-label">3</a></sup></p>
-      <p>Daar houd ik rekening mee bij de <code>max-width</code> van de tekstkolom. Die staat in <code>--measure</code> op 40 rem: zo’n zeventig tekens bij deze letter.</p>
+      <h3>Line length</h3>
+      <p>A line reads most comfortably at 45 to 75 characters; 66 is considered ideal.<sup><a href="#user-content-fn-line-length-a" id="user-content-fnref-line-length-a" data-footnote-ref aria-describedby="footnote-label">1</a></sup><sup><a href="#user-content-fn-line-length-b" id="user-content-fnref-line-length-b" data-footnote-ref aria-describedby="footnote-label">2</a></sup><sup><a href="#user-content-fn-line-length-c" id="user-content-fnref-line-length-c" data-footnote-ref aria-describedby="footnote-label">3</a></sup></p>
+      <p>I take that into account in the <code>max-width</code> of the text column. It is set in <code>--measure</code> to 40 rem: about seventy characters in this typeface.</p>
 
-      <h3>Breed</h3>
-      <p>Een blok met de klasse <code>bleed</code> loopt op brede schermen door tot en met de notenkolom. Handig voor afbeeldingen, tabellen en een enkele passage die meer ruimte verdient.<sup><a href="#user-content-fn-bleed" id="user-content-fnref-bleed" data-footnote-ref aria-describedby="footnote-label">4</a></sup></p>
+      <h3>Wide</h3>
+      <p>A block with the class <code>bleed</code> runs on wide screens all the way up to and including the notes column. Useful for images, tables and the odd passage that deserves more room.<sup><a href="#user-content-fn-bleed" id="user-content-fnref-bleed" data-footnote-ref aria-describedby="footnote-label">4</a></sup></p>
       <div class="bleed">
-        <p>Zo ziet een brede alinea eruit. Gebruik dit spaarzaam: een regel van ruim honderd tekens leest merkbaar zwaarder, en dat is precies waarom de gewone tekstkolom smaller is. Voor een korte, bijzondere passage kan het werken. Voor gewone tekst niet.</p>
+        <p>This is what a wide paragraph looks like. Use it sparingly: a line of well over a hundred characters reads noticeably heavier, and that is exactly why the regular text column is narrower. For a short, special passage it can work. For regular text it does not.</p>
       </div>
 
-      <h3>Scheidingslijn</h3>
-      <p>Een <code>hr</code> wordt een klein sterrengroepje: het markeert een wending in de tekst, zonder harde lijn.</p>
+      <h3>Divider</h3>
+      <p>An <code>hr</code> becomes a small group of stars: it marks a turn in the text, without a hard line.</p>
       <hr />
 
       <!-- ================================================================ -->
-      <h2 id="tekstopmaak">Tekstopmaak</h2>
+      <h2 id="text-formatting">Text formatting</h2>
 
-      <h3>Cursief</h3>
-      <p>Het element <code>i</code> is voor woorden in een andere stem, stemming of taal, zoals vaktermen of een uitdrukking uit een andere taal.</p>
-      <p><i>Pa’s wijze lynx bezag vroom het fikse aquaduct.</i></p>
+      <h3>Italic</h3>
+      <p>The element <code>i</code> is for words in a different voice, mood or language, such as technical terms or an expression from another language.</p>
+      <p><i>The quick brown fox jumps over the lazy dog.</i></p>
 
-      <h3>Nadruk</h3>
-      <p>Met <code>em</code> leg je klemtoon: iets wat je anders uitspreekt. Is cursief alleen een stijlkeuze, gebruik dan <code>i</code>.</p>
-      <p>Je <em>moet</em> die nieuwe twaalfjarige Aultmore echt proberen!</p>
+      <h3>Emphasis</h3>
+      <p>With <code>em</code> you place stress: something you would pronounce differently. If italics are only a stylistic choice, use <code>i</code>.</p>
+      <p>You really <em>must</em> try that new twelve-year-old Aultmore!</p>
 
-      <h3>Sterk</h3>
-      <p>Met <code>strong</code> geef je aan dat iets belangrijk is. Voor vet zonder die betekenis is er <code>b</code>.</p>
-      <p>Steek <strong>geen</strong> spijkers in het stopcontact.</p>
+      <h3>Strong</h3>
+      <p>With <code>strong</code> you indicate that something is important. For bold without that meaning there is <code>b</code>.</p>
+      <p>Do <strong>not</strong> put nails in the power socket.</p>
 
       <h3>Links</h3>
-      <p><a href="https://www.google.com" title="Zoek het op Google">Boterkaramelblokjes die het goed aanpakken</a>. Een link is groen met een dunne, lichte onderstreping. Wijs hem aan en de streep wordt vol.</p>
+      <p><a href="https://www.google.com" title="Search for it on Google">Butterscotch squares that do things right</a>. A link is green with a thin, light underline. Point at it and the line becomes solid.</p>
 
-      <h3>Afkortingen</h3>
-      <p>Afkortingen zoals <abbr title="HyperText Markup Language">HTML</abbr> krijgen een <code>abbr</code>, met een <code>title</code> voor de volledige naam. De gestippelde lijn laat zien dat er uitleg is; wijs de afkorting aan om die te lezen.</p>
+      <h3>Abbreviations</h3>
+      <p>Abbreviations such as <abbr title="HyperText Markup Language">HTML</abbr> get an <code>abbr</code>, with a <code>title</code> for the full name. The dotted line shows that there is an explanation; point at the abbreviation to read it.</p>
 
-      <h3>Werktitels</h3>
-      <p>Titels van boeken, films en artikelen staan in een <code>cite</code>, zoals <cite>The Elements of Typographic Style</cite> van Robert Bringhurst.</p>
+      <h3>Titles of works</h3>
+      <p>Titles of books, films and articles go in a <code>cite</code>, such as <cite>The Elements of Typographic Style</cite> by Robert Bringhurst.</p>
 
-      <h3>Verwijderd en toegevoegd</h3>
-      <p>Verwijderde tekst staat in <del>del</del>, toegevoegde tekst in <ins>ins</ins>.</p>
+      <h3>Deleted and inserted</h3>
+      <p>Deleted text goes in <del>del</del>, inserted text in <ins>ins</ins>.</p>
 
-      <h3>Superschrift en subschrift</h3>
-      <p>Superschrift gebruikt <sup>sup</sup> en subschrift <sub>sub</sub>, zoals in m<sup>2</sup> en H<sub>2</sub>O.</p>
+      <h3>Superscript and subscript</h3>
+      <p>Superscript uses <sup>sup</sup> and subscript <sub>sub</sub>, as in m<sup>2</sup> and H<sub>2</sub>O.</p>
 
-      <h3>Toetsen</h3>
-      <p>De toetsen <kbd>⌘</kbd> en <kbd>Shift</kbd> zijn belangrijk.</p>
-      <p>En nu alles door elkaar: een <abbr>afk.</abbr> hier, een <sup>sup</sup> daar en een <sub>sub</sub> ertussen. Kijk hoe <kbd>⌘</kbd>, <kbd>Shift</kbd>, <kbd>F4</kbd> en <kbd>Caps Lock</kbd> zich gedragen midden in een alinea, naast <del>oude</del> <ins>nieuwe</ins> tekst, <strong>vet</strong>, <em>cursief</em> en <code>code</code>. De regelafstand hoort overal gelijk te blijven, ook als er van alles tussen de regels staat.</p>
+      <h3>Keys</h3>
+      <p>The keys <kbd>⌘</kbd> and <kbd>Shift</kbd> are important.</p>
+      <p>And now everything mixed together: an <abbr>abbr.</abbr> here, a <sup>sup</sup> there and a <sub>sub</sub> in between. See how <kbd>⌘</kbd>, <kbd>Shift</kbd>, <kbd>F4</kbd> and <kbd>Caps Lock</kbd> behave in the middle of a paragraph, next to <del>old</del> <ins>new</ins> text, <strong>bold</strong>, <em>italic</em> and <code>code</code>. The line spacing should stay the same everywhere, even when there is all sorts of things between the lines.</p>
 
       <!-- ================================================================ -->
-      <h2 id="kaders">Kaders en citaten</h2>
+      <h2 id="boxes">Boxes and quotes</h2>
 
-      <h3>Terzijde</h3>
-      <p>Een <code>aside</code> is voor een zijpad dat net te groot is voor een noot.</p>
-      <aside><p>Dit is een terzijde. Rustig, iets kleiner dan de tekst, en duidelijk geen onderdeel van het hoofdbetoog.</p></aside>
+      <h3>Aside</h3>
+      <p>An <code>aside</code> is for a side path that is just too big for a note.</p>
+      <aside><p>This is an aside. Calm, slightly smaller than the text, and clearly not part of the main argument.</p></aside>
 
-      <h3>Informatie</h3>
-      <p>Met <code>class="information"</code> wordt het kader groen en krijgt het een klein teken. Voor iets wat de lezer echt moet weten, zoals een correctie of een update.</p>
-      <aside class="information"><p>Dit stuk is bijgewerkt op 22 september 2026. De voorbeelden gebruiken nu Astro 7.</p></aside>
+      <h3>Information</h3>
+      <p>With <code>class="information"</code> the box turns green and gets a small sign. For something the reader really needs to know, such as a correction or an update.</p>
+      <aside class="information"><p>This piece was updated on 22 September 2026. The examples now use Astro 7.</p></aside>
 
-      <h3>Citaat</h3>
+      <h3>Quote</h3>
       <blockquote>
-        <p>Een citaat springt iets in, met een lijn ernaast. De bron komt eronder, kleiner en in de schreefloze.<cite><a href="https://www.google.com" title="Zoek het op Google">Naam van de bron</a>, een toelichting</cite></p>
+        <p>A quote is indented slightly, with a line next to it. The source goes below it, smaller and in the sans-serif.<cite><a href="https://www.google.com" title="Search for it on Google">Name of the source</a>, an explanation</cite></p>
       </blockquote>
 
       <!-- ================================================================ -->
-      <h2 id="lijsten">Lijsten</h2>
+      <h2 id="lists">Lists</h2>
 
-      <h3>Genummerd</h3>
+      <h3>Numbered</h3>
       <ol>
-        <li>Schrijf een eerste versie</li>
+        <li>Write a first draft</li>
         <li>
-          Laat hem een nacht liggen
+          Let it rest for a night
           <ol>
-            <li>lees hem hardop</li>
-            <li>schrap wat niet nodig is</li>
+            <li>read it out loud</li>
+            <li>cut what is not needed</li>
           </ol>
         </li>
-        <li>Publiceer</li>
+        <li>Publish</li>
       </ol>
 
-      <h3>Ongenummerd</h3>
+      <h3>Unnumbered</h3>
       <ul>
         <li>
-          Papier
+          Paper
           <ul>
-            <li>gelinieerd</li>
-            <li>blanco</li>
+            <li>lined</li>
+            <li>blank</li>
           </ul>
         </li>
-        <li>Potlood</li>
-        <li>Gum</li>
+        <li>Pencil</li>
+        <li>Eraser</li>
       </ul>
 
       <!-- ================================================================ -->
       <h2 id="code">Code</h2>
-      <p>Code in de tekst krijgt een lichte achtergrond, zoals <code>font-optical-sizing</code>. Codeblokken volgen het lichte of donkere thema en scrollen zijwaarts als een regel te lang is.</p>
+      <p>Code in the text gets a light background, such as <code>font-optical-sizing</code>. Code blocks follow the light or dark theme and scroll sideways if a line is too long.</p>
       <Code code={jsSample} lang="js" themes={codeThemes} defaultColor={false} />
       <Code code={cssSample} lang="css" themes={codeThemes} defaultColor={false} />
 
       <!-- ================================================================ -->
-      <h2 id="beeld">Beeld</h2>
+      <h2 id="images">Images</h2>
 
-      <h3>In de tekstkolom</h3>
-      <p>Een afbeelding is zo breed als de tekst. Op brede schermen staat het bijschrift in de marge, net als een noot, uitgelijnd met de onderkant van de foto.</p>
+      <h3>In the text column</h3>
+      <p>An image is as wide as the text. On wide screens the caption is in the margin, just like a note, aligned with the bottom of the photo.</p>
       <figure>
         <a href={brug.src}>
-          <Image src={brug} alt="Zwart-witfoto van een stalen boogbrug voor de trein over het water, met grote graffitiletters op de zijkant." widths={[640, 960, 1280]} sizes="(min-width: 40rem) 40rem, 100vw" />
+          <Image src={brug} alt="Black-and-white photo of a steel arch bridge for the train over the water, with large graffiti letters on the side." widths={[640, 960, 1280]} sizes="(min-width: 40rem) 40rem, 100vw" />
         </a>
-        <figcaption>Dit is het bijschrift bij de afbeelding. Op een smal scherm staat het eronder.</figcaption>
+        <figcaption>This is the caption of the image. On a narrow screen it is below it.</figcaption>
       </figure>
 
-      <h3>Breed</h3>
-      <p>In een <code>bleed</code> loopt de afbeelding door tot in de marge. Het bijschrift staat er dan onder.</p>
+      <h3>Wide</h3>
+      <p>In a <code>bleed</code> the image runs into the margin. The caption then goes below it.</p>
       <div class="bleed">
         <figure>
           <a href={brug.src}>
-            <Image src={brug} alt="Dezelfde brug, breder weergegeven." widths={[960, 1280, 1920]} sizes="(min-width: 70rem) 58.5rem, 100vw" />
+            <Image src={brug} alt="The same bridge, shown wider." widths={[960, 1280, 1920]} sizes="(min-width: 70rem) 58.5rem, 100vw" />
           </a>
-          <figcaption>Dit is het bijschrift bij een brede afbeelding.</figcaption>
+          <figcaption>This is the caption of a wide image.</figcaption>
         </figure>
       </div>
 
       <!-- ================================================================ -->
-      <h2 id="tabellen">Tabellen</h2>
-      <p>Tabellen staan in de schreefloze. Een brede tabel staat in een <code>bleed</code> en scrolt op kleinere schermen zijwaarts. Op een telefoon wordt elke rij een blokje, met de kolomnaam ervoor.</p>
+      <h2 id="tables">Tables</h2>
+      <p>Tables are set in the sans-serif. A wide table sits in a <code>bleed</code> and scrolls sideways on smaller screens. On a phone every row becomes a small block, with the column name in front of it.</p>
       <div class="bleed">
-        <div class="table-wrap" role="region" aria-labelledby="tabel-lamy" tabindex="0">
+        <div class="table-wrap" role="region" aria-labelledby="table-lamy" tabindex="0">
           <table>
-            <caption id="tabel-lamy">Lamy Studio: speciale en vaste edities</caption>
+            <caption id="table-lamy">Lamy Studio: special and regular editions</caption>
             <thead>
               <tr>
-                <th scope="col">Jaar</th>
+                <th scope="col">Year</th>
                 {penColumns.map((c) => <th scope="col">{c}</th>)}
               </tr>
             </thead>
@@ -364,42 +364,42 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
       </div>
 
       <!-- ================================================================ -->
-      <h2 id="kantlijn">Kantlijn, noten en menu</h2>
+      <h2 id="margin-line">Margin line, notes and menu</h2>
 
-      <h3>Kantlijn</h3>
-      <p>Links van de tekst loopt een lijn die volloopt terwijl je leest, met een streepje voor elke h2 en h3, op de hoogte waar dat hoofdstuk staat. Beweeg je muis naar de linkerrand en de titels verschijnen. Met <kbd>Tab</kbd> werkt het ook, en op een tablet tik je op de kantlijn. Op een telefoon staat de inhoud in het menu en loopt er een groene balk onder de header.</p>
+      <h3>Margin line</h3>
+      <p>To the left of the text runs a line that fills up as you read, with a tick for every h2 and h3, at the height where that chapter is. Move your mouse to the left edge and the titles appear. It also works with <kbd>Tab</kbd>, and on a tablet you tap the margin line. On a phone the contents are in the menu and a green bar runs under the header.</p>
 
-      <h3>Noten</h3>
-      <p>Voetnoten schrijf je gewoon in Markdown. Vanaf 1120 pixels breed staan ze in de rechtermarge, op dezelfde basislijn als hun nummertje. Wijs het nummer of de noot aan en ze lichten samen op. Op smallere schermen verschijnt de noot in een klein venster als je het nummer aanwijst, en staan alle noten onderaan.</p>
+      <h3>Notes</h3>
+      <p>You simply write footnotes in Markdown. From 1120 pixels wide they are in the right margin, on the same baseline as their number. Point at the number or the note and they light up together. On narrower screens the note appears in a small window when you point at the number, and all notes are at the bottom.</p>
 
       <h3>Header</h3>
-      <p>De header is half doorzichtig en vervaagt wat eronder zit, zodat de tekst er wazig onderdoor schuift. Hij verdwijnt als je naar beneden scrolt en komt terug zodra je omhoog scrolt.</p>
+      <p>The header is semi-transparent and blurs what is underneath it, so that the text slides underneath it, blurred. It disappears when you scroll down and comes back as soon as you scroll up.</p>
 
-      <h3>Menuknop</h3>
-      <p>Drie lijnen die naar een kruis draaien als het menu opent. Het menu schuift van links in, de items komen kort na elkaar binnen.</p>
+      <h3>Menu button</h3>
+      <p>Three lines that turn into a cross when the menu opens. The menu slides in from the left, the items come in shortly after each other.</p>
       <div class="menu-demo">
-        <button type="button" class="menu-button" aria-expanded="false" aria-label="Voorbeeld van de menuknop" data-menu-demo>
+        <button type="button" class="menu-button" aria-expanded="false" aria-label="Example of the menu button" data-menu-demo>
           <span class="menu-button__icon" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
-        <span>Klik om te wisselen tussen dicht en open.</span>
+        <span>Click to switch between closed and open.</span>
       </div>
 
       <!-- ================================================================ -->
-      <h2 id="onderdelen">Onderdelen</h2>
+      <h2 id="components">Components</h2>
 
-      <h3>Onderwerpen</h3>
-      <p>Bovenaan een stuk, boven de titel. Klein en rustig, in de schreefloze.</p>
-      <ul class="post-tags is-demo" aria-label="Voorbeeld van onderwerpen">
-        <li>Typografie</li>
-        <li>Lezen</li>
+      <h3>Topics</h3>
+      <p>At the top of a piece, above the title. Small and calm, in the sans-serif.</p>
+      <ul class="post-tags is-demo" aria-label="Example of topics">
+        <li>Typography</li>
+        <li>Reading</li>
         <li>Web</li>
       </ul>
 
-      <h3>Artikelkop</h3>
-      <p>Onderwerpen, titel en een regel met auteur, datum en leestijd. De kop van <a href="#top">deze pagina</a> is er een voorbeeld van.</p>
+      <h3>Article header</h3>
+      <p>Topics, title and a line with author, date and reading time. The header of <a href="#top">this page</a> is an example of it.</p>
 
-      <h3>Overzicht</h3>
-      <p>Op de overzichtspagina staat de nieuwste post groot bovenaan. Daaronder volgt het archief per jaar; de omschrijving van elke post staat in de marge, net als een noot, en licht op als je de regel aanwijst.</p>
+      <h3>Overview</h3>
+      <p>On the overview page the newest post is shown large at the top. Below it follows the archive per year; the description of each post is in the margin, just like a note, and lights up when you point at the line.</p>
       {
         featured && (
           <div class="demo-archive bleed">
@@ -427,8 +427,8 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
         )
       }
 
-      <h3>Onder een stuk</h3>
-      <p>Links naar het vorige en het volgende stuk, onder een dunne lijn.</p>
+      <h3>Below a piece</h3>
+      <p>Links to the previous and the next piece, below a thin line.</p>
       {
         demoEntries.length > 1 && (
           <div class="post-nav is-demo" lang="en">
@@ -444,21 +444,21 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
         )
       }
 
-      <!-- Voetnoten, in dezelfde vorm als Markdown ze maakt. -->
+      <!-- Footnotes, in the same form as Markdown makes them. -->
       <section data-footnotes class="footnotes">
-        <h2 class="sr-only" id="footnote-label">Voetnoten</h2>
+        <h2 class="sr-only" id="footnote-label">Footnotes</h2>
         <ol>
-          <li id="user-content-fn-regellengte-a">
-            <p><a href="http://baymard.com/blog/line-length-readability">Readability: the Optimal Line Length</a>, Baymard Institute. <a href="#user-content-fnref-regellengte-a" data-footnote-backref aria-label="Terug naar verwijzing 1" class="data-footnote-backref">↩</a></p>
+          <li id="user-content-fn-line-length-a">
+            <p><a href="http://baymard.com/blog/line-length-readability">Readability: the Optimal Line Length</a>, Baymard Institute. <a href="#user-content-fnref-line-length-a" data-footnote-backref aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
           </li>
-          <li id="user-content-fn-regellengte-b">
-            <p><a href="http://webtypography.net/2.1.2">The Elements of Typographic Style Applied to the Web</a>, naar Robert Bringhurst. <a href="#user-content-fnref-regellengte-b" data-footnote-backref aria-label="Terug naar verwijzing 2" class="data-footnote-backref">↩</a></p>
+          <li id="user-content-fn-line-length-b">
+            <p><a href="http://webtypography.net/2.1.2">The Elements of Typographic Style Applied to the Web</a>, after Robert Bringhurst. <a href="#user-content-fnref-line-length-b" data-footnote-backref aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
           </li>
-          <li id="user-content-fn-regellengte-c">
-            <p><a href="https://accessibility.digital.gov/visual-design/typography/">Accessibility for Teams</a>, U.S. General Services Administration. <a href="#user-content-fnref-regellengte-c" data-footnote-backref aria-label="Terug naar verwijzing 3" class="data-footnote-backref">↩</a></p>
+          <li id="user-content-fn-line-length-c">
+            <p><a href="https://accessibility.digital.gov/visual-design/typography/">Accessibility for Teams</a>, U.S. General Services Administration. <a href="#user-content-fnref-line-length-c" data-footnote-backref aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
           </li>
           <li id="user-content-fn-bleed">
-            <p>Een noot die naast een breed blok zou vallen, schuift vanzelf door tot onder dat blok. <a href="#user-content-fnref-bleed" data-footnote-backref aria-label="Terug naar verwijzing 4" class="data-footnote-backref">↩</a></p>
+            <p>A note that would fall next to a wide block automatically moves down to below that block. <a href="#user-content-fnref-bleed" data-footnote-backref aria-label="Back to reference 4" class="data-footnote-backref">↩</a></p>
           </li>
         </ol>
       </section>
@@ -467,13 +467,13 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
     <div class="sidenotes" data-sidenotes></div>
   </article>
 
-  <TocRail items={toc} title="Styleguide" label="Inhoud" />
+  <TocRail items={toc} title="Styleguide" />
 
   <script>
     import { initSidenotes } from '../scripts/sidenotes';
     document.querySelectorAll<HTMLElement>('[data-post]').forEach(initSidenotes);
-  
-    // Licht / Donker / Systeem (alleen voor deze pagina, niet onthouden).
+
+    // Light / Dark / System (only for this page, not remembered).
     const root = document.documentElement;
     const choices = document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]');
     choices.forEach((button) => {
@@ -484,8 +484,8 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
         choices.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
       });
     });
-  
-    // Voorbeeld van de menuknop.
+
+    // Example of the menu button.
     document.querySelectorAll<HTMLButtonElement>('[data-menu-demo]').forEach((button) => {
       button.addEventListener('click', () => {
         const open = button.getAttribute('aria-expanded') === 'true';
