@@ -1,11 +1,12 @@
 ---
 /**
- * Layout for every markdown article (blog posts and pens).
+ * Layout for every markdown and MDX article (blog posts and pens).
  *
  * Keeps the existing frontmatter: title, description, date, tags, draft, dutch.
  * Adds the left rail (headings + reading progress), footnotes in the margin,
  * and links to the previous and next post.
  */
+import { readFileSync } from 'node:fs';
 import type { MarkdownHeading } from 'astro';
 import BaseLayout from './BaseLayout.astro';
 import TocRail from '../components/TocRail.astro';
@@ -24,13 +25,19 @@ interface Props {
   headings?: MarkdownHeading[];
   rawContent?: () => string;
   url?: string;
+  file?: string;
 }
 
-const { frontmatter, headings = [], rawContent, url } = Astro.props;
+const { frontmatter, headings = [], rawContent, url, file } = Astro.props;
 const { title, description, draft, dutch } = frontmatter;
 const date = parseDate(frontmatter.date);
 const tags = tagList(frontmatter.tags);
-const minutes = readingTime(rawContent?.() ?? '');
+
+// Markdown hands us its source; for MDX we read the file, minus frontmatter and imports.
+const source =
+  rawContent?.() ??
+  (file ? readFileSync(file, 'utf8').replace(/^---[\s\S]*?---/, '').replace(/^import .*$/gm, '') : '');
+const minutes = readingTime(source);
 
 // Headings for the rail: h2 and h3, minus the hidden "Footnotes" heading.
 const toc = headings

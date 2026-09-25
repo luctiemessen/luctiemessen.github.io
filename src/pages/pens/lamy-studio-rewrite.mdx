@@ -7,6 +7,9 @@ tags: personal pens
 draft: true
 ---
 
+import PenCase from '../../components/PenCase.astro';
+import { lamyStudio } from '../../data/pens';
+
 <p class="lead">In 2005 Lamy added a pen to its range that looks like nothing else in the catalogue: a slim, all-metal cigar with a clip shaped like the blade of a propeller. More than twenty years and a long list of colours later, the Lamy Studio is still for sale. This is its story, from the designer who drew it to every edition I could track down.</p>
 
 ## At a glance
@@ -115,6 +118,14 @@ For the Studio, the finish digits work out roughly like this:
 - **9**: Platinum, and most special editions since 2021
 
 I'm under the impression that Lamy tries to align these finish numbers across models, but I'm not sure. There are discrepancies: on the cp1, 6 is the matt black finish, while the Studio uses 7 for black. <ref>Ask Lamy.</ref>
+
+## The collection
+
+Here is every Studio from the timetable below, in one case. On a computer or tablet they lie in a tray, one above the other: point at a pen to see its details next to it, or move through them with the arrow keys. On a phone they stand upright, and you swipe through them.
+
+<ref>Replace the drawings with photos of my own pens, all framed the same way.</ref>
+
+<PenCase pens={lamyStudio} label="Every Lamy Studio, 2005 to 2026" />
 
 ## Release timetable
 

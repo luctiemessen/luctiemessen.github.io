@@ -1,0 +1,98 @@
+---
+/**
+ * A case full of pens.
+ *
+ * - From 40rem: the pens lie in a tray, and the details of the pen you
+ *   point at appear next to it. From 70rem they move into the right margin.
+ * - Phones (< 40rem): the pens stand upright in a strip you swipe through.
+ *   The pen in the middle is the active one; its details appear below.
+ * - Without JavaScript: a plain list of pens, each with its details.
+ *
+ * Without a photo, a pen is drawn in its swatch colour. Photos go in the
+ * data (src/data/pens.ts) and are rotated upright by CSS on small screens.
+ */
+import { Image } from 'astro:assets';
+import type { Pen } from '../data/pens';
+import '../styles/pen-case.css';
+
+interface Props {
+  pens: Pen[];
+  /** Accessible name for the whole case, e.g. "Every Lamy Studio". */
+  label: string;
+}
+
+const { pens, label } = Astro.props;
+const prefix = label.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+---
+
+<section class="pen-case" aria-label={label} data-pen-case data-in-margin>
+  <ol class="pen-case__list">
+    {
+      pens.map((pen, i) => (
+        <li class="pen-case__item" style={`--swatch: ${pen.swatch}; --trim: ${pen.trim ?? '#d3d5d7'}`}>
+          <button class="pen-case__pen" type="button" aria-describedby={`${prefix}-${i}`}>
+            <span class="pen-case__year">{pen.year}</span>
+            <span class="pen-case__visual">
+              {pen.image ? (
+                <Image class="pen-case__photo" src={pen.image} alt="" widths={[480, 960]} sizes="30rem" />
+              ) : (
+                <span class="pen-case__art" aria-hidden="true">
+                  <span class="pen-case__body" />
+                  <span class="pen-case__end" />
+                  <span class="pen-case__end pen-case__end--right" />
+                  <span class="pen-case__band" />
+                  <span class="pen-case__clip" />
+                </span>
+              )}
+            </span>
+            <span class="sr-only">{pen.name}</span>
+          </button>
+          <div class="pen-case__info" id={`${prefix}-${i}`}>
+            <p class="pen-case__name">{pen.name}</p>
+            <p class="pen-case__edition">
+              {pen.year} · {pen.edition}
+            </p>
+            <dl class="pen-case__specs">
+              <div>
+                <dt>Finish</dt>
+                <dd>{pen.finish}</dd>
+              </div>
+              <div>
+                <dt>Nib</dt>
+                <dd>{pen.nib}</dd>
+              </div>
+              <div>
+                <dt>Section</dt>
+                <dd>{pen.section}</dd>
+              </div>
+              <div>
+                <dt>Model</dt>
+                <dd>{pen.model}</dd>
+              </div>
+            </dl>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+
+  <div class="pen-case__dots">
+    {
+      pens.map((pen) => (
+        <button
+          class="pen-case__dot"
+          type="button"
+          style={`--swatch: ${pen.swatch}`}
+          aria-label={`${pen.name}, ${pen.year}`}
+        />
+      ))
+    }
+  </div>
+
+  <div class="pen-case__card" aria-hidden="true"></div>
+</section>
+
+<script>
+  import { initPenCase } from '../scripts/pen-case';
+  document.querySelectorAll<HTMLElement>('[data-pen-case]').forEach(initPenCase);
+</script>

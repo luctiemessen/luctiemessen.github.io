@@ -1,3 +1,4 @@
+import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
@@ -10,7 +11,8 @@ export default defineConfig({
       defaultColor: false,
     },
   },
-  integrations: [sitemap()],
+  // MDX is for articles that use components, like the pen case.
+  integrations: [mdx(), sitemap()],
   // Fix for a malfunctioning sharp install: images are copied, not optimized.
   image: {
     service: { entrypoint: 'astro/assets/services/noop' },

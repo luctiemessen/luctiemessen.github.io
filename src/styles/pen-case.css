@@ -1,0 +1,336 @@
+/* ==========================================================================
+   Pennenvitrine (PenCase.astro, pen-case.ts)
+
+   - Zonder JavaScript: een gewone lijst pennen met hun gegevens.
+   - Met JavaScript (.is-ready):
+     - < 40rem (telefoons): de pennen staan rechtop in een strook waar je
+       doorheen veegt, de gegevens staan eronder.
+     - ≥ 40rem: de pennen liggen in een vitrine, de gegevens staan ernaast,
+       binnen de tekstkolom.
+     - ≥ 70rem: de gegevens schuiven de echte marge in, net als een noot.
+
+   Niet in een laag, dus de lijststijlen van .prose hebben hier geen invloed.
+   ========================================================================== */
+
+.pen-case {
+  --pen-ratio: 12;
+  position: relative;
+  margin: 2.5em 0;
+}
+
+.pen-case__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pen-case__item {
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.pen-case__pen {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pen-case__year {
+  font: 400 0.8125rem/1 var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+}
+
+.pen-case__visual {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  aspect-ratio: var(--pen-ratio) / 1;
+}
+
+.pen-case__art,
+.pen-case__photo {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pen-case__photo {
+  object-fit: contain;
+  border-radius: 0;
+}
+
+/* ---------- De tekening, zolang er geen foto is ---------- */
+
+.pen-case__art > span {
+  position: absolute;
+  display: block;
+}
+
+.pen-case__body {
+  inset: 14% 0;
+  border-radius: 999px;
+  background: var(--swatch);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.pen-case__end {
+  top: 14%;
+  bottom: 14%;
+  left: 0;
+  width: 3.2%;
+  border-radius: 999px 0 0 999px;
+  background: var(--trim);
+}
+
+.pen-case__end--right {
+  left: auto;
+  right: 0;
+  border-radius: 0 999px 999px 0;
+}
+
+.pen-case__band {
+  top: 14%;
+  bottom: 14%;
+  left: 45%;
+  width: 1%;
+  background: var(--trim);
+}
+
+.pen-case__clip {
+  top: 1%;
+  left: 5%;
+  width: 30%;
+  height: 25%;
+  border-radius: 3px;
+  background: var(--trim);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+/* ---------- Gegevens van een pen ---------- */
+
+.pen-case__info {
+  padding: 0.35rem 0 0 3.75rem;
+  font: 400 0.8125rem/1.5 var(--font-sans);
+  color: var(--ink-3);
+}
+
+.pen-case__name {
+  margin: 0;
+  font: 500 1.0625rem/1.3 var(--font-serif);
+  color: var(--ink);
+}
+
+.pen-case__edition {
+  margin: 0.1rem 0 0.45rem;
+  color: var(--accent);
+}
+
+.pen-case__specs {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.05rem 0.75rem;
+  margin: 0;
+}
+
+.pen-case__specs div {
+  display: contents;
+}
+
+.pen-case__specs dd {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.pen-case__dots,
+.pen-case__card {
+  display: none;
+}
+
+/* ==========================================================================
+   Met JavaScript
+   ========================================================================== */
+
+/* De gegevens per pen blijven voor schermlezers (aria-describedby),
+   maar staan voortaan maar één keer in beeld: in de kaart. */
+.pen-case.is-ready .pen-case__info {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.pen-case.is-ready .pen-case__item {
+  margin: 0;
+}
+
+.pen-case.is-ready .pen-case__card {
+  display: block;
+  font: 400 0.8125rem/1.5 var(--font-sans);
+  color: var(--ink-3);
+}
+
+/* ---------- Telefoons: rechtop in een strook ---------- */
+
+@media (max-width: 39.99rem) {
+  .pen-case.is-ready {
+    --pen-length: min(21rem, 52vh);
+    --slot: 4rem;
+  }
+
+  .pen-case.is-ready .pen-case__list {
+    display: flex;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0.75rem calc(50% - var(--slot) / 2) 0.5rem;
+  }
+
+  .pen-case.is-ready .pen-case__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pen-case.is-ready .pen-case__item {
+    flex: 0 0 var(--slot);
+    scroll-snap-align: center;
+  }
+
+  /* De buren worden iets kleiner, niet lichter: de kleuren moeten kloppen. */
+  .pen-case.is-ready .pen-case__pen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0;
+    transform: scale(0.86);
+    transition: transform 0.35s var(--ease-out);
+  }
+
+  .pen-case.is-ready .is-active .pen-case__pen {
+    transform: translateY(-6px);
+  }
+
+  .pen-case.is-ready .pen-case__year {
+    order: 2;
+  }
+
+  .pen-case.is-ready .is-active .pen-case__year {
+    color: var(--ink);
+  }
+
+  /* Staand: het vak is smal en hoog, de liggende pen draait een kwartslag. */
+  .pen-case.is-ready .pen-case__visual {
+    width: calc(var(--pen-length) / var(--pen-ratio));
+    height: var(--pen-length);
+    max-width: none;
+    aspect-ratio: auto;
+  }
+
+  .pen-case.is-ready .pen-case__art,
+  .pen-case.is-ready .pen-case__photo {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    width: var(--pen-length);
+    height: calc(var(--pen-length) / var(--pen-ratio));
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .pen-case.is-ready .pen-case__dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .pen-case__dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--swatch);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 18%, transparent);
+    cursor: pointer;
+  }
+
+  .pen-case__dot.is-active {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .pen-case.is-ready .pen-case__card {
+    min-height: 8.5rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+  }
+}
+
+/* ---------- Vanaf 40rem: liggend, gegevens ernaast ---------- */
+
+@media (min-width: 40rem) {
+  .pen-case.is-ready {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 12rem;
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+
+  .pen-case.is-ready .pen-case__list {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .pen-case.is-ready .pen-case__pen {
+    transition: background-color 0.15s ease;
+  }
+
+  .pen-case.is-ready .is-active .pen-case__pen {
+    background: var(--accent-tint);
+  }
+
+  .pen-case.is-ready .is-active .pen-case__year {
+    color: var(--ink);
+  }
+
+  /* Dezelfde vorm als een noot in de marge. */
+  .pen-case.is-ready .pen-case__card {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: -0.75rem;
+    padding: 0.35rem 0.6rem 0.4rem 0.75rem;
+    border-left: 2px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    transform: translateY(var(--card-y, 0));
+    transition: transform 0.35s var(--ease-out);
+  }
+}
+
+/* ---------- Vanaf 70rem: de gegevens staan in de echte marge ---------- */
+
+@media (min-width: 70rem) {
+  .pen-case.is-ready {
+    grid-template-columns: minmax(0, 1fr) var(--note-w);
+    column-gap: var(--note-gap);
+    margin-right: calc(-1 * (var(--note-gap) + var(--note-w)));
+  }
+}
