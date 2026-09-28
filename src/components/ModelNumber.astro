@@ -1,0 +1,51 @@
+---
+/**
+ * How a model number is built up: one column per digit, with the meaning
+ * of every possible value.
+ *
+ * Each column shows the whole number (XXX) with its own digit highlighted,
+ * so it still reads when the columns stack on a phone. For screen readers
+ * every column is a group ("First digit, Style") with a list of values;
+ * the X's are decorative.
+ */
+import type { ModelNumberPosition } from '../data/pens';
+import '../styles/model-number.css';
+
+interface Props {
+  positions: ModelNumberPosition[];
+  caption: string;
+}
+
+const { positions, caption } = Astro.props;
+const places = ['First', 'Second', 'Third', 'Fourth'];
+const prefix = `model-number-${caption.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+---
+
+<figure class="model-number">
+  <div class="model-number__positions">
+    {
+      positions.map((position, i) => (
+        <div class="model-number__position" role="group" aria-labelledby={`${prefix}-${i}`}>
+          <p class="model-number__code" aria-hidden="true">
+            {positions.map((_, j) => (
+              <span class:list={{ 'is-current': j === i }}>X</span>
+            ))}
+          </p>
+          <p class="model-number__label" id={`${prefix}-${i}`}>
+            <span class="model-number__place">{places[i]} digit</span>
+            <span class="model-number__name">{position.label}</span>
+          </p>
+          <dl class="model-number__options">
+            {position.options.map(([digit, meaning]) => (
+              <div>
+                <dt>{digit}</dt>
+                <dd>{meaning}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      ))
+    }
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>

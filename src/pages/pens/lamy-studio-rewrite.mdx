@@ -7,8 +7,9 @@ tags: personal pens
 draft: true
 ---
 
+import ModelNumber from '../../components/ModelNumber.astro';
 import PenCase from '../../components/PenCase.astro';
-import { lamyStudio } from '../../data/pens';
+import { lamyModelNumber, lamyStudio } from '../../data/pens';
 
 <p class="lead">In 2005 Lamy added a pen to its range that looks like nothing else in the catalogue: a slim, all-metal cigar with a clip shaped like the blade of a propeller. More than twenty years and a long list of colours later, the Lamy Studio is still for sale. This is its story, from the designer who drew it to every edition I could track down.</p>
 
@@ -96,16 +97,7 @@ Most Lamy pens follow the same numbering: three digits, each with its own meanin
 
 The leading zero of a fountain pen is usually dropped, which is why the Brushed Studio fountain pen is sold as the L65 rather than L065. The Brushed ballpoint and rollerball are the L265 and L365, and the Black rollerball is the L367.[^model-numbers]
 
-<div class="bleed">
-
-<figure>
-
-![Model numbering Lamy](../../assets/model-numbering-lamy.png "Model numbering Lamy")
-
-<figcaption>How Lamy's model numbers are built up</figcaption>
-</figure>
-
-</div>
+<ModelNumber positions={lamyModelNumber} caption="How Lamy's model numbers are built up" />
 
 So with these numbers you can identify a Lamy Studio Platinum ballpoint as model 269. <ref>Turn this into an illustration.</ref>
 

@@ -1,5 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import Signature from '../assets/signature.svg';
+
 ---
 
 <PageLayout title="About" heading="About me" description="About Luc Tiemessen, designer at ING in Amsterdam.">
@@ -7,7 +9,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 
   <p>I hold an MSc in Computer Science (Master Human Media Interaction) from the <a href="https://www.utwente.nl">University of Twente</a> (Master <a href="https://www.utwente.nl/en/eemcs/hmi/">Human Media Interaction</a>) and a BSc from <a href="https://www.han.nl">HAN University of Applied Sciences</a>. Apparently I am one of those who love design and code almost equally.</p>
 
-  <p>Before ING, I spent 9 fantastic years at <a href="https://www.informaat.nl">Informaat</a>, working with clients like <a href="http://www.klm.com">KLM</a>, <a href="https://www.achmea.nl/">Achmea</a>, and <a href="https://www.eneco.nl/">Eneco</a>.</p>
+  <p>Before ING, I spent 9 fantastic years at Informaat, working with clients like <a href="http://www.klm.com">KLM</a>, <a href="https://www.achmea.nl/">Achmea</a>, and <a href="https://www.eneco.nl/">Eneco</a>.</p>
 
   <p>In addition to my day job, I co-founded (with <a href="https://thisafternoon.nl/">Thisafternoon</a>) a company offering WordPress courses to empower small businesses and self employed. After three successful years, I shifted focus to my main gig.</p>
 
@@ -15,5 +17,10 @@ import PageLayout from '../layouts/PageLayout.astro';
 
   <p>This site is entirely written, designed and built by me, with the help of static site generator <a href="https://astro.build/">Astro</a>. It may not be perfect, but it's my happy space. Hosted on <a href="https://github.com/luctiemessen/luctiemessen.github.io">Github</a>, feel free to check it out (and my <a href="/styleguide/">Styleguide</a>) and follow along as I continue to enhance it.</p>
 
-  <p>Thanks for joining the journey!<br />Luc</p>
+  <p>Thanks for joining the journey!</p>
+  <Signature class="signature" />
+
+  <style>
+    .signature { width: 5rem; height: auto; color: var(--ink); }
+  </style>
 </PageLayout>

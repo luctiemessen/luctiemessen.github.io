@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPostLayout.astro"
 title: "Redesign 2026: notes in the margin"
 date: 2026-09-24
-description: How this site went from Lora and Playfair on a six-column grid to a warm, calm design with footnotes in the margin. The styleguide, the trade-offs behind it and what I'm aiming for.
+description: How this site went from big and bold to a warm and calm design.
 tags: web design personal
 draft: false
 ---
@@ -287,7 +287,7 @@ markdown: {
 
 ### Astro 7
 
-With the new design in place, I also upgraded from Astro 5 to Astro 7. The biggest change was Astro's new markdown processor, which made one of my old plugins unnecessary. To be sure nothing else changed, I built the site before and after the upgrade and compared every page: the structure, the links, the text, the RSS feed and the sitemap. They were identical, apart from some whitespace between elements that you can't see.
+With the new design in place, I also upgraded from Astro 5 to Astro 7. The biggest change was Astro's new markdown processor, which made one of my old plugins unnecessary.
 
 ## What I'm aiming for
 

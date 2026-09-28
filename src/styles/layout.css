@@ -23,8 +23,8 @@
   right: 0;
   padding-top: var(--safe-top);
   background: color-mix(in srgb, var(--paper) 70%, transparent);
-  -webkit-backdrop-filter: blur(18px) saturate(1.6);
-  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(10px) saturate(1.6);
+  backdrop-filter: blur(10px) saturate(1.6);
   border-bottom: 1px solid transparent;
   transition:
     transform 0.45s var(--ease-out),

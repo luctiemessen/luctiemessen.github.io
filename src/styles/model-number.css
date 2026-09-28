@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Modelnummer (ModelNumber.astro)
+   Eén kolom per cijfer. Naast elkaar vanaf ± 34rem, daaronder onder elkaar.
+   Niet in een laag, dus de stijlen van .prose hebben hier geen invloed.
+   ========================================================================== */
+
+.model-number__positions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 2rem 1.75rem;
+}
+
+/* Het hele nummer, met het eigen cijfer van deze kolom in de accentkleur. */
+.model-number__code {
+  margin: 0;
+  font: 300 3.25rem/1 var(--font-serif);
+  letter-spacing: 0.06em;
+  color: var(--rule-strong);
+}
+
+.model-number__code .is-current {
+  color: var(--accent);
+}
+
+.model-number__label {
+  margin: 0.7rem 0 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.model-number__place {
+  display: block;
+  font: 400 0.75rem/1.3 var(--font-sans);
+  color: var(--ink-3);
+}
+
+.model-number__name {
+  display: block;
+  font: 500 1.125rem/1.3 var(--font-serif);
+  color: var(--ink);
+}
+
+.model-number__options {
+  display: grid;
+  grid-template-columns: 1.1rem minmax(0, 1fr);
+  gap: 0.3rem 0.6rem;
+  margin: 0;
+  font: 400 0.875rem/1.4 var(--font-sans);
+}
+
+.model-number__options div {
+  display: contents;
+}
+
+.model-number__options dt {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.model-number__options dd {
+  margin: 0;
+  color: var(--ink-2);
+}

@@ -55,3 +55,49 @@ export const lamyStudio: Pen[] = [
   { year: 2025, name: 'Orion', swatch: '#5b3a4d', finish: 'Matt lacquer', nib: 'Steel', section: 'Polished steel', model: '066', edition: 'Special edition' },
   { year: 2026, name: 'Petrol', swatch: '#1f5559', finish: 'Matt lacquer', nib: 'Steel', section: 'Polished steel', model: '069', edition: 'Special edition' },
 ];
+
+/** One position in a model number, with the meaning of each digit. */
+export interface ModelNumberPosition {
+  label: string;
+  options: [digit: string, meaning: string][];
+}
+
+/** How Lamy's three-digit model numbers are built up (ModelNumber.astro). */
+export const lamyModelNumber: ModelNumberPosition[] = [
+  {
+    label: 'Style',
+    options: [
+      ['0', 'Fountain pen'],
+      ['1', 'Mechanical pencil'],
+      ['2', 'Ballpoint'],
+      ['3', 'Rollerball'],
+      ['4', 'Multi color ballpoint'],
+      ['5', 'Fineliner'],
+      ['6', 'Twin pen'],
+    ],
+  },
+  {
+    label: 'Model',
+    options: [
+      ['0', 'Lamy 2000, Logo'],
+      ['1', 'Safari, Vista'],
+      ['2', 'Pur, Linea, AL-star'],
+      ['3', 'Swift'],
+      ['4', 'st'],
+      ['5', 'cp1'],
+      ['6', 'Studio'],
+      ['7', 'Dialog'],
+      ['8', 'Scribble, Pico'],
+    ],
+  },
+  {
+    label: 'Finish',
+    options: [
+      ['5', 'Brushed steel'],
+      ['6', 'Matte black, All black LX, Violet, Royal red'],
+      ['7', 'Black, Blue'],
+      ['8', 'Palladium, Platinum grey, Piano black'],
+      ['9', 'Platinum, Dark brown'],
+    ],
+  },
+];
