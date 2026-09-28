@@ -58,7 +58,7 @@ if (button && drawer) {
       (el) => !el.hasAttribute('inert'),
     );
 
-  const setOpen = (next: boolean, returnFocus = false) => {
+  const setOpen = (next: boolean, returnFocus = false, fromKeyboard = false) => {
     if (next === open) return;
     open = next;
     root.toggleAttribute('data-nav-open', next);
@@ -68,14 +68,19 @@ if (button && drawer) {
 
     if (next) {
       header?.removeAttribute('data-hidden');
-      // Focus naar het eerste item, zonder dat de pagina verspringt.
-      drawer.querySelector<HTMLElement>('a[href]')?.focus({ preventScroll: true });
+      // Geopend met het toetsenbord: focus (met focusring) naar het eerste item.
+      // Met muis of vinger: focus naar het menu zelf, zonder ring. Anders toont
+      // Safari de ring om het eerste item, omdat het de knop bij een klik geen
+      // focus geeft. Tab brengt je daarna vanzelf bij het eerste item.
+      const target = fromKeyboard ? drawer.querySelector<HTMLElement>('a[href]') : drawer;
+      target?.focus({ preventScroll: true });
     } else if (returnFocus) {
       button.focus({ preventScroll: true });
     }
   };
 
-  button.addEventListener('click', () => setOpen(!open));
+  // Een klik via Enter of spatie heeft `detail` 0, een echte klik 1 of meer.
+  button.addEventListener('click', (event) => setOpen(!open, false, event.detail === 0));
   scrim?.addEventListener('click', () => setOpen(false));
 
   // Klikken op een link in het menu sluit het (belangrijk voor #ankers op dezelfde pagina).
@@ -93,17 +98,19 @@ if (button && drawer) {
     }
 
     // Houd de focus binnen knop + menu zolang het menu open is.
+    // Tab en Shift+Tab lopen rond binnen knop + links; ook als het menu zelf
+    // focus heeft (index -1), of als de focus ergens buiten het menu staat.
     if (event.key === 'Tab') {
       const items = focusables();
-      const first = items[0];
-      const last = items[items.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
+      const index = items.indexOf(document.activeElement as HTMLElement);
+      event.preventDefault();
+      const next =
+        index === -1
+          ? event.shiftKey
+            ? items.length - 1
+            : Math.min(1, items.length - 1)
+          : (index + (event.shiftKey ? -1 : 1) + items.length) % items.length;
+      items[next].focus();
     }
   });
 }

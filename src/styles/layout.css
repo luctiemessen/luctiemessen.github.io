@@ -199,6 +199,12 @@ html[data-nav-open] .nav-drawer {
     box-shadow 0.45s ease;
 }
 
+/* Het menu krijgt zelf focus als je het met muis of vinger opent
+   (site-header.ts). Het is geen knop of link, dus geen focusring. */
+.nav-drawer:focus {
+  outline: none;
+}
+
 .nav-drawer__list {
   list-style: none;
   margin: 0;

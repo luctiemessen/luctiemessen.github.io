@@ -37,7 +37,7 @@ const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWi
 
 <div class="nav-scrim" aria-hidden="true" data-nav-scrim></div>
 
-<nav class="nav-drawer" id="nav-drawer" aria-label="Main menu" inert data-nav-drawer>
+<nav class="nav-drawer" id="nav-drawer" aria-label="Main menu" tabindex="-1" inert data-nav-drawer>
   <ul class="nav-drawer__list">
     {
       links.map((item, i) => (
