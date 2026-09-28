@@ -30,7 +30,7 @@ In early 2024 I wrote a three-part series about the previous design: [finding th
 </div>
 </div>
 
-The 2024 design was built on a few strong ideas. Lora for reading, Playfair for the headings, Source Sans 3 for metadata and Source Code Pro for code. A fluid base size, and everything snapped to a vertical rhythm of `1.5rem` that I could show with a keyboard shortcut. A bright yellow accent and links with a light blue underline. The core of the old stylesheet looked like this:
+The 2024 design was built on a few ideas. Lora for reading, Playfair for the headings, Source Sans 3 for metadata and Source Code Pro for code. A fluid base size, and everything snapped to a vertical rhythm of `1.5rem`. A bright yellow accent and links with a light blue underline. The core of the old stylesheet looked like this:
 
 ```css
 :root {
@@ -65,21 +65,21 @@ The layout was a grid of six columns, at most `62rem` wide. The text sat in colu
 </div>
 </div>
 
-This spring I took a detour. Based on a design I generated with Google Stitch, the site got Newsreader with Inter, a floating glass navigation pill and an editorial list with teal tags. It was live for a few months, but it was built on top of the old stylesheet, which grew from 676 to 1,414 lines along the way. Its write-up never left draft. Time for a proper reset.
+This spring I took a detour. I experimented with some designs generated with Google Stitch, the site got Newsreader with Inter, a floating glass navigation pill and an editorial list with teal tags. It was live for a few months, but it was built on top of the old stylesheet, which grew from 676 to almost 1500 lines along the way. Its write-up never left the draft status (might publish at some time). Time for a proper reset.
 
 ## Starting with a styleguide
 
-This time I started with the styleguide instead of the site. I worked it out in a conversation with Claude: one page that shows every element of the site, from colours and typefaces to footnotes and the menu, each with a short explanation next to it. The [styleguide](/styleguide/) is written in Dutch, and its CSS carries the working title *Kanttekeningen*: Dutch for notes in the margin.[^kanttekeningen] That name turned out to describe the whole design.
+This time I started with the a short conversation with Claude. I alraedy created a styleguide for my first site but some elements were missing (header, menu and a proper description of the color usage). I asked Claude to fill in the missing components based on the description and the new color palette I created. It did a fine job of adding the dark mode switch, menu button, topics and article header (which I did not describe earlier). So I ended up with a complete page that shows every element of the site, from colours and typefaces to footnotes and the menu. The [styleguide](/styleguide/) was written in Dutch but also some parts were English. I asked Claude to translate it to English. While defining the design direction for this new one I used the working title *Kanttekeningen*: Dutch for notes in the margin.[^kanttekeningen] That name turned out to be a proper direction for the whole redesign. 
 
 The styleguide is built on a handful of rules.
 
 1. **Reading comes first.** One column of about seventy characters, generous line spacing, and nothing that competes with the text.
 2. **Two typefaces, two jobs.** A serif for everything you read, a sans-serif for everything you use.
-3. **One paper, three inks, one accent.** Colour is reserved for what you can click or what lights up.
+3. **One paper, three inks, one accent.** Yes, ink... You see the fountain pen connection here ;-). Colour is reserved for what you can click or what lights up.
 4. **The margin is part of the page.** Footnotes, captions and descriptions live next to the text, not below it.
 5. **Dark mode is not an afterthought.** Every colour has a dark counterpart, chosen by hand.
 
-Once the styleguide was done, I gave the page and its CSS to Claude Code and had it rebuild the whole site around it: every page, every layout, and all the markdown. The rest of this article is about what that involved.
+Once the styleguide was done, I gave the Styleguide and its CSS to Claude Code and had it rebuild the Astro configuration to use the stylesheet with the new components on every page, every layout, and all the markdown. The rest of this article is about what that involved.
 
 ## Typography
 
@@ -134,7 +134,7 @@ For comparison, here is the 2025 palette, frozen in time:
 <div><div style="height:2.75rem;border-radius:5px;background:hsl(195,88%,55%)"></div>Links</div>
 <div><div style="height:2.75rem;border-radius:5px;background:hsl(40,2%,94%)"></div>Inset</div>
 </div>
-<figcaption>The 2025 palette, with fixed colours so it looks the same in both modes.</figcaption>
+<figcaption>The 2025 palette.</figcaption>
 </figure>
 
 All colours are defined once, as custom properties in a small `tokens.css`, with a separate block for dark mode:
@@ -158,7 +158,7 @@ All colours are defined once, as custom properties in a small `tokens.css`, with
 }
 ```
 
-The lightest ink, used for dates and notes, still has a contrast of 4.65:1 against the paper, just above the 4.5:1 that WCAG asks for small text. I did try a lighter paper for light mode, with the raised surfaces a shade darker instead of lighter. In the end I liked it as it was.
+The lightest ink, used for dates and notes, still has a contrast of 4.65:1 against the paper, just above the 4.5:1 that WCAG asks for small text. 
 
 ## The margin
 

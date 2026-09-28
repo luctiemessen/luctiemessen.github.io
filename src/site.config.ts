@@ -15,5 +15,7 @@ export const NAV = [
   { name: 'Blog', path: '/blog/' },
   { name: 'Pens', path: '/pens/' },
   { name: 'About', path: '/about/' },
-  { name: 'Styleguide', path: '/styleguide/' },
 ];
+
+/** Onder het kopje "Reference" in het menu. */
+export const REFERENCE = [{ name: 'Styleguide', path: '/styleguide/' }];

@@ -246,7 +246,8 @@ html[data-nav-open] .nav-drawer {
   text-decoration: none;
 }
 
-.nav-drawer__toc a:hover {
+.nav-drawer__toc a:hover,
+.nav-drawer__toc a[aria-current='page'] {
   color: var(--accent);
 }
 

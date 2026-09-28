@@ -2,9 +2,10 @@
 /**
  * Glass header + hamburger menu + slide-in navigation.
  * Pass `toc` to also list the headings of the current page in the menu
- * (useful on phones, where the left rail is hidden).
+ * (useful on phones, where the left rail is hidden). Pages like the
+ * styleguide sit in a small "Reference" section at the bottom.
  */
-import { NAV as links, SITE } from '../site.config';
+import { NAV as links, REFERENCE as reference, SITE } from '../site.config';
 
 interface Props {
   toc?: { id: string; text: string; depth: number }[];
@@ -62,6 +63,20 @@ const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWi
       </section>
     )
   }
+  <section class="nav-drawer__section" data-stagger style={`--i: ${links.length + (toc.length > 0 ? 1 : 0)}`}>
+    <h2 class="nav-drawer__heading">Reference</h2>
+    <ul class="nav-drawer__toc">
+      {
+        reference.map((item) => (
+          <li>
+            <a href={item.path} aria-current={isCurrent(item.path) ? 'page' : undefined}>
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </nav>
 
 <script>
