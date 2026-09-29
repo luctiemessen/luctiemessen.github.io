@@ -272,8 +272,17 @@
     content: '— ';
   }
 
+  /* Een link in een bijzaak (bron, noot, footer) houdt de kleur van de tekst
+     eromheen en wordt groen als je hem aanwijst. */
   .prose blockquote cite a {
     color: inherit;
+    transition:
+      color 0.15s ease,
+      text-decoration-color 0.15s ease;
+  }
+
+  .prose blockquote cite a:hover {
+    color: var(--accent);
   }
 
   /* ---------- Kaders: <aside> en <aside class="information"> ---------- */
@@ -862,4 +871,47 @@
     grid-column: 1;
     text-align: left;
   }
+}
+
+/* --------------------------------------------------------------------------
+   Preview: een stukje HTML, CSS en JavaScript dat rendert in een afgeschermd
+   blok (een shadow root): een div met de class preview, met daarin een
+   template met shadowrootmode="open". Zie de styleguide voor een voorbeeld.
+
+   Let op: zet in dit commentaar geen HTML-tags. In de devserver staat deze
+   CSS in een style-element, en een afsluitende style-tag in het commentaar
+   zou dat element te vroeg beëindigen.
+
+   De stijlen binnen en buiten de preview raken elkaar niet. Tokens zoals
+   var(--accent) werken wel. Een eigen label: data-label="Voorbeeld".
+   Met data-replay komt er een knop Replay bij (gemaakt door preview.ts).
+   Scripts in de preview draaien via preview.ts en krijgen root mee.
+   -------------------------------------------------------------------------- */
+
+.preview {
+  position: relative;
+  margin: 2em 0;
+  padding: 2.1rem 1rem 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--paper-raised);
+  /* Een demo erft niet de grote artikeltekst, maar begint gewoon. */
+  font: 400 1rem/1.5 var(--font-sans);
+  color: var(--ink);
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.preview::before {
+  content: 'Preview';
+  position: absolute;
+  top: 0.65rem;
+  left: 1rem;
+  font: 500 0.75rem/1 var(--font-sans);
+  color: var(--ink-3);
+}
+
+.preview[data-label]::before {
+  content: attr(data-label);
 }

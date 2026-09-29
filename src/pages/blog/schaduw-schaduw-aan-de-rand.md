@@ -19,6 +19,21 @@ Afbeelding eindresultaat
 
 Zie hieronder wat ik bedoel (links de neutrale status, en rechts de mouseover status).
 
+<div class="preview" data-label="Voorbeeld">
+<template shadowrootmode="open">
+<style>
+  .stage { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; padding: 24px; border-radius: 4px; background: #fff; color: #333; font: 14px/1.45 system-ui, sans-serif; }
+  .label { margin: 0 0 8px; font-size: 12px; color: #777; }
+  .attention { width: 200px; padding: 20px; border: 2px solid #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc, inset 0 0 50px #ccc; }
+  .attention.is-hover { box-shadow: 0 0 10px #666, inset 0 0 50px #666; }
+</style>
+<div class="stage">
+  <div><p class="label">Neutraal</p><div class="attention">Let op! Deze box bestaat uit slechts één html element maar hij bevat meerdere schaduwen. Is dat niet geweldig?</div></div>
+  <div><p class="label">Mouseover</p><div class="attention is-hover">Let op! Deze box bestaat uit slechts één html element maar hij bevat meerdere schaduwen. Is dat niet geweldig?</div></div>
+</div>
+</template>
+</div>
+
 Best geinig, er zit een schaduw achter het object en er zit ook een binnenschaduw in het object, gecombineerd levert dat best een leuk concept op. Zou het echter niet handig zijn als dit geneuzel met het slicen van afbeeldingen e.d. eens afgelopen kan zijn? Nou, dat kan.
 
 Hieronder zal ik uitleggen hoe je met wat simpele CSS3 selectors dit kunt bereiken zonder gedoe met afbeeldingen, http requests, overbodige datatraffic en beperkte schaalbaarheid. Daarbij opent de nieuwe manier nog extra functionaliteit kunt toevoegen zoals animaties. Je levert wat in aan cross browser compatibiliteit maar goed, kom op, het is 2010 we kunnen wel zonder de IE’s.
@@ -67,6 +82,16 @@ Deze inset schaduw is iets groter zodat we een vollere schaduw aan de binnenkant
 
 Zie hier het tussenresultaat.
 
+<div class="preview" data-label="Voorbeeld">
+<template shadowrootmode="open">
+<style>
+  .stage { padding: 24px; border-radius: 4px; background: #fff; color: #333; font: 14px/1.45 system-ui, sans-serif; }
+  .attention { width: 200px; padding: 20px; margin: 0 auto; box-shadow: 0 0 10px #ccc, inset 0 0 50px #ccc; }
+</style>
+<div class="stage"><div class="attention">Let op! Deze box bestaat uit slechts één html element maar hij bevat meerdere schaduwen. Is dat niet geweldig?</div></div>
+</template>
+</div>
+
 Wat missen we nog? Precies! Ronde hoekjes. Daar hebben we uiteraard de border-radius eigenschap voor. Laten we die even toevoegen.
 
 ```css
@@ -84,6 +109,16 @@ Wat missen we nog? Precies! Ronde hoekjes. Daar hebben we uiteraard de border-ra
 ```
 
 We komen al in de buurt kijk maar.
+
+<div class="preview" data-label="Voorbeeld">
+<template shadowrootmode="open">
+<style>
+  .stage { padding: 24px; border-radius: 4px; background: #fff; color: #333; font: 14px/1.45 system-ui, sans-serif; }
+  .attention { width: 200px; padding: 20px; margin: 0 auto; box-shadow: 0 0 10px #ccc, inset 0 0 50px #ccc; border-radius: 10px; }
+</style>
+<div class="stage"><div class="attention">Let op! Deze box bestaat uit slechts één html element maar hij bevat meerdere schaduwen. Is dat niet geweldig?</div></div>
+</template>
+</div>
 
 Het enige wat we nu nog missen is een witte rand tussen de twee schaduwen, want ze liggen nu dicht op elkaar. Onze eeuwenoude eigenschap <code>border</code> gaat ons daar bij helpen.
 
@@ -104,6 +139,16 @@ We voegen een witte rand toe en we zijn klaar!
 }
 ```
 Twee pixeltjes afstand tussen beide schaduwen en we hebben ons gewenste resultaat. We hebben de afbeelding compleet nagemaakt zonder het gebruik van plaatjes. Maar zoals ik al aangaf in de introductie kunnen we nu meer doen met dit element.
+
+<div class="preview" data-label="Voorbeeld">
+<template shadowrootmode="open">
+<style>
+  .stage { padding: 24px; border-radius: 4px; background: #fff; color: #333; font: 14px/1.45 system-ui, sans-serif; }
+  .attention { width: 200px; padding: 20px; margin: 0 auto; box-shadow: 0 0 10px #ccc, inset 0 0 50px #ccc; border-radius: 10px; border: 2px solid #fff; }
+</style>
+<div class="stage"><div class="attention">Let op! Deze box bestaat uit slechts één html element maar hij bevat meerdere schaduwen. Is dat niet geweldig?</div></div>
+</template>
+</div>
 
 Spice it up
 De overgang op de mouseover is vrij abrupt, iets waar we aan gewend zijn geraakt omdat we met afbeeldingen niet anders konden (nouja, in theorie zou je geanimeerde gif’s kunnen gebruiken maar dat doen we niet toch…?). Met deze opzet kunnen we de overgang van neutrale status naar actieve status (mouseover) animeren. Dit kan door de transition eigenschap van CSS3 (box-shadow en border-radius zijn overigens ook allemaal CSS3 eigenschappen). Door een simpel regeltje toe te voegen animeert de overgang van neutraal naar actief vloeiend en zitten we niet meer in de maag gesplitst met de abrupte overgangen.
@@ -132,6 +177,21 @@ De overgang op de mouseover is vrij abrupt, iets waar we aan gewend zijn geraakt
 }
 ```
 We hebben nu de transition specifiek op de box-shadow gezet. Je zou deze ook op “all” kunnen zetten en dan worden alle ondersteunde eigenschappen binnen 0.6 seconden getransformeerd naar de doelvorm. Je kunt hiermee natuurlijk helemaal los gaan, het veranderen van de tekst kleur, de achtergrondkleur e.d. alles kan worden bepaald. Om het subtiel te houden laten we het bij de box-shadow die we transformeren.
+
+<div class="preview" data-label="Voorbeeld">
+<template shadowrootmode="open">
+<style>
+  .stage { padding: 24px; border-radius: 4px; background: #fff; color: #333; font: 14px/1.45 system-ui, sans-serif; }
+  .hint { margin: 0 0 16px; text-align: center; font-size: 12px; color: #777; }
+  .attention { width: 200px; padding: 20px; margin: 0 auto; box-shadow: 0 0 10px #ccc, inset 0 0 50px #ccc; border-radius: 10px; border: 2px solid #fff; transition: box-shadow 0.6s; }
+  .attention:hover { box-shadow: 0 0 10px #666, inset 0 0 50px #666; }
+</style>
+<div class="stage">
+  <p class="hint">Ga met je muis over de box.</p>
+  <div class="attention">Let op! Deze box bestaat uit slechts één html element maar hij bevat meerdere schaduwen. Is dat niet geweldig?</div>
+</div>
+</template>
+</div>
 
 
 Bekijk het eindresultaat op [CodePen](https://codepen.io/lucraak/pen/xxBZoYJ "Codepen met het eindresultaat").

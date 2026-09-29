@@ -103,4 +103,50 @@ So, this linear gradient has a minus 90 degrees orientation with a 1px top borde
 
 When you put all this together with some other basic styling (not worth mentioning here) we get this final result (works with Webkit and Gecko engines)
 
+<div class="preview" data-label="Final result" data-replay>
+<template shadowrootmode="open">
+<style>
+  .stage { display: grid; place-items: center; min-height: 260px; padding: 24px; border-radius: 4px; background: #3d4046; }
+  @keyframes iOSpulse {
+    0% { transform: scale(0); }
+    33% { transform: scale(1.1); }
+    67% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+  }
+  .alert { width: 270px; padding: 14px 14px 16px; border: 2px solid rgba(255,255,255,.85); border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.6); background: radial-gradient(circle at 50% -50%, rgba(255,255,255,.1) 50%, transparent 50%), rgba(5,24,71,0.9); background-size: 100% 400%; background-position: 0 29%; color: #fff; font-family: Helvetica, Arial, sans-serif; text-align: center; text-shadow: rgba(0,0,0,.6) 0 -1px 0; }
+  .alert.is-playing { animation: iOSpulse .38s ease-in-out; }
+  h1 { margin: 2px 0 6px; font-size: 17px; line-height: 1.25; }
+  p { margin: 0 0 14px; font-size: 15px; }
+  .buttons { display: flex; gap: 8px; }
+  .buttons button { flex: 1; padding: 9px 6px; border: 1px solid rgba(0,0,0,.5); border-radius: 6px; background: linear-gradient(to bottom, rgba(255,255,255,.38) 1px, rgba(255,255,255,.1) 50%, rgba(255,255,255,.04) 50%, rgba(255,255,255,.04) 100%); color: #fff; font: bold 16px Helvetica, Arial, sans-serif; text-shadow: black 0px -1px 0px; cursor: pointer; }
+  .buttons .default { background: linear-gradient(to bottom, rgba(255,255,255,.68) 0, rgba(255,255,255,.43) 50%, rgba(255,255,255,.25) 50%, rgba(255,255,255,.32) 100%); }
+  .buttons button:active { background: linear-gradient(to bottom, rgba(98,98,98,.38) 1px, rgba(98,98,98,.2) 50%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.38) 100%); }
+  @media (prefers-reduced-motion: reduce) { .alert.is-playing { animation: none; } }
+</style>
+<div class="stage">
+  <div class="alert is-playing">
+    <h1>This is a pure CSS3 iOS alert simulation</h1>
+    <p>Do you like this stuff?</p>
+    <div class="buttons"><button type="button">Nope</button><button type="button" class="default">Very much</button></div>
+  </div>
+</div>
+<script>
+  const alert = root.querySelector('.alert');
+  const play = () => {
+    alert.classList.remove('is-playing');
+    void alert.offsetWidth;
+    alert.classList.add('is-playing');
+  };
+  alert.classList.remove('is-playing');
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      play();
+      observer.disconnect();
+    }
+  }, { threshold: 0.6 });
+  observer.observe(alert);
+</script>
+</template>
+</div>
+
 If you have any improvements, please let me know.

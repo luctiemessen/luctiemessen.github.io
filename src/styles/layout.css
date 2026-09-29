@@ -299,6 +299,9 @@ html[data-nav-open] .nav-drawer [data-stagger] {
 
 .site-footer a {
   color: inherit;
+  transition:
+    color 0.15s ease,
+    text-decoration-color 0.15s ease;
 }
 
 .site-footer a:hover {

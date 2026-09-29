@@ -115,7 +115,9 @@ const older = index >= 0 ? posts[index + 1] : undefined;
   <TocRail items={toc} title={title} />
 
   <script>
+    import { initPreviews } from '../scripts/preview';
     import { initSidenotes } from '../scripts/sidenotes';
+    initPreviews();
     document.querySelectorAll<HTMLElement>('[data-post]').forEach(initSidenotes);
   </script>
 </BaseLayout>

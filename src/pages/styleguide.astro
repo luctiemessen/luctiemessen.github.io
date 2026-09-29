@@ -81,6 +81,18 @@ const cssSample = `.ninja {
     animation-duration: 0.000001s;
 }`;
 
+const previewSample = `<div class="preview">
+<template shadowrootmode="open">
+<style>
+  p { color: var(--accent); }
+</style>
+<p>Hello from inside the preview.</p>
+<script>
+  root.querySelector('p').textContent += ' JavaScript works too.';
+</script>
+</template>
+</div>`;
+
 const codeThemes = { light: 'github-light', dark: 'github-dark' } as const;
 
 // Real posts for the examples of the overview and the navigation.
@@ -243,6 +255,7 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
 
       <h3>Links</h3>
       <p><a href="https://www.google.com" title="Search for it on Google">Butterscotch squares that do things right</a>. A link is green with a thin, light underline. Point at it and the line becomes solid.</p>
+      <p>In secondary text, such as sources, notes and the footer, a link keeps the colour of the text around it, with the same thin underline, and turns green when you point at it. That way it doesn’t compete with the text it belongs to. You can see it in the source of the quote below.</p>
 
       <h3>Abbreviations</h3>
       <p>Abbreviations such as <abbr title="HyperText Markup Language">HTML</abbr> get an <code>abbr</code>, with a <code>title</code> for the full name. The dotted line shows that there is an explanation; point at the abbreviation to read it.</p>
@@ -444,6 +457,27 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
         )
       }
 
+      <h3>Preview</h3>
+      <p>A block in which a piece of HTML, CSS and JavaScript renders, shielded from the rest of the page: the styles inside and outside the preview don’t affect each other, but tokens such as <code>var(--accent)</code> do work. Write it straight into Markdown, without blank lines. In a script, use <code>root</code> instead of <code>document</code>. Give it a label of its own with <code>data-label</code>.</p>
+      <p>Optionally, add <code>data-replay</code> for a Replay button next to the label. It rebuilds the preview from its original content and runs its scripts again, so animations play again and the example starts over. Click the button below a few times, then press Replay.</p>
+      <Code code={previewSample} lang="html" themes={codeThemes} defaultColor={false} />
+      <div class="preview" data-replay>
+        <template shadowrootmode="open">
+          <style is:inline>
+            button { padding: 0.6rem 1rem; border: 0; border-radius: 999px; background: var(--accent); color: var(--paper); font: 500 0.9375rem/1 var(--font-sans); cursor: pointer; }
+            p { margin: 0.75rem 0 0; color: var(--ink-2); }
+          </style>
+          <button type="button">Click me</button>
+          <p>Clicked <span>0</span> times.</p>
+          <script is:inline>
+            const count = root.querySelector('span');
+            root.querySelector('button').addEventListener('click', () => {
+              count.textContent = String(Number(count.textContent) + 1);
+            });
+          </script>
+        </template>
+      </div>
+
       <!-- Footnotes, in the same form as Markdown makes them. -->
       <section data-footnotes class="footnotes">
         <h2 class="sr-only" id="footnote-label">Footnotes</h2>
@@ -470,7 +504,9 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
   <TocRail items={toc} title="Styleguide" />
 
   <script>
+    import { initPreviews } from '../scripts/preview';
     import { initSidenotes } from '../scripts/sidenotes';
+    initPreviews();
     document.querySelectorAll<HTMLElement>('[data-post]').forEach(initSidenotes);
 
     // Light / Dark / System (only for this page, not remembered).
