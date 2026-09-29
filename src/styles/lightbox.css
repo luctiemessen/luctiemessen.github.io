@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Lightbox (lightbox.ts)
+   Afbeeldingen die je groter kunt bekijken. Zet in Markdown een figure met
+   de class lightbox om een of meer afbeeldingen, eventueel met figcaption.
+
+   - Eén afbeelding: zo breed als de tekst.
+   - Twee of drie: naast elkaar en even hoog, zonder bijsnijden. Meer dan
+     drie: rijen van hooguit drie.
+   - Klik of tik: de afbeelding opent schermvullend, op de papierkleur.
+   - Zonder JavaScript: gewone afbeeldingen onder elkaar.
+
+   Geen HTML-tags in dit commentaar (zie de opmerking bij .preview).
+   ========================================================================== */
+
+/* lightbox.ts geeft elke afbeelding een --ratio (breedte / hoogte), zodat
+   afbeeldingen in één rij even hoog worden. */
+.lightbox__row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lightbox__row + .lightbox__row {
+  margin-top: 0.5rem;
+}
+
+.lightbox__trigger {
+  position: relative;
+  display: block;
+  flex: var(--ratio, 1) 1 0%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: none;
+  cursor: zoom-in;
+}
+
+.lightbox__trigger img {
+  width: 100%;
+  height: auto;
+}
+
+/* Een klein teken rechtsonder dat je kunt vergroten: bij aanwijzen en bij
+   focus, en altijd op touchscreens (daar kun je niet aanwijzen). */
+.lightbox__trigger::before,
+.lightbox__trigger::after {
+  content: '';
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.lightbox__trigger::before {
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--paper-raised) 88%, transparent);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.18);
+}
+
+.lightbox__trigger::after {
+  background: var(--ink);
+  -webkit-mask: var(--lightbox-icon) center / 0.9rem no-repeat;
+  mask: var(--lightbox-icon) center / 0.9rem no-repeat;
+}
+
+.lightbox__trigger:hover::before,
+.lightbox__trigger:hover::after,
+.lightbox__trigger:focus-visible::before,
+.lightbox__trigger:focus-visible::after {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .lightbox__trigger::before,
+  .lightbox__trigger::after {
+    opacity: 1;
+  }
+}
+
+/* Op een telefoon zijn afbeeldingen in een rij klein; dan ook het teken. */
+@media (width < 40rem) {
+  .lightbox__row:has(> :nth-child(2)) .lightbox__trigger::before,
+  .lightbox__row:has(> :nth-child(2)) .lightbox__trigger::after {
+    right: 0.3rem;
+    bottom: 0.3rem;
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .lightbox__row:has(> :nth-child(2)) .lightbox__trigger::after {
+    -webkit-mask-size: 0.7rem;
+    mask-size: 0.7rem;
+  }
+}
+
+:root {
+  --lightbox-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9'/%3E%3C/svg%3E");
+}
+
+/* --------------------------------------------------------------------------
+   De grote weergave: een dialog over het hele scherm
+   -------------------------------------------------------------------------- */
+
+html:has(.lightbox-dialog[open]) {
+  overflow: hidden;
+}
+
+.lightbox-dialog {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: color-mix(in srgb, var(--paper) 96%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.lightbox-dialog::backdrop {
+  background: transparent;
+}
+
+.lightbox-dialog[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+.lightbox-dialog:focus {
+  outline: none;
+}
+
+.lightbox-dialog__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--safe-top) + 0.6rem) 0.75rem 0.4rem 1.25rem;
+  font: 400 0.875rem/1 var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+}
+
+.lightbox-dialog__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: 0 1rem;
+}
+
+.lightbox-dialog__image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: var(--shadow);
+  animation: lightbox-in 0.3s var(--ease-out);
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+.lightbox-dialog__caption {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem calc(var(--safe-bottom) + 1rem);
+  font: 400 0.875rem/1.45 var(--font-sans);
+  color: var(--ink-2);
+  text-align: center;
+  text-wrap: pretty;
+}
+
+/* Knoppen: dezelfde ronde vorm als de menuknop. */
+.lightbox-dialog__button {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: 400 1.5rem/1 var(--font-sans);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lightbox-dialog__button:hover {
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+}
+
+.lightbox-dialog__nav {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  background: color-mix(in srgb, var(--paper-raised) 88%, transparent);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.15);
+}
+
+.lightbox-dialog__nav:hover {
+  background: var(--paper-raised);
+}
+
+.lightbox-dialog__nav--prev {
+  left: 0.75rem;
+}
+
+.lightbox-dialog__nav--next {
+  right: 0.75rem;
+}

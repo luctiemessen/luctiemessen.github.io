@@ -20,6 +20,8 @@ import PostEntry from '../components/PostEntry.astro';
 import { SITE } from '../site.config';
 import { getPosts, formatDate, parseDate, readingTime, postUrl, summary } from '../lib/posts';
 import brug from '../assets/brug.jpg';
+import sketch from '../assets/wettstein-scribble-sketch.jpg';
+import homeScreenshot from '../assets/redesign-2026/home-2026.jpg';
 import '../styles/styleguide.css';
 
 const toc = [
@@ -80,6 +82,13 @@ const cssSample = `.ninja {
     visibility: hidden;
     animation-duration: 0.000001s;
 }`;
+
+const lightboxSample = `<figure class="lightbox">
+
+![A macro shot of a nib](../../assets/nib.jpg "The nib, up close")
+
+<figcaption>An optional caption.</figcaption>
+</figure>`;
 
 const previewSample = `<div class="preview">
 <template shadowrootmode="open">
@@ -347,6 +356,20 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
         </figure>
       </div>
 
+      <h3>Enlarge</h3>
+      <p>Put images in a <code>figure</code> with the class <code>lightbox</code> and they can be viewed larger: click or tap an image and it opens full screen, on the paper colour. One image is as wide as the text; two or three stand side by side at the same height, whatever their proportions. With more than one, you browse with the arrows, the arrow keys or by swiping. The title of an image becomes its caption in the large view.</p>
+      <Code code={lightboxSample} lang="md" themes={codeThemes} defaultColor={false} />
+      <figure class="lightbox">
+        <Image src={sketch} alt="Pencil sketches of the Lamy Scribble, seen from different sides." title="Sketch of the Lamy Scribble" widths={[640, 960]} sizes="(min-width: 40rem) 40rem, 100vw" />
+        <figcaption>One image, as wide as the text. Click it to see it larger.</figcaption>
+      </figure>
+      <figure class="lightbox">
+        <Image src={brug} alt="Black-and-white photo of a steel arch bridge over the water." title="A landscape photo" widths={[640, 960]} sizes="20rem" />
+        <Image src={sketch} alt="Pencil sketches of the Lamy Scribble." title="A sketch" widths={[480, 960]} sizes="14rem" />
+        <Image src={homeScreenshot} alt="The home page of this site." title="A screenshot" widths={[640, 960]} sizes="20rem" />
+        <figcaption>Three images side by side, at the same height.</figcaption>
+      </figure>
+
       <!-- ================================================================ -->
       <h2 id="tables">Tables</h2>
       <p>Tables are set in the sans-serif. A wide table sits in a <code>bleed</code> and scrolls sideways on smaller screens. On a phone every row becomes a small block, with the column name in front of it.</p>
@@ -504,9 +527,11 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
   <TocRail items={toc} title="Styleguide" />
 
   <script>
+    import { initLightboxes } from '../scripts/lightbox';
     import { initPreviews } from '../scripts/preview';
     import { initSidenotes } from '../scripts/sidenotes';
     initPreviews();
+    initLightboxes();
     document.querySelectorAll<HTMLElement>('[data-post]').forEach(initSidenotes);
 
     // Light / Dark / System (only for this page, not remembered).
