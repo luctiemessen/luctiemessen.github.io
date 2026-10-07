@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Schakelaar en versies (variants.ts)
+
+   .switch: een rij knoppen waarvan er één gekozen is, zoals Light / Dark /
+   System in de styleguide. De gekozen knop heeft aria-pressed="true".
+
+   figure.variants: twee of meer versies van dezelfde afbeelding, met een
+   schakelaar erboven. De title van elke afbeelding wordt het label van zijn
+   knop. De versies liggen op elkaar, dus wisselen verschuift de pagina niet;
+   de nieuwe versie fadet in. Zonder JavaScript: gewone afbeeldingen onder
+   elkaar.
+
+   Geen HTML-tags in dit commentaar (zie de opmerking bij .preview).
+   ========================================================================== */
+
+.switch {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+}
+
+.switch button {
+  padding: 0.45rem 0.95rem 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font: 500 0.8125rem/1 var(--font-sans);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.switch button:hover {
+  color: var(--ink);
+}
+
+.switch button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.variants > .switch {
+  margin-bottom: 1rem;
+}
+
+/* Alle versies in dezelfde cel van het raster, op elkaar. */
+.variants__stage {
+  display: grid;
+}
+
+.variants__stage img {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0.35s;
+}
+
+.variants__stage img.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease;
+}

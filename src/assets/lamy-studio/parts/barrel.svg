@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="215.5 854.5 198 1069.5" width="198" height="1069.5" class="lamy-drawing" role="img" aria-labelledby="title">
+  <title id="title">Barrel of the Lamy Studio</title>
+  <style>
+    /* Transparent, in the ink colour of the blog (--ink): dark in light mode, light in dark mode. */
+    .lamy-drawing { color: #1d1c1a; }
+    @media (prefers-color-scheme: dark) {
+      .lamy-drawing { color: #e9e6e0; }
+    }
+    .lamy-drawing path, .lamy-drawing circle { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+    .lamy-drawing .o { stroke-width: 2.2; }
+    .lamy-drawing .f { stroke-width: 1.4; }
+  </style>
+  <path class="o" d="M241.2 878.5 H387.8 C392.2 1140 383.5 1475 371.7 1894 Q371.5 1900 367 1900 L262 1900 Q257.5 1900 257.3 1894 C245.5 1475 236.8 1140 241.2 878.5 Z"/>
+  <path class="o" d="M256.7 1873.5 H372.3"/>
+  <path class="o" d="M257.3 1894 H371.7"/>
+</svg>

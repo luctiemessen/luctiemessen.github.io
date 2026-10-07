@@ -174,36 +174,9 @@
   color: var(--ink-3);
 }
 
-/* Licht / Donker / Systeem */
+/* Licht / Donker / Systeem. De knoppen zelf: .switch in variants.css. */
 .theme-switch {
-  display: inline-flex;
-  gap: 2px;
   margin: 0.2em 0 0;
-  padding: 3px;
-  border: 1px solid var(--rule-strong);
-  border-radius: 999px;
-}
-
-.theme-switch button {
-  padding: 0.45rem 0.95rem 0.5rem;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  font: 500 0.8125rem/1 var(--font-sans);
-  color: var(--ink-2);
-  cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.theme-switch button:hover {
-  color: var(--ink);
-}
-
-.theme-switch button[aria-pressed='true'] {
-  background: var(--ink);
-  color: var(--paper);
 }
 
 /* --------------------------------------------------------------------------

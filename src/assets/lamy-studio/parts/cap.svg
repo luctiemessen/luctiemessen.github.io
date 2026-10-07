@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="217.2 173 194.5 729.5" width="194.5" height="729.5" class="lamy-drawing" role="img" aria-labelledby="title">
+  <title id="title">Cap of the Lamy Studio, without the clip</title>
+  <style>
+    /* Transparent, in the ink colour of the blog (--ink): dark in light mode, light in dark mode. */
+    .lamy-drawing { color: #1d1c1a; }
+    @media (prefers-color-scheme: dark) {
+      .lamy-drawing { color: #e9e6e0; }
+    }
+    .lamy-drawing path, .lamy-drawing circle { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+    .lamy-drawing .o { stroke-width: 2.2; }
+    .lamy-drawing .f { stroke-width: 1.4; }
+  </style>
+  <path class="o" d="M259.5 200 Q259.5 197 262.5 197 L366.5 197 Q369.5 197 369.5 200 L387.8 878.5 H241.2 Z"/>
+  <path class="o" d="M259.4 202 H369.6"/>
+  <path class="o" d="M258.9 220.5 H370.1"/>
+</svg>

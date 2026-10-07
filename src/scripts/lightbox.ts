@@ -11,6 +11,9 @@
  * The large view uses the widest image in the srcset if there is one,
  * otherwise the image itself. Without JavaScript, nothing changes: the
  * images simply show in the article.
+ *
+ * A figure that is also `variants` (variants.ts) gets one button, which
+ * enlarges the version that is showing.
  */
 
 type Item = { src: string; alt: string; caption: string };
@@ -134,6 +137,20 @@ const open = (group: Item[], start: number) => {
   dialog.focus();
 };
 
+const makeTrigger = () => {
+  const el = document.createElement('button');
+  el.type = 'button';
+  el.className = 'lightbox__trigger';
+  el.setAttribute('aria-haspopup', 'dialog');
+  return el;
+};
+
+const makeRow = () => {
+  const el = document.createElement('div');
+  el.className = 'lightbox__row';
+  return el;
+};
+
 export function initLightboxes() {
   document.querySelectorAll<HTMLElement>('figure.lightbox').forEach((figure) => {
     const images = Array.from(figure.querySelectorAll<HTMLImageElement>('img'));
@@ -141,6 +158,26 @@ export function initLightboxes() {
 
     const figcaption = figure.querySelector(':scope > figcaption');
     const figureCaption = figcaption?.textContent?.trim() ?? '';
+
+    // Versions of one image (variants.ts): one button that enlarges the version
+    // that is showing. Its name is "Enlarge: " plus the alt of that version,
+    // because hidden versions don't count.
+    const stage = figure.querySelector<HTMLElement>(':scope > .variants__stage');
+    if (stage) {
+      const button = makeTrigger();
+      const hint = document.createElement('span');
+      hint.className = 'sr-only';
+      hint.textContent = 'Enlarge: ';
+      const wrapper = makeRow();
+      stage.replaceWith(wrapper);
+      button.append(hint, stage);
+      wrapper.append(button);
+      button.addEventListener('click', () => {
+        const img = stage.querySelector<HTMLImageElement>('img.is-active') ?? images[0];
+        open([{ src: largestSource(img), alt: img.alt, caption: figureCaption }], 0);
+      });
+      return;
+    }
     const group: Item[] = images.map((img) => ({
       src: largestSource(img),
       alt: img.alt,
@@ -152,29 +189,22 @@ export function initLightboxes() {
     const rows: HTMLDivElement[] = [];
 
     images.forEach((img, i) => {
-      if (i % 3 === 0) {
-        const row = document.createElement('div');
-        row.className = 'lightbox__row';
-        rows.push(row);
-      }
+      if (i % 3 === 0) rows.push(makeRow());
 
-      const trigger = document.createElement('button');
-      trigger.type = 'button';
-      trigger.className = 'lightbox__trigger';
-      trigger.setAttribute('aria-haspopup', 'dialog');
-      trigger.setAttribute('aria-label', img.alt ? `Enlarge: ${img.alt}` : 'Enlarge image');
+      const button = makeTrigger();
+      button.setAttribute('aria-label', img.alt ? `Enlarge: ${img.alt}` : 'Enlarge image');
 
       const setRatio = () => {
         const width = Number(img.getAttribute('width')) || img.naturalWidth;
         const height = Number(img.getAttribute('height')) || img.naturalHeight;
-        if (width && height) trigger.style.setProperty('--ratio', (width / height).toFixed(4));
+        if (width && height) button.style.setProperty('--ratio', (width / height).toFixed(4));
       };
       setRatio();
-      if (!trigger.style.getPropertyValue('--ratio')) img.addEventListener('load', setRatio, { once: true });
+      if (!button.style.getPropertyValue('--ratio')) img.addEventListener('load', setRatio, { once: true });
 
-      trigger.addEventListener('click', () => open(group, i));
-      trigger.append(img);
-      rows[rows.length - 1].append(trigger);
+      button.addEventListener('click', () => open(group, i));
+      button.append(img);
+      rows[rows.length - 1].append(button);
     });
 
     rows.forEach((row) => figure.insertBefore(row, figcaption));

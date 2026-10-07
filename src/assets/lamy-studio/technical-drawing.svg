@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 1164 1984" width="1164" height="1984" class="lamy-drawing" role="img" aria-labelledby="title">
+  <title id="title">Technical drawing of the Lamy Studio fountain pen with the dimensions from the book</title>
+  <style>
+    /* Transparent, in the ink colour of the blog (--ink): dark in light mode, light in dark mode. */
+    .lamy-drawing { color: #1d1c1a; }
+    @media (prefers-color-scheme: dark) {
+      .lamy-drawing { color: #e9e6e0; }
+    }
+    .lamy-drawing path, .lamy-drawing circle { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+    .lamy-drawing .o { stroke-width: 2.2; }
+    .lamy-drawing .c { stroke-width: 1.8; }
+    .lamy-drawing .d { stroke-width: 1.8; }
+    .lamy-drawing .t { stroke-width: 3.6; }
+    .lamy-drawing text { font: 36px Helvetica, Arial, sans-serif; fill: currentColor; text-anchor: middle; }
+  </style>
+  <g id="side">
+  <path class="o" d="M259.2 210 L259.5 200 Q259.5 197 262.5 197 L366.5 197 Q369.5 197 369.5 200 L387.8 878.5 C392.2 1140 383.5 1475 371.7 1894 Q371.5 1900 367 1900 L262 1900 Q257.5 1900 257.3 1894 C245.5 1475 236.8 1140 241.2 878.5 L258.9 220.5"/>
+  <path class="o" d="M259.4 202 H369.6"/>
+  <path class="o" d="M241.2 878.5 H387.8"/>
+  <path class="o" d="M256.7 1873.5 H372.3"/>
+  <path class="o" d="M257.3 1894 H371.7"/>
+  <path class="o" d="M263 210 L235.8 210 Q222.8 210 222.8 225 C222.6 229.2 222 241.7 221.6 250 C221.3 258.3 221.1 266.7 220.8 275 C220.6 283.3 220.4 291.7 220.2 300 C220 308.3 219.8 316.7 219.6 325 C219.4 333.3 219.2 341.7 219 350 C218.7 358.3 218.5 366.7 218.2 375 C217.9 383.3 217.6 391.7 217.3 400 C216.9 408.3 216.6 416.7 216.1 425 C215.7 433.3 215.2 441.7 214.6 450 C214.1 458.3 213.5 466.7 212.8 475 C212.2 483.3 211.5 491.7 210.7 500 C210 508.3 209.1 516.7 208.3 525 C207.4 533.3 206.5 541.7 205.5 550 C204.6 558.3 203.5 566.7 202.5 575 C201.5 583.3 200.4 591.7 199.3 600 C198.2 608.3 197 616.7 195.9 625 C194.7 633.3 193.7 640.8 192.4 650 C191 659.2 189.2 670.2 187.8 680 C186.4 689.8 185.3 699 184 708.6 A31.2 31.2 0 0 0 245.5 718.9 M245.9 706 C245.2 700.8 242.8 684.3 241.8 675 C240.7 665.7 240.4 658.3 239.8 650 C239.1 641.7 238.5 633.3 237.9 625 C237.2 616.7 236.6 608.3 236 600 C235.5 591.7 234.9 583.3 234.4 575 C233.9 566.7 233.4 558.3 232.9 550 C232.5 541.7 232 533.3 231.7 525 C231.3 516.7 231 508.3 230.7 500 C230.4 491.7 230.2 483.3 230 475 C229.8 466.7 229.6 458.3 229.5 450 C229.5 441.7 229.4 433.3 229.4 425 C229.4 416.7 229.4 408.3 229.5 400 C229.6 391.7 229.7 383.3 229.9 375 C230 366.7 230.3 358.3 230.5 350 C230.7 341.7 231 333.3 231.2 325 C231.5 316.7 231.8 308.3 232.1 300 C232.5 291.7 232.8 283.3 233.1 275 C233.4 266.7 233.8 258.3 234.1 250 C234.4 241.7 234.9 229.2 235 225 Q235 220.5 240 220.5 H370.1"/>
+  <path class="o" d="M263 210 V220.5"/>
+  </g>
+  <g id="section">
+  <path class="o" d="M1006.5 200 Q1006.5 197 1009.5 197 L1113.5 197 Q1116.5 197 1116.5 200 L1134.8 878.5 C1139.2 1140 1130.5 1475 1118.7 1894 Q1118.5 1900 1114 1900 L1009 1900 Q1004.5 1900 1004.3 1894 C992.5 1475 983.8 1140 988.2 878.5 Z"/>
+  <path class="c" d="M1061.5 143 V1959.5"/>
+  <path class="o" d="M1061.5 202 H1116.6"/>
+  <path class="o" d="M1005.9 220.5 H1117.1"/>
+  <path class="o" d="M988.2 878.5 H1134.8"/>
+  <path class="o" d="M1003.7 1873.5 H1119.3"/>
+  <path class="o" d="M1061.5 1894 H1118.7"/>
+  <circle class="o" cx="1061.5" cy="326.5" r="5.3"/>
+  <circle class="o" cx="1061.5" cy="446.3" r="5.3"/>
+  <path class="o" d="M1056.9 323.9 L1021.5 442.8 V515 Q1021.5 519 1025.5 519 H1108.5"/>
+  <path class="o" d="M1066.1 329.1 L1081.1 401"/>
+  <path class="o" d="M1081.1 401 C1080.6 396.4 1079 382.7 1077.9 373.1 C1076.9 363.5 1075.8 350.7 1074.8 343.2 C1073.8 335.7 1071.5 331.9 1071.7 328.2 C1071.9 324.4 1074.4 320.7 1076 320.7 C1077.6 320.7 1080.5 324.4 1081.3 328.2 C1082.1 331.9 1080.4 335.7 1080.7 343.2 C1081 350.7 1082.5 363.1 1083.3 373.1 C1084.1 383.1 1085.1 398 1085.5 403"/>
+  <path class="o" d="M1081.1 401 C1081.1 418 1076.5 434 1065.1 442.2"/>
+  <path class="o" d="M1085.5 403 L1100.3 446 V461 M1100.3 464.5 V466 M1100.3 471 V519"/>
+  <path class="o" d="M1036 394.2 V448 M1036 452 V457 M1036 461 V467 M1036 471 V519"/>
+  <path class="o" d="M1085.5 403 V448 M1085.5 452 V457 M1085.5 461 V467 M1085.5 471 V519"/>
+  <path class="o" d="M1085.5 429 Q1088.7 444 1094.3 519"/>
+  <path class="o" d="M1057.7 450.2 C1055 458 1055.5 480 1060.5 500"/>
+  <path class="o" d="M1107.5 422.6 V512"/>
+  <path class="o" d="M1107.5 512 L1114.1 543"/>
+  <path class="o" d="M1116.3 422 V529 Q1117 537 1125.6 538.5"/>
+  <path class="o" d="M1114.1 540 L1125.8 547"/>
+  <path class="o" d="M1061.5 523.3 H1110.4"/>
+  <path class="o" d="M1061.5 528.8 H1100.3"/>
+  <path class="o" d="M1061.5 543 H1114.1"/>
+  <path class="o" d="M1061.5 549.4 H1125.9"/>
+  <path class="o" d="M1115 549.4 L1129.2 878.5"/>
+  <path class="o" d="M1100.3 528.8 V671 M1100.3 682 V692 M1100.3 704 V712 M1100.3 724 V827.4 H1072.3 V901 Q1072.3 911.4 1061.5 911.4"/>
+  <path class="o" d="M1061.5 901 H1092.8"/>
+  <path class="o" d="M1092.5 901 V944 L1106 941.5 L1108.4 1562 L1097.3 1569.3 V1751.3 H1061.5"/>
+  </g>
+  <g id="dimensions">
+  <path class="d" d="M259.5 61 V167"/>
+  <path class="d" d="M369.5 61 V167"/>
+  <path class="d" d="M229.5 84 H399.5"/>
+  <path class="t" d="M248.5 95 L270.5 73"/>
+  <path class="t" d="M358.5 95 L380.5 73"/>
+  <path class="d" d="M404.5 197 H810.5"/>
+  <path class="d" d="M404.5 202 H546.5"/>
+  <path class="d" d="M404.5 220.5 H661.5"/>
+  <path class="d" d="M521.5 82 V250"/>
+  <path class="t" d="M510.5 191 L532.5 213"/>
+  <path class="t" d="M510.5 209.5 L532.5 231.5"/>
+  <path class="d" d="M635.7 83 V252"/>
+  <path class="t" d="M624.7 186 L646.7 208"/>
+  <path class="t" d="M624.7 209.5 L646.7 231.5"/>
+  <path class="d" d="M64.6 208.5 H209.5"/>
+  <path class="d" d="M64.2 743.5 H176.3"/>
+  <path class="d" d="M89 201 V755"/>
+  <path class="t" d="M78 197.5 L100 219.5"/>
+  <path class="t" d="M78 732.5 L100 754.5"/>
+  <path class="d" d="M426.2 878.5 H738.9"/>
+  <path class="d" d="M712.3 191 V893"/>
+  <path class="t" d="M701.3 186 L723.3 208"/>
+  <path class="t" d="M701.3 867.5 L723.3 889.5"/>
+  <path class="d" d="M406 1900 H811.4"/>
+  <path class="d" d="M786.5 193 V1923"/>
+  <path class="t" d="M775.5 186 L797.5 208"/>
+  <path class="t" d="M775.5 1889 L797.5 1911"/>
+  <path class="d" d="M21.9 1045.5 H401"/>
+  <path class="t" d="M229.1 1056.5 L251.1 1034.5"/>
+  <path class="t" d="M377.9 1056.5 L399.9 1034.5"/>
+  </g>
+
+  <!-- The dimensions, in millimetres. Change a number between > and < to adjust it. -->
+  <g id="labels">
+    <!-- Width of the cap at the top -->
+    <text x="314.5" y="47">9,1</text>
+    <!-- Height of the clip ring -->
+    <text transform="translate(480.7 126) rotate(-90)">1,6</text>
+    <!-- Top of the cap to the bottom of the clip ring -->
+    <text transform="translate(594 128) rotate(-90)">2,0</text>
+    <!-- Length of the clip -->
+    <text transform="translate(47.8 473) rotate(-90)">45,0</text>
+    <!-- Length of the cap -->
+    <text transform="translate(671.5 560) rotate(-90)">57,0</text>
+    <!-- Total length -->
+    <text transform="translate(745 1026) rotate(-90)">138,0</text>
+    <!-- Widest point of the barrel -->
+    <text x="79.8" y="1003">12,2</text>
+  </g>
+</svg>
