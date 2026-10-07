@@ -59,3 +59,6 @@ window.addEventListener('storage', (event) => {
 });
 
 apply(current());
+
+// A module of its own, so names like `root` don't clash with other scripts.
+export {};
