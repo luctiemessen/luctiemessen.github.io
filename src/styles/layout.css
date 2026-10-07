@@ -178,6 +178,8 @@ html[data-nav-open] .nav-scrim {
   width: min(21rem, 86vw);
   padding: calc(var(--header-h) + var(--safe-top) + 1.75rem) 1.75rem calc(2rem + var(--safe-bottom))
     max(1.75rem, env(safe-area-inset-left, 0px));
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--paper-raised);
@@ -261,6 +263,13 @@ html[data-nav-open] .nav-drawer {
   padding-left: 0.9rem;
   font-size: 0.875rem;
   color: var(--ink-3);
+}
+
+/* Licht / Donker / Systeem: helemaal onderin het menu. Is het menu langer
+   dan het scherm, dan staat de keuze gewoon als laatste. */
+.nav-drawer__theme {
+  margin-top: auto;
+  padding-top: 2.25rem;
 }
 
 /* Items glijden na elkaar binnen zodra het menu opent. */

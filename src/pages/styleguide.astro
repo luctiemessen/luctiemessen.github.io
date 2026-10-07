@@ -132,7 +132,7 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
       <!-- ================================================================ -->
       <h2 id="colour">Colour</h2>
       <p>One warm paper colour, three shades of ink and one green accent. The green is reserved for what you can click or what lights up: links, note numbers and the note under your mouse.</p>
-      <p>Dark mode follows the setting of your system. On this page you can also choose it yourself.</p>
+      <p>Dark mode follows the setting of your system. You can also choose it yourself, here or at the bottom of the menu. Your choice is remembered.</p>
       <div class="switch theme-switch" role="group" aria-label="Colour theme">
         <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
         <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
@@ -534,17 +534,7 @@ const demoYear = demoEntries[0] && parseDate(demoEntries[0].frontmatter.date)?.g
     initLightboxes();
     document.querySelectorAll<HTMLElement>('[data-post]').forEach(initSidenotes);
 
-    // Light / Dark / System (only for this page, not remembered).
-    const root = document.documentElement;
-    const choices = document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]');
-    choices.forEach((button) => {
-      button.addEventListener('click', () => {
-        const choice = button.dataset.themeChoice;
-        if (choice === 'system') delete root.dataset.theme;
-        else root.dataset.theme = choice;
-        choices.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
-      });
-    });
+    // Light / Dark / System is handled by theme.ts, for this switch and the one in the menu.
 
     // Example of the menu button.
     document.querySelectorAll<HTMLButtonElement>('[data-menu-demo]').forEach((button) => {

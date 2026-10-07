@@ -3,7 +3,8 @@
  * Glass header + hamburger menu + slide-in navigation.
  * Pass `toc` to also list the headings of the current page in the menu
  * (useful on phones, where the left rail is hidden). Pages like the
- * styleguide sit in a small "Reference" section at the bottom.
+ * styleguide sit in a small "Reference" section, and the colour theme
+ * (Light / Dark / System, theme.ts) at the very bottom.
  */
 import { NAV as links, REFERENCE as reference, SITE } from '../site.config';
 
@@ -77,8 +78,16 @@ const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWi
       }
     </ul>
   </section>
+  <div class="nav-drawer__theme" data-stagger style={`--i: ${links.length + (toc.length > 0 ? 2 : 1)}`}>
+    <div class="switch" role="group" aria-label="Colour theme">
+      <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+      <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      <button type="button" data-theme-choice="system" aria-pressed="true">System</button>
+    </div>
+  </div>
 </nav>
 
 <script>
   import '../scripts/site-header';
+  import '../scripts/theme';
 </script>

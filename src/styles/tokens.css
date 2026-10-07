@@ -39,7 +39,7 @@
 }
 
 /* Donkere modus volgt het systeem, tenzij <html data-theme="light|dark"> is gezet
-   (dat doet alleen de themakeuze op /styleguide/). */
+   (door de themakeuze onderin het menu of in de styleguide, zie theme.ts). */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     --paper: #1c1d1b;

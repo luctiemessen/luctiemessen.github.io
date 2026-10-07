@@ -52,6 +52,18 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
 
     <meta name="theme-color" content="#f7f5f1" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1c1d1b" media="(prefers-color-scheme: dark)" />
+    <script is:inline>
+      // Gekozen thema (theme.ts) toepassen vóór het eerste beeld, zodat er niets flitst.
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme;
+          document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+            meta.content = theme === 'dark' ? '#1c1d1b' : '#f7f5f1';
+          });
+        }
+      } catch {}
+    </script>
     <meta property="og:type" content={type} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />

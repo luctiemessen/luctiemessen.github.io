@@ -660,6 +660,22 @@
   text-decoration: var(--shiki-dark-text-decoration);
 }
 
+/* SVG-afbeeldingen, zoals de Lamy-tekeningen, kiezen hun inktkleur zelf met
+   prefers-color-scheme: ze kunnen de keuze in het menu niet zien. Wijkt die
+   keuze af van het systeem, dan draaien we ze om: donkere lijnen worden licht
+   en andersom. Geldt ook voor de grote weergave in de lightbox. */
+@media (prefers-color-scheme: light) {
+  :root[data-theme='dark'] img[src*='.svg'] {
+    filter: invert(1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme='light'] img[src*='.svg'] {
+    filter: invert(1);
+  }
+}
+
 /* --------------------------------------------------------------------------
    De rechtermarge: .bleed en bijschriften (≥ 70rem)
    -------------------------------------------------------------------------- */
