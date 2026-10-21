@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="235.5 178 158 590" width="158" height="590" class="lamy-drawing" role="img" aria-labelledby="title">
+  <title id="title">Clip of the Lamy Studio, back view, with GERMANY stamped inside</title>
+  <style>
+    /* Transparent, in the ink colour of the blog (--ink): dark in light mode, light in dark mode. */
+    .lamy-drawing { color: #1d1c1a; }
+    @media (prefers-color-scheme: dark) {
+      .lamy-drawing { color: #e9e6e0; }
+    }
+    .lamy-drawing path { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+    .lamy-drawing .o { stroke-width: 2.2; }
+    .lamy-drawing .f { stroke-width: 1.4; }
+    .lamy-drawing .stamp { font: 500 10px Futura, 'Century Gothic', Helvetica, Arial, sans-serif; letter-spacing: 0.4px; fill: currentColor; text-anchor: middle; }
+  </style>
+  <path class="o" d="M261 202 H368 Q369.5 202 369.5 203.5 V219 Q369.5 220.5 368 220.5 H348.5 Q342.5 220.5 342.3 226.5 C339.9 300 319.8 470 319.8 560 V738.8 A5.2 5.2 0 0 1 309.2 738.8 V560 C309.2 470 289.1 300 286.7 226.5 Q286.5 220.5 280.5 220.5 H261 Q259.5 220.5 259.5 219 V203.5 Q259.5 202 261 202 Z"/>
+  <path class="o" d="M280.5 220.5 H296 V214.5 H333 V220.5 H348.5"/>
+  <path class="f" d="M291 226.5 C293.4 300 312.5 455 314.5 545 C316.5 455 335.6 300 338 226.5"/>
+  <path class="f" d="M314.5 545 V736"/>
+  <text class="stamp" transform="translate(318.1 423.6) rotate(-90)">GERMANY</text>
+</svg>
