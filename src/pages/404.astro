@@ -1,9 +1,148 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+/**
+ * 404: a page that isn't there.
+ *
+ * A small technical drawing of the missing page, in the style of the Lamy
+ * Studio drawing: dashed (hidden) lines, centre lines and one dimension.
+ * Below it, a guess at what you were looking for (not-found.ts compares the
+ * address with every page), and the most recent writing.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostEntry from '../components/PostEntry.astro';
+import { getPosts, postUrl } from '../lib/posts';
+import { NAV, REFERENCE } from '../site.config';
+
+const posts = await getPosts();
+const recent = posts.slice(0, 3);
+
+// Every page the guess can point to. The "<" is escaped, so a title can never close the script.
+const pages = [
+  ...NAV.map((item) => ({ title: item.name, url: item.path })),
+  ...REFERENCE.map((item) => ({ title: item.name, url: item.path })),
+  ...posts.map((post) => ({ title: post.frontmatter.title, url: postUrl(post) })),
+];
+const pagesJson = JSON.stringify(pages).replace(/</g, '\\u003c');
 ---
 
-<PageLayout title="Page not found" heading="Oops! This is embarrassing!">
-  <p>Looks like you’ve ventured into the unknown... 🚀</p>
-  <p>This page must have gone on vacation, or maybe it’s hiding under the couch cushions. Either way, it's not here!</p>
-  <p>But don’t worry, you’re still in the right place to find your way back.<br /><a href="/">Go home</a> and let’s try this again! 😅</p>
-</PageLayout>
+<BaseLayout title="Page not found" description="This page doesn't exist. Maybe it moved, or it was never written.">
+  <div class="page-grid" id="top">
+    <header class="post-header wide">
+      <h1 class="post-title">A page that isn’t there</h1>
+    </header>
+
+    <div class="prose">
+      <p class="lead">You followed a link or typed an address, and ended up somewhere that doesn’t exist. Maybe the page moved, maybe it was never written, or a letter went missing along the way.</p>
+
+      <figure class="missing-page">
+        <svg viewBox="0 0 640 360" role="img" aria-labelledby="missing-page-title">
+          <title id="missing-page-title">A technical drawing of a page in dashed lines, with one dimension: 404,0</title>
+          <!-- centre lines -->
+          <path class="missing-page__centre" d="M320 22 V342 M196 184 H444" />
+          <!-- the page, in hidden (dashed) lines, with a folded corner -->
+          <path class="missing-page__hidden" d="M220 42 H388 L420 74 V326 H220 Z" />
+          <path class="missing-page__hidden" d="M388 42 V74 H420" />
+          <!-- dimension: the height of the page -->
+          <path class="missing-page__dim" d="M396 42 H490 M428 326 H490 M478 30 V338" />
+          <path class="missing-page__tick" d="M470 34 L486 50 M470 318 L486 334" />
+          <text class="missing-page__label" transform="translate(462 184) rotate(-90)">404,0</text>
+        </svg>
+        <figcaption>In a technical drawing, dashed lines show what you can’t see. Here, that’s the whole page.</figcaption>
+      </figure>
+
+      <p class="missing-page__guess" data-guess hidden>Judging by the address, you might be looking for <a href="/"></a>.</p>
+
+      <p>From here, you can start at the <a href="/">home page</a>, browse <a href="/blog/">all articles</a>, or read a little <a href="/about/">about me</a>.</p>
+
+      <blockquote>
+        <p>Whereof one cannot speak, thereof one must be silent.<cite>Ludwig Wittgenstein, Tractatus Logico-Philosophicus</cite></p>
+      </blockquote>
+    </div>
+
+    <section class="archive wide" aria-labelledby="recent-writing">
+      <h2 class="archive__year" id="recent-writing">Recent writing</h2>
+      <ol class="archive__list">
+        {recent.map((post) => <PostEntry post={post} />)}
+      </ol>
+      <p class="archive__more"><a href="/blog/">View all articles</a></p>
+    </section>
+  </div>
+
+  <script is:inline type="application/json" data-pages set:html={pagesJson} />
+  <script>
+    import '../scripts/not-found';
+  </script>
+</BaseLayout>
+
+<style>
+  /* De tekening: ink-kleuren, zodat hij meekleurt met licht en donker. */
+  .missing-page svg {
+    display: block;
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .missing-page path {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .missing-page__hidden {
+    stroke: var(--ink-2);
+    stroke-width: 1.6;
+    stroke-dasharray: 9 6;
+  }
+
+  .missing-page__centre {
+    stroke: var(--ink-3);
+    stroke-width: 0.8;
+    stroke-dasharray: 18 4 3 4;
+  }
+
+  .missing-page__dim {
+    stroke: var(--ink-3);
+    stroke-width: 1;
+  }
+
+  .missing-page__tick {
+    stroke: var(--ink-2);
+    stroke-width: 2.2;
+  }
+
+  .missing-page__label {
+    font: 400 20px/1 var(--font-sans);
+    font-variant-numeric: tabular-nums;
+    fill: var(--ink-2);
+    text-anchor: middle;
+  }
+
+  /* Rustig opbouwen: eerst de pagina, dan de hartlijnen, dan de maat. */
+  @media (prefers-reduced-motion: no-preference) {
+    .missing-page path,
+    .missing-page text {
+      animation: missing-page-in 0.8s var(--ease-out) both;
+    }
+
+    .missing-page__centre {
+      animation-delay: 0.25s !important;
+    }
+
+    .missing-page__dim,
+    .missing-page__tick {
+      animation-delay: 0.5s !important;
+    }
+
+    .missing-page__label {
+      animation-delay: 0.7s !important;
+    }
+  }
+
+  @keyframes missing-page-in {
+    from {
+      opacity: 0;
+    }
+  }
+</style>
